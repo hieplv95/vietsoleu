@@ -1,0 +1,220 @@
+.about {
+  position: relative;
+  background: var(--clr-bg);
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.about__bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+}
+
+.about__bg-orb--1 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(108,71,255,0.15) 0%, transparent 70%);
+  top: -100px;
+  right: -100px;
+}
+
+.about__bg-orb--2 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(0,212,177,0.1) 0%, transparent 70%);
+  bottom: -50px;
+  left: 0;
+}
+
+.about__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-16);
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.about__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.about__title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 800;
+  background: linear-gradient(135deg, #fff 0%, #c0bcff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
+}
+
+.about__desc {
+  font-size: 1rem;
+  color: var(--clr-text-muted);
+  line-height: 1.75;
+}
+
+.about__desc strong {
+  color: #a78bfa;
+  font-weight: 600;
+}
+
+.about__highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.about__highlight-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9375rem;
+  color: var(--clr-text-muted);
+}
+
+.about__highlight-item span:first-child {
+  font-size: 1.125rem;
+  flex-shrink: 0;
+}
+
+/* Visual */
+.about__visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hub */
+.about__hub {
+  position: relative;
+  width: 380px;
+  height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about__hub-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid;
+  animation: spin-slow linear infinite;
+}
+
+.about__hub-ring--1 {
+  width: 180px;
+  height: 180px;
+  border-color: rgba(108,71,255,0.2);
+  animation-duration: 20s;
+}
+
+.about__hub-ring--2 {
+  width: 280px;
+  height: 280px;
+  border-color: rgba(108,71,255,0.12);
+  animation-duration: 30s;
+  animation-direction: reverse;
+}
+
+.about__hub-ring--3 {
+  width: 360px;
+  height: 360px;
+  border-color: rgba(108,71,255,0.07);
+  animation-duration: 40s;
+}
+
+.about__hub-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.375rem;
+  z-index: 2;
+  background: rgba(13,18,48,0.9);
+  border: 1px solid rgba(108,71,255,0.3);
+  border-radius: 16px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 0 40px rgba(108,71,255,0.3);
+}
+
+.about__hub-center span {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #a78bfa;
+}
+
+/* Orbit items */
+.about__orbit-item {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  /* Place on a 150px radius circle */
+  transform: rotate(var(--angle)) translateX(150px) rotate(calc(-1 * var(--angle)));
+  animation: float 4s ease-in-out infinite;
+  animation-delay: var(--animationDelay);
+}
+
+.about__orbit-item > span:first-child {
+  font-size: 1.5rem;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+
+.about__orbit-item:hover > span:first-child {
+  transform: scale(1.15);
+  border-color: var(--color);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3), 0 0 10px var(--color);
+}
+
+.about__orbit-label {
+  font-size: 0.6875rem;
+  color: var(--clr-text-muted);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .about__inner {
+    grid-template-columns: 1fr;
+  }
+  .about__visual {
+    order: -1;
+  }
+  .about__hub {
+    width: 300px;
+    height: 300px;
+  }
+  .about__orbit-item {
+    transform: rotate(var(--angle)) translateX(120px) rotate(calc(-1 * var(--angle)));
+  }
+  .about__hub-ring--3 {
+    width: 280px;
+    height: 280px;
+  }
+  .about__hub-ring--2 {
+    width: 220px;
+    height: 220px;
+  }
+  .about__hub-ring--1 {
+    width: 150px;
+    height: 150px;
+  }
+}

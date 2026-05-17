@@ -1,0 +1,124 @@
+.blog {
+  background: var(--clr-bg);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.blog__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: var(--space-12);
+}
+
+.blog__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.blog__card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 0;
+}
+
+.blog__card-thumb {
+  position: relative;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--clr-border);
+}
+
+.blog__card-emoji {
+  font-size: 3.5rem;
+  filter: drop-shadow(0 4px 20px rgba(0,0,0,0.3));
+  transition: transform 0.3s ease;
+}
+
+.blog__card:hover .blog__card-emoji {
+  transform: scale(1.15) rotate(-5deg);
+}
+
+.blog__card-category {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 6px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.blog__card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.blog__card-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--clr-text-muted);
+}
+
+.blog__card-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.4;
+  transition: color 0.2s ease;
+}
+
+.blog__card:hover .blog__card-title {
+  color: var(--post-color, #a78bfa);
+}
+
+.blog__card-excerpt {
+  font-size: 0.875rem;
+  color: var(--clr-text-muted);
+  line-height: 1.65;
+  flex: 1;
+}
+
+.blog__card-link {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: gap 0.2s ease;
+  margin-top: auto;
+}
+
+.blog__card:hover .blog__card-link {
+  gap: 0.625rem;
+}
+
+@media (max-width: 900px) {
+  .blog__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .blog__grid {
+    grid-template-columns: 1fr;
+  }
+  .blog__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
