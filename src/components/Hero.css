@@ -211,11 +211,31 @@
     inset 0 1px 0 rgba(255,255,255,0.08);
 }
 
-[data-theme="light"] .hero__dashboard {
+/* Photo */
+.hero__photo {
+  width: 100%;
+  border-radius: 16px;
+  object-fit: cover;
   box-shadow:
-    0 20px 60px rgba(90,56,232,0.15),
-    0 0 0 1px rgba(90,56,232,0.1);
+    0 30px 80px rgba(0,0,0,0.35),
+    0 0 0 1px rgba(108,71,255,0.15);
+  transform: perspective(1200px) rotateY(-4deg) rotateX(2deg);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
+
+.hero__right:hover .hero__photo {
+  transform: perspective(1200px) rotateY(-1deg) rotateX(1deg);
+  box-shadow:
+    0 40px 100px rgba(0,0,0,0.4),
+    0 0 0 1px rgba(108,71,255,0.25);
+}
+
+[data-theme="light"] .hero__photo {
+  box-shadow:
+    0 20px 60px rgba(90,56,232,0.18),
+    0 0 0 1px rgba(90,56,232,0.12);
+}
+
 
 .hero__dashboard-bar {
   display: flex;

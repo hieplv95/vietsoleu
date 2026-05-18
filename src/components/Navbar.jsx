@@ -22,7 +22,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState(null)
   const [theme, setTheme] = useState(() => {
-    return localStorage.getItem('vietsol-theme') || 'dark'
+    return localStorage.getItem('vietsol-theme') || 'light'
   })
 
   useEffect(() => {

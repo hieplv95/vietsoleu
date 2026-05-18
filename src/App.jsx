@@ -5,7 +5,7 @@ import Stats from './components/Stats'
 import Features from './components/Features'
 import About from './components/About'
 import Testimonials from './components/Testimonials'
-import SocialScheduler from './components/SocialScheduler'
+import Services from './components/Services'
 import Pricing from './components/Pricing'
 import Blog from './components/Blog'
 import CTA from './components/CTA'
@@ -19,9 +19,9 @@ function App() {
         <Hero />
         <Stats />
         <Features />
+        <Services />
         <About />
         <Testimonials />
-        <SocialScheduler />
         <Pricing />
         <Blog />
         <CTA />

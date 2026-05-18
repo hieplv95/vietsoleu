@@ -48,7 +48,7 @@
   font-family: 'Outfit', sans-serif;
   font-size: clamp(1.75rem, 3vw, 2.5rem);
   font-weight: 800;
-  background: linear-gradient(135deg, #fff 0%, #c0bcff 100%);
+  background: linear-gradient(135deg, var(--clr-section-title-from, #fff) 0%, var(--clr-section-title-to, #c0bcff) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
