@@ -44,7 +44,7 @@
 }
 
 .brand-story__img--main {
-  height: 340px;
+  height: 280px;
   width: 100%;
   border-radius: 12px;
   object-fit: cover;
@@ -80,11 +80,11 @@
 }
 
 .brand-story__img--vertical {
-  height: 220px;
+  height: 130px;
 }
 
 .brand-story__img--horizontal {
-  height: 105px;
+  height: 60px;
 }
 
 /* Interactive Hover effect */
