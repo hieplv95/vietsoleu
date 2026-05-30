@@ -12,7 +12,6 @@ const navLinks = [
     ]
   },
   { label: 'Giải pháp', href: '#about' },
-  { label: 'Bảng Giá', href: '#pricing' },
   { label: 'Blog', href: '#blog' },
   { label: 'Liên Hệ', href: '#contact' },
 ]
@@ -116,7 +115,7 @@ export default function Navbar() {
             </svg>
             <span>WhatsApp</span>
           </a>
-          <a href="#pricing" className="btn btn-primary btn-sm">
+          <a href="https://wa.me/+32" className="btn btn-primary btn-sm" target="_blank" rel="noreferrer">
             <span>Dùng thử miễn phí</span>
           </a>
           <button

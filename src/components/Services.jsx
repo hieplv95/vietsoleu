@@ -101,8 +101,8 @@ export default function Services() {
             <span className="services__strip-tag">📦 Gói trọn bộ</span>
             <p>Sử dụng trọn gói dịch vụ, tiết kiệm <strong>từ €500 – €1.000/tháng</strong> so với thuê riêng lẻ</p>
           </div>
-          <a href="#pricing" className="btn btn-primary">
-            <span>Xem bảng giá</span>
+          <a href="https://wa.me/+32" className="btn btn-primary" target="_blank" rel="noreferrer">
+            <span>Liên hệ tư vấn</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
               <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
             </svg>

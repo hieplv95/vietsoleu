@@ -105,7 +105,7 @@ export default function Features() {
             <p>Bạn đang đau đầu khi không biết <strong>khách hàng của mình có trung thành</strong> với cửa hàng không?</p>
             <p>Sợ không chăm sóc được khách hàng tốt, khách hàng sẽ <strong>qua tiệm khác</strong>?</p>
           </div>
-          <a href="#pricing" className="btn btn-primary btn-sm">
+          <a href="https://wa.me/+32" className="btn btn-primary btn-sm" target="_blank" rel="noreferrer">
             <span>Giải quyết ngay</span>
           </a>
         </div>
