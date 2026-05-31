@@ -1,3 +1,4 @@
+import logoImg from '../assets/logo-yocheckin.png'
 import './Footer.css'
 
 const footerLinks = {
@@ -27,18 +28,9 @@ export default function Footer() {
       <div className="container footer__inner">
         <div className="footer__brand">
           <div className="footer__logo">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-              <rect width="32" height="32" rx="8" fill="url(#footer-logo-grad)"/>
-              <path d="M8 10L16 22L24 10" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-              <circle cx="16" cy="16" r="3" fill="white"/>
-              <defs>
-                <linearGradient id="footer-logo-grad" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
-                  <stop stopColor="#6c47ff"/>
-                  <stop offset="1" stopColor="#4e2ed4"/>
-                </linearGradient>
-              </defs>
-            </svg>
-            <span>Vietsol</span>
+            <div className="footer__logo-icon-container">
+              <img src={logoImg} alt="YoCheckIn Logo" className="footer__logo-icon-cropped" />
+            </div>
           </div>
           <p className="footer__tagline">
             VIETSOL — Vietnam Digital Marketing Solutions in Europe

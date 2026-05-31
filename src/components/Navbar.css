@@ -38,11 +38,24 @@
   flex-shrink: 0;
 }
 
-.navbar__logo-icon {
+.navbar__logo-icon-container {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: transparent;
   transition: transform 0.3s ease;
 }
 
-.navbar__logo:hover .navbar__logo-icon {
+.navbar__logo-icon-cropped {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.navbar__logo:hover .navbar__logo-icon-container {
   transform: rotate(-8deg) scale(1.05);
 }
 
@@ -199,9 +212,17 @@
 @media (max-width: 1024px) {
   .navbar__whatsapp span { display: none; }
   .navbar__theme-toggle span { display: none; }
+  .navbar__logo-icon-container {
+    width: 90px;
+    height: 90px;
+  }
 }
 
 @media (max-width: 768px) {
+  .navbar__logo-icon-container {
+    width: 76px;
+    height: 76px;
+  }
   .navbar__inner {
     gap: 0.5rem;
   }

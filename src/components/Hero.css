@@ -211,11 +211,13 @@
     inset 0 1px 0 rgba(255,255,255,0.08);
 }
 
-/* Photo */
-.hero__photo {
+/* Container for the photo to handle CSS cropping and card effects */
+.hero__photo-container {
   width: 100%;
+  aspect-ratio: 1.416; /* Aspect ratio of the original image (670x473) */
   border-radius: 16px;
-  object-fit: cover;
+  overflow: hidden;
+  position: relative;
   box-shadow:
     0 30px 80px rgba(0,0,0,0.35),
     0 0 0 1px rgba(108,71,255,0.15);
@@ -223,17 +225,34 @@
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-.hero__right:hover .hero__photo {
+.hero__right:hover .hero__photo-container {
   transform: perspective(1200px) rotateY(-1deg) rotateX(1deg);
   box-shadow:
     0 40px 100px rgba(0,0,0,0.4),
     0 0 0 1px rgba(108,71,255,0.25);
 }
 
-[data-theme="light"] .hero__photo {
+[data-theme="light"] .hero__photo-container {
   box-shadow:
     0 20px 60px rgba(90,56,232,0.18),
     0 0 0 1px rgba(90,56,232,0.12);
+}
+
+/* Photo itself: scaled up and centered to crop out the white card frame and grid borders */
+.hero__photo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.23); /* Scales up the inner image, cropping out the white frame and grid borders */
+  transform-origin: center center;
+  transition: transform 0.4s ease;
+}
+
+.hero__right:hover .hero__photo {
+  transform: scale(1.28); /* Smooth interactive zoom-in effect on hover */
 }
 
 
@@ -498,12 +517,14 @@
   .hero__trust {
     justify-content: center;
   }
-  .hero__dashboard {
+  .hero__dashboard,
+  .hero__photo-container {
     transform: none !important;
     max-width: 680px;
     margin: 0 auto;
   }
-  .hero__right:hover .hero__dashboard {
+  .hero__right:hover .hero__dashboard,
+  .hero__right:hover .hero__photo-container {
     transform: none !important;
   }
   .hero__floating-badge {
@@ -595,7 +616,8 @@
   .hero__actions {
     max-width: 100%;
   }
-  .hero__dashboard {
+  .hero__dashboard,
+  .hero__photo-container {
     border-radius: 12px;
   }
   .hero__mock-stats {

@@ -21,6 +21,27 @@
   margin-bottom: 1rem;
 }
 
+.footer__logo-icon-container {
+  width: 180px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: transparent;
+  transition: transform 0.3s ease;
+}
+
+.footer__logo-icon-cropped {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.footer__logo:hover .footer__logo-icon-container {
+  transform: rotate(-8deg) scale(1.05);
+}
+
 .footer__logo span {
   font-family: 'Outfit', sans-serif;
   font-size: 1.25rem;
@@ -198,9 +219,17 @@
   .footer__brand {
     grid-column: 1 / -1;
   }
+  .footer__logo-icon-container {
+    width: 130px;
+    height: 130px;
+  }
 }
 
 @media (max-width: 768px) {
+  .footer__logo-icon-container {
+    width: 100px;
+    height: 100px;
+  }
   .footer__inner {
     grid-template-columns: 1fr 1fr;
     gap: var(--space-6);

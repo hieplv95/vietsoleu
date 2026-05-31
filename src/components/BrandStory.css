@@ -93,6 +93,42 @@
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
 }
 
+/* Photo Wrapper to support CSS cropping */
+.brand-story__img-wrapper {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.brand-story__img-wrapper--horizontal {
+  height: 60px;
+}
+
+.brand-story__img-wrapper:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Cropped scaled image to hide the baked-in white borders */
+.brand-story__img--cropped {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.23); /* Scales up the inner image, cropping out the white frame */
+  transform-origin: center center;
+  transition: transform 0.4s ease;
+}
+
+.brand-story__img-wrapper:hover .brand-story__img--cropped {
+  transform: scale(1.28); /* Parallax zoom on hover */
+}
+
 /* ===== RIGHT COLUMN: Content ===== */
 .brand-story__right {
   display: flex;
@@ -215,7 +251,8 @@
   .brand-story__bottom-row .brand-story__img--vertical {
     height: 120px;
   }
-  .brand-story__bottom-row .brand-story__img--horizontal {
+  .brand-story__bottom-row .brand-story__img--horizontal,
+  .brand-story__img-wrapper--horizontal {
     height: 55px;
   }
   .brand-story__flags {
@@ -234,7 +271,8 @@
   .brand-story__bottom-row .brand-story__img--vertical {
     height: 90px;
   }
-  .brand-story__bottom-row .brand-story__img--horizontal {
+  .brand-story__bottom-row .brand-story__img--horizontal,
+  .brand-story__img-wrapper--horizontal {
     height: 40px;
   }
   .brand-story__title {

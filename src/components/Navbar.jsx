@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import logoImg from '../assets/logo-yocheckin.png'
 import './Navbar.css'
 
 const navLinks = [
@@ -41,20 +42,9 @@ export default function Navbar() {
     <header className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
       <div className="container navbar__inner">
         <a href="#" className="navbar__logo">
-          <div className="navbar__logo-icon">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-              <rect width="32" height="32" rx="8" fill="url(#logo-grad)"/>
-              <path d="M8 10L16 22L24 10" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-              <circle cx="16" cy="16" r="3" fill="white"/>
-              <defs>
-                <linearGradient id="logo-grad" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
-                  <stop stopColor="#6c47ff"/>
-                  <stop offset="1" stopColor="#4e2ed4"/>
-                </linearGradient>
-              </defs>
-            </svg>
+          <div className="navbar__logo-icon-container">
+            <img src={logoImg} alt="YoCheckIn Logo" className="navbar__logo-icon-cropped" />
           </div>
-          <span className="navbar__logo-text">Vietsol</span>
         </a>
 
         <nav className={`navbar__nav ${menuOpen ? 'navbar__nav--open' : ''}`}>

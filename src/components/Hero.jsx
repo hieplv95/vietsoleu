@@ -92,11 +92,13 @@ export default function Hero() {
 
         {/* ===== RIGHT: Real photo ===== */}
         <div className="hero__right">
-          <img
-            src={tabletImg}
-            alt="YoCheckin tại tiệm Nails"
-            className="hero__photo"
-          />
+          <div className="hero__photo-container">
+            <img
+              src={tabletImg}
+              alt="YoCheckin tại tiệm Nails"
+              className="hero__photo"
+            />
+          </div>
 
           {/* Floating badge */}
           <div className="hero__floating-badge">

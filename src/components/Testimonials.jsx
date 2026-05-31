@@ -1,4 +1,8 @@
 import { useState } from 'react'
+import avatarWoman1 from '../assets/avatar-woman-1.jpg'
+import avatarMan from '../assets/avatar-man.png'
+import avatarWoman2 from '../assets/avatar-woman-2.png'
+import avatarWoman3 from '../assets/avatar-woman-3.jpg'
 import './Testimonials.css'
 
 const testimonials = [
@@ -7,9 +11,9 @@ const testimonials = [
     name: 'Chị Hoa Nguyễn',
     role: 'Chủ tiệm Nails Paris Beauty',
     location: 'Paris, Pháp',
-    stat: '+640%',
+    stat: '+150%',
     statLabel: 'đánh giá Google Maps',
-    avatar: '👩',
+    avatar: avatarWoman1,
   },
   {
     quote: 'SMS tự động gửi nhắc nhở khách lâu không quay lại — tỷ lệ khách quay lại tăng lên 35%. Đội ngũ hỗ trợ rất nhiệt tình và nói tiếng Việt!',
@@ -18,7 +22,7 @@ const testimonials = [
     location: 'Brussels, Bỉ',
     stat: '+35%',
     statLabel: 'tỷ lệ khách quay lại',
-    avatar: '👨',
+    avatar: avatarMan,
   },
   {
     quote: 'Hệ thống tích điểm rất được lòng khách hàng. Họ cảm thấy được trân trọng và hay giới thiệu bạn bè đến tiệm nhiều hơn.',
@@ -27,7 +31,16 @@ const testimonials = [
     location: 'Amsterdam, Hà Lan',
     stat: '+52%',
     statLabel: 'khách hàng mới từ giới thiệu',
-    avatar: '👩',
+    avatar: avatarWoman2,
+  },
+  {
+    quote: 'Giao diện quản lý thân thiện, dễ sử dụng giúp tôi quản lý tiệm nails hiệu quả hơn, ngoài ra các chiến dịch marketing thực sự rất tốt khách quay lại nhiều.',
+    name: 'Chị Ana Nguyen',
+    role: 'Chủ tiệm Queen Nails',
+    location: 'Munich, Đức',
+    stat: '+82%',
+    statLabel: 'khách hàng mới từ giới thiệu',
+    avatar: avatarWoman3,
   },
 ]
 
@@ -51,11 +64,11 @@ export default function Testimonials() {
           <div className="testimonials__featured card">
             <div className="testimonials__quote-icon">
               <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                <path d="M13 6H7a1 1 0 00-1 1v6a1 1 0 001 1h3l-3 6h4l4-7V7a1 1 0 00-1-1zM25 6h-6a1 1 0 00-1 1v6a1 1 0 001 1h3l-3 6h4l4-7V7a1 1 0 00-1-1z" fill="url(#quote-grad)"/>
+                <path d="M13 6H7a1 1 0 00-1 1v6a1 1 0 001 1h3l-3 6h4l4-7V7a1 1 0 00-1-1zM25 6h-6a1 1 0 00-1 1v6a1 1 0 001 1h3l-3 6h4l4-7V7a1 1 0 00-1-1z" fill="url(#quote-grad)" />
                 <defs>
                   <linearGradient id="quote-grad" x1="0" y1="0" x2="32" y2="32">
-                    <stop stopColor="#6c47ff"/>
-                    <stop offset="1" stopColor="#00d4b1"/>
+                    <stop stopColor="#6c47ff" />
+                    <stop offset="1" stopColor="#00d4b1" />
                   </linearGradient>
                 </defs>
               </svg>
@@ -66,7 +79,9 @@ export default function Testimonials() {
               <div className="testimonials__stat-label">{testimonials[active].statLabel}</div>
             </div>
             <div className="testimonials__author">
-              <div className="testimonials__avatar">{testimonials[active].avatar}</div>
+              <div className="testimonials__avatar">
+                <img src={testimonials[active].avatar} alt={testimonials[active].name} />
+              </div>
               <div>
                 <div className="testimonials__name">{testimonials[active].name}</div>
                 <div className="testimonials__role">{testimonials[active].role}</div>
@@ -86,7 +101,9 @@ export default function Testimonials() {
                 className={`testimonials__nav-card ${active === i ? 'testimonials__nav-card--active' : ''}`}
                 onClick={() => setActive(i)}
               >
-                <div className="testimonials__nav-avatar">{t.avatar}</div>
+                <div className="testimonials__nav-avatar">
+                  <img src={t.avatar} alt={t.name} />
+                </div>
                 <div>
                   <div className="testimonials__nav-name">{t.name}</div>
                   <div className="testimonials__nav-location">{t.location}</div>
