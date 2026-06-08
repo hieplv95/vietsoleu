@@ -1,12 +1,13 @@
+import { Link, useLocation } from 'react-router-dom'
 import logoImg from '../assets/logo-yocheckin.png'
 import './Footer.css'
 
 const footerLinks = {
   'Tính Năng': [
+    { label: 'Thiết kế Web & SEO Nails', href: '/dich-vu-nails' },
     { label: 'Quản lý khách hàng', href: '#features' },
     { label: 'SMS tự động', href: '#features' },
     { label: 'Tăng Google Review', href: '#features' },
-    { label: 'Phân tích doanh thu', href: '#features' },
   ],
   'Tài Nguyên': [
     { label: 'Trung tâm hỗ trợ', href: '#' },
@@ -23,6 +24,21 @@ const footerLinks = {
 }
 
 export default function Footer() {
+  const location = useLocation()
+
+  const handleHashLinkClick = (e, href) => {
+    if (href.startsWith('#')) {
+      if (location.pathname === '/') {
+        e.preventDefault()
+        const id = href.replace('#', '')
+        const element = document.getElementById(id)
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' })
+        }
+      }
+    }
+  }
+
   return (
     <footer className="footer" id="contact">
       <div className="container footer__inner">
@@ -81,7 +97,13 @@ export default function Footer() {
             <ul className="footer__links">
               {links.map((link, i) => (
                 <li key={i}>
-                  <a href={link.href} className="footer__link">{link.label}</a>
+                  <Link
+                    to={link.href.startsWith('#') ? `/${link.href}` : link.href}
+                    className="footer__link"
+                    onClick={(e) => handleHashLinkClick(e, link.href)}
+                  >
+                    {link.label}
+                  </Link>
                 </li>
               ))}
             </ul>

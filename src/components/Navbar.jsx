@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import logoImg from '../assets/logo-yocheckin.png'
 import './Navbar.css'
 
@@ -9,9 +10,10 @@ const navLinks = [
     dropdown: [
       { label: 'Phần mềm YoCheckIn', href: '#features' },
       { label: 'Chạy Quảng Cáo', href: '#about' },
-      { label: 'Thiết kế Web + SEO', href: '#about' },
+      { label: 'Thiết kế Web & SEO Nails', href: '/dich-vu-nails' },
     ]
   },
+  { label: 'Web & SEO Nails', href: '/dich-vu-nails' },
   { label: 'Giải pháp', href: '#about' },
   { label: 'Blog', href: '#blog' },
   { label: 'Liên Hệ', href: '#contact' },
@@ -38,14 +40,30 @@ export default function Navbar() {
 
   const toggleTheme = () => setTheme(t => t === 'dark' ? 'light' : 'dark')
 
+  const location = useLocation()
+
+  const handleHashLinkClick = (e, href) => {
+    if (href.startsWith('#')) {
+      if (location.pathname === '/') {
+        e.preventDefault()
+        const id = href.replace('#', '')
+        const element = document.getElementById(id)
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' })
+        }
+      }
+      setMenuOpen(false)
+    }
+  }
+
   return (
     <header className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
       <div className="container navbar__inner">
-        <a href="#" className="navbar__logo">
+        <Link to="/" className="navbar__logo" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
           <div className="navbar__logo-icon-container">
             <img src={logoImg} alt="YoCheckIn Logo" className="navbar__logo-icon-cropped" />
           </div>
-        </a>
+        </Link>
 
         <nav className={`navbar__nav ${menuOpen ? 'navbar__nav--open' : ''}`}>
           {navLinks.map((link, i) => (
@@ -55,20 +73,40 @@ export default function Navbar() {
               onMouseEnter={() => link.dropdown ? setActiveDropdown(i) : null}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <a href={link.href} className="navbar__nav-link" onClick={() => setMenuOpen(false)}>
+              <Link
+                to={link.href.startsWith('#') ? `/${link.href}` : link.href}
+                className="navbar__nav-link"
+                onClick={(e) => {
+                  handleHashLinkClick(e, link.href)
+                  if (!link.href.startsWith('#')) {
+                    setMenuOpen(false)
+                  }
+                }}
+              >
                 {link.label}
                 {link.dropdown && (
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                     <path d="M2 4L6 8L10 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
                   </svg>
                 )}
-              </a>
+              </Link>
               {link.dropdown && activeDropdown === i && (
                 <div className="navbar__dropdown">
                   {link.dropdown.map((item, j) => (
-                    <a key={j} href={item.href} className="navbar__dropdown-link">
+                    <Link
+                      key={j}
+                      to={item.href.startsWith('#') ? `/${item.href}` : item.href}
+                      className="navbar__dropdown-link"
+                      onClick={(e) => {
+                        handleHashLinkClick(e, item.href)
+                        setActiveDropdown(null)
+                        if (!item.href.startsWith('#')) {
+                          setMenuOpen(false)
+                        }
+                      }}
+                    >
                       {item.label}
-                    </a>
+                    </Link>
                   ))}
                 </div>
               )}
