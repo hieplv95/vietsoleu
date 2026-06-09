@@ -219,15 +219,22 @@
 }
 
 @media (max-width: 768px) {
+  .navbar__logo {
+    position: relative;
+    z-index: 1001;
+  }
   .navbar__logo-icon-container {
     width: 60px;
     height: 60px;
   }
   .navbar__inner {
     gap: 0.5rem;
+    justify-content: space-between;
   }
   .navbar__burger {
     display: flex;
+    position: relative;
+    z-index: 1001;
   }
   .navbar__nav {
     position: fixed;
@@ -235,6 +242,8 @@
     left: 0;
     right: 0;
     bottom: 0;
+    height: 100vh;
+    height: 100dvh;
     width: 100vw;
     background: var(--clr-bg);
     flex-direction: column;

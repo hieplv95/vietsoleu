@@ -157,12 +157,6 @@ export default function BrandStory() {
             </div>
           </div>
 
-          {/* Action button */}
-          <div className="brand-story__action">
-            <a href="https://wa.me/+32" className="btn btn-primary btn-lg" target="_blank" rel="noreferrer">
-              <span>{t('brandStory.btnLearnMore')}</span>
-            </a>
-          </div>
         </div>
 
       </div>
