@@ -1,44 +1,43 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import logoImg from '../assets/logo-yocheckin.png'
+import { useLanguage } from '../context/LanguageContext'
 import './Navbar.css'
 
-const navLinks = [
-  {
-    label: 'Dịch vụ',
-    href: '#features',
-    dropdown: [
-      { label: 'Phần mềm YoCheckIn', href: '#features' },
-      { label: 'Chạy Quảng Cáo', href: '#about' },
-      { label: 'Thiết kế Web & SEO Nails', href: '/dich-vu-nails' },
-    ]
-  },
-  { label: 'Web & SEO Nails', href: '/dich-vu-nails' },
-  { label: 'Giải pháp', href: '#about' },
-  { label: 'Blog', href: '#blog' },
-  { label: 'Liên Hệ', href: '#contact' },
-]
-
 export default function Navbar() {
+  const { language, setLanguage, t } = useLanguage()
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState(null)
-  const [theme, setTheme] = useState(() => {
-    return localStorage.getItem('vietsol-theme') || 'light'
-  })
+
+  const navLinks = [
+    {
+      label: t('navbar.services'),
+      href: '#features',
+      dropdown: [
+        { label: t('navbar.yocheckin'), href: '#features' },
+        { label: t('navbar.webSeo'), href: '/dich-vu-nails' },
+        { label: t('navbar.socialAds'), href: '/social-media-marketing' },
+      ]
+    },
+    { label: t('navbar.webSeo'), href: '/dich-vu-nails' },
+    { label: t('navbar.socialAds'), href: '/social-media-marketing' },
+    { label: t('navbar.solutions'), href: '#about' },
+    { label: t('navbar.blog'), href: '/blog' },
+    { label: t('navbar.contact'), href: '#contact' },
+  ]
 
   useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme)
-    localStorage.setItem('vietsol-theme', theme)
-  }, [theme])
+    // Maintain theme compatibility
+    const currentTheme = localStorage.getItem('vietsol-theme') || 'light'
+    document.documentElement.setAttribute('data-theme', currentTheme)
+  }, [])
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20)
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
-
-  const toggleTheme = () => setTheme(t => t === 'dark' ? 'light' : 'dark')
 
   const location = useLocation()
 
@@ -115,26 +114,20 @@ export default function Navbar() {
         </nav>
 
         <div className="navbar__actions">
-          {/* Theme Toggle */}
+          {/* Language Switcher Toggle */}
           <button
-            className="navbar__theme-toggle"
-            onClick={toggleTheme}
-            aria-label={theme === 'dark' ? 'Chuyển sang Light Mode' : 'Chuyển sang Dark Mode'}
-            title={theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
+            className="navbar__lang-toggle"
+            onClick={() => setLanguage(language === 'vi' ? 'en' : 'vi')}
+            aria-label={language === 'vi' ? 'Switch to English' : 'Chuyển sang Tiếng Việt'}
+            title={language === 'vi' ? 'English' : 'Tiếng Việt'}
           >
-            {theme === 'dark' ? (
-              /* Sun icon */
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                <circle cx="12" cy="12" r="5" stroke="currentColor" strokeWidth="2"/>
-                <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-              </svg>
-            ) : (
-              /* Moon icon */
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            )}
-            <span>{theme === 'dark' ? 'Light' : 'Dark'}</span>
+            {/* Globe Icon */}
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+            <span>{language === 'vi' ? 'EN' : 'VI'}</span>
           </button>
 
           <a href="https://wa.me/+32" className="navbar__whatsapp" target="_blank" rel="noreferrer">
@@ -144,7 +137,7 @@ export default function Navbar() {
             <span>WhatsApp</span>
           </a>
           <a href="https://wa.me/+32" className="btn btn-primary btn-sm" target="_blank" rel="noreferrer">
-            <span>Dùng thử miễn phí</span>
+            <span>{t('navbar.freeTrial')}</span>
           </a>
           <button
             className={`navbar__burger ${menuOpen ? 'navbar__burger--active' : ''}`}

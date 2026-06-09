@@ -1,12 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
+import { useLanguage } from '../context/LanguageContext'
 import './Stats.css'
-
-const stats = [
-  { value: 500, suffix: '+', label: 'Khách hàng', sub: 'đang sử dụng' },
-  { value: 50000, suffix: '+', label: 'Khách hàng CheckIn', sub: 'được quản lý' },
-  { value: 10, suffix: '+', label: 'Năm kinh nghiệm', sub: 'digital marketing' },
-  { value: 15, suffix: '', label: 'Quốc gia Châu Âu', sub: 'được phục vụ' },
-]
 
 function useCountUp(target, duration = 2000, start = false) {
   const [count, setCount] = useState(0)
@@ -39,8 +33,16 @@ function StatItem({ stat, inView }) {
 }
 
 export default function Stats() {
+  const { t } = useLanguage()
   const ref = useRef(null)
   const [inView, setInView] = useState(false)
+
+  const stats = [
+    { value: 500, suffix: '+', label: t('stats.clientLabel'), sub: t('stats.clientSub') },
+    { value: 50000, suffix: '+', label: t('stats.checkinLabel'), sub: t('stats.checkinSub') },
+    { value: 10, suffix: '+', label: t('stats.experienceLabel'), sub: t('stats.experienceSub') },
+    { value: 15, suffix: '', label: t('stats.countriesLabel'), sub: t('stats.countriesSub') },
+  ]
 
   useEffect(() => {
     const observer = new IntersectionObserver(

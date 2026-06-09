@@ -1,3 +1,4 @@
+import { useLanguage } from '../context/LanguageContext'
 import './About.css'
 
 const integrations = [
@@ -10,6 +11,15 @@ const integrations = [
 ]
 
 export default function About() {
+  const { t } = useLanguage()
+
+  const highlights = [
+    { icon: '🎯', text: t('aboutSection.h1') },
+    { icon: '🚀', text: t('aboutSection.h2') },
+    { icon: '🔒', text: t('aboutSection.h3') },
+    { icon: '📊', text: t('aboutSection.h4') },
+  ]
+
   return (
     <section className="about section" id="about">
       <div className="about__bg-orb about__bg-orb--1"></div>
@@ -17,25 +27,19 @@ export default function About() {
       <div className="container about__inner">
         {/* Left: Content */}
         <div className="about__content">
-          <div className="section-label">Seamless Tool Integration</div>
+          <div className="section-label">{t('aboutSection.label')}</div>
           <h2 className="about__title">
-            Vietsol Digital Marketing — công ty của người Việt tại Châu Âu
+            {t('aboutSection.title')}
           </h2>
           <p className="about__desc">
-            Với hơn <strong>10 năm kinh nghiệm</strong> trong digital marketing, chúng tôi giúp khách hàng
-            triển khai các hoạt động tiếp thị, quảng bá sản phẩm/dịch vụ thông qua các kênh trực tuyến.
+            {t('aboutSection.desc1')}<strong>{t('aboutSection.desc1Bold')}</strong>{t('aboutSection.desc1End')}
           </p>
           <p className="about__desc">
-            Giúp khách hàng tiếp cận những công nghệ mới để <strong>thu hút và chăm sóc khách hàng</strong> hiệu quả hơn.
+            {t('aboutSection.desc2')}<strong>{t('aboutSection.desc2Bold')}</strong>{t('aboutSection.desc2End')}
           </p>
 
           <div className="about__highlights">
-            {[
-              { icon: '🎯', text: 'Chuyên gia marketing người Việt tại EU' },
-              { icon: '🚀', text: 'Triển khai nhanh, hỗ trợ tận tình' },
-              { icon: '🔒', text: 'Dữ liệu bảo mật theo chuẩn GDPR Châu Âu' },
-              { icon: '📊', text: 'Báo cáo kết quả rõ ràng, minh bạch' },
-            ].map((item, i) => (
+            {highlights.map((item, i) => (
               <div key={i} className="about__highlight-item">
                 <span>{item.icon}</span>
                 <span>{item.text}</span>
@@ -44,7 +48,7 @@ export default function About() {
           </div>
 
           <a href="#contact" className="btn btn-primary">
-            <span>Xem tất cả tích hợp</span>
+            <span>{t('aboutSection.btnAllIntegrations')}</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
               <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
             </svg>

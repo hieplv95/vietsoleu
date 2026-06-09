@@ -1,3 +1,4 @@
+import { useLanguage } from '../context/LanguageContext'
 import salonMain from '../assets/salon_main.png'
 import yocheckinReal from '../assets/yocheckin-real.png'
 import salonWaiting from '../assets/salon_waiting.png'
@@ -6,6 +7,8 @@ import salonTech from '../assets/salon_tech.png'
 import './BrandStory.css'
 
 export default function BrandStory() {
+  const { t } = useLanguage()
+
   return (
     <section className="brand-story section" id="brand-story">
       <div className="container brand-story__inner">
@@ -46,25 +49,22 @@ export default function BrandStory() {
 
         {/* ===== RIGHT: Content ===== */}
         <div className="brand-story__right">
-          <h2 className="brand-story__title">VietSol Digital Marketing</h2>
-          <div className="brand-story__since">Since 2023</div>
+          <h2 className="brand-story__title">{t('brandStory.title')}</h2>
+          <div className="brand-story__since">{t('brandStory.since')}</div>
 
           <div className="brand-story__content">
             <p className="brand-story__desc">
-              Là công ty người Việt tại Tây Ban Nha, với hơn 10 năm kinh nghiệm trong lĩnh vực Digital marketing cho các tiệm nails.
-              Công ty VietSol Digital Marketing đã giúp hàng chục ngàn chủ tiệm nails trên khắp nước Đức,Anh,Tây Ban nha và khắp Châu Âu
-              kiếm thêm khách hàng mới và thành công trong việc kinh doanh của mình.
+              {t('brandStory.desc1')}
             </p>
             <p className="brand-story__desc">
-              Với kinh nghiệm trợ giúp và phục vụ khách hàng tại nhiều quốc gia với nhiều hoàn cảnh khác nhau, VietSol tự tin
-              sẽ luôn có các giải pháp phù hợp đáp ứng đầy đủ các yêu cầu của chủ tiệm.
+              {t('brandStory.desc2')}
             </p>
           </div>
 
           {/* Flags representing coverage */}
           <div className="brand-story__flags">
             {/* UK Flag */}
-            <div className="brand-story__flag-wrapper" title="Anh Quốc">
+            <div className="brand-story__flag-wrapper" title={t('brandStory.flagUk')}>
               <svg width="72" height="48" viewBox="0 0 60 30" className="brand-story__flag">
                 <clipPath id="uk-clip">
                   <path d="M0,0 v30 h60 v-30 z" />
@@ -81,7 +81,7 @@ export default function BrandStory() {
             </div>
 
             {/* Germany Flag */}
-            <div className="brand-story__flag-wrapper" title="Đức">
+            <div className="brand-story__flag-wrapper" title={t('brandStory.flagGermany')}>
               <svg width="72" height="48" viewBox="0 0 5 3" className="brand-story__flag">
                 <rect width="5" height="1" y="0" fill="#000000" />
                 <rect width="5" height="1" y="1" fill="#DD0000" />
@@ -90,7 +90,7 @@ export default function BrandStory() {
             </div>
 
             {/* France Flag */}
-            <div className="brand-story__flag-wrapper" title="Pháp">
+            <div className="brand-story__flag-wrapper" title={t('brandStory.flagFrance')}>
               <svg width="72" height="48" viewBox="0 0 3 2" className="brand-story__flag">
                 <rect width="1" height="2" x="0" fill="#00209F" />
                 <rect width="1" height="2" x="1" fill="#FFFFFF" />
@@ -99,7 +99,7 @@ export default function BrandStory() {
             </div>
 
             {/* Spain Flag */}
-            <div className="brand-story__flag-wrapper" title="Tây Ban Nha">
+            <div className="brand-story__flag-wrapper" title={t('brandStory.flagSpain')}>
               <svg width="72" height="48" viewBox="0 0 750 500" className="brand-story__flag">
                 <rect width="750" height="500" fill="#F1BF00" />
                 <rect width="750" height="125" fill="#C60B1E" />
@@ -133,7 +133,7 @@ export default function BrandStory() {
             </div>
 
             {/* EU Flag */}
-            <div className="brand-story__flag-wrapper" title="Châu Âu">
+            <div className="brand-story__flag-wrapper" title={t('brandStory.flagEu')}>
               <svg width="72" height="48" viewBox="0 0 300 200" className="brand-story__flag">
                 <defs>
                   <g id="eu-star">
@@ -160,7 +160,7 @@ export default function BrandStory() {
           {/* Action button */}
           <div className="brand-story__action">
             <a href="https://wa.me/+32" className="btn btn-primary btn-lg" target="_blank" rel="noreferrer">
-              <span>TÌM HIỂU THÊM</span>
+              <span>{t('brandStory.btnLearnMore')}</span>
             </a>
           </div>
         </div>

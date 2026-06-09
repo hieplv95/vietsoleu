@@ -1,50 +1,57 @@
+import { Link } from 'react-router-dom'
+import { useLanguage } from '../context/LanguageContext'
 import './Blog.css'
 
-const posts = [
-  {
-    category: 'Tips & Tricks',
-    date: '15 tháng 12, 2024',
-    title: '10 ý tưởng giúp tiệm nails hút khách vào dịp Noel',
-    excerpt: 'Dịp Noel là cơ hội vàng để tiệm nails thu hút thêm khách mới và giữ chân khách cũ. Khám phá 10 chiến lược marketing hiệu quả nhất.',
-    readTime: '5 phút đọc',
-    emoji: '🎄',
-    color: '#ff6b35',
-  },
-  {
-    category: 'Digital Marketing',
-    date: '08 tháng 11, 2024',
-    title: 'Cách tăng đánh giá Google Maps cho tiệm nails trong 30 ngày',
-    excerpt: 'Hướng dẫn chi tiết để tăng số lượng đánh giá tích cực trên Google Maps, giúp tiệm nails của bạn nổi bật hơn trong tìm kiếm địa phương.',
-    readTime: '7 phút đọc',
-    emoji: '⭐',
-    color: '#f5a623',
-  },
-  {
-    category: 'Quản lý khách hàng',
-    date: '22 tháng 10, 2024',
-    title: 'Làm thế nào để khách hàng quay lại tiệm nails nhiều hơn',
-    excerpt: 'Phân tích hành vi khách hàng và các chiến lược giữ chân hiệu quả để tăng tỷ lệ khách hàng trung thành cho tiệm nails của bạn.',
-    readTime: '6 phút đọc',
-    emoji: '💅',
-    color: '#6c47ff',
-  },
-]
-
 export default function Blog() {
+  const { t } = useLanguage()
+
+  const posts = [
+    {
+      id: '10-y-tuong-giup-tiem-nails-hut-khach-vao-dip-noel',
+      category: t('blogSection.post1.category'),
+      date: t('blogSection.post1.date'),
+      title: t('blogSection.post1.title'),
+      excerpt: t('blogSection.post1.excerpt'),
+      readTime: t('blogSection.post1.readTime'),
+      emoji: '🎄',
+      color: '#ff6b35',
+    },
+    {
+      id: 'cach-tang-danh-gia-google-maps',
+      category: t('blogSection.post2.category'),
+      date: t('blogSection.post2.date'),
+      title: t('blogSection.post2.title'),
+      excerpt: t('blogSection.post2.excerpt'),
+      readTime: t('blogSection.post2.readTime'),
+      emoji: '⭐',
+      color: '#f5a623',
+    },
+    {
+      id: 'lam-the-nao-de-khach-hang-quay-lai',
+      category: t('blogSection.post3.category'),
+      date: t('blogSection.post3.date'),
+      title: t('blogSection.post3.title'),
+      excerpt: t('blogSection.post3.excerpt'),
+      readTime: t('blogSection.post3.readTime'),
+      emoji: '💅',
+      color: '#6c47ff',
+    },
+  ]
+
   return (
     <section className="blog section" id="blog">
       <div className="container">
         <div className="blog__header">
           <div>
-            <div className="section-label">Latest News</div>
-            <h2 className="section-title">Tin tức & Chia sẻ kiến thức</h2>
+            <div className="section-label">{t('blogSection.label')}</div>
+            <h2 className="section-title">{t('blogSection.title')}</h2>
           </div>
-          <a href="#blog" className="btn btn-secondary">
-            Xem tất cả bài viết
+          <Link to="/blog" className="btn btn-secondary">
+            {t('blogSection.btnAllPosts')}
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
               <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
             </svg>
-          </a>
+          </Link>
         </div>
 
         <div className="blog__grid">
@@ -62,14 +69,18 @@ export default function Blog() {
                   <span>·</span>
                   <span>{post.readTime}</span>
                 </div>
-                <h3 className="blog__card-title">{post.title}</h3>
+                <h3 className="blog__card-title">
+                  <Link to={`/blog/${post.id}`} style={{ color: 'inherit', textDecoration: 'none' }}>
+                    {post.title}
+                  </Link>
+                </h3>
                 <p className="blog__card-excerpt">{post.excerpt}</p>
-                <a href="#" className="blog__card-link" style={{ color: post.color }}>
-                  Đọc thêm
+                <Link to={`/blog/${post.id}`} className="blog__card-link" style={{ color: post.color }}>
+                  {t('blogSection.linkReadMore')}
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
                     <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
                   </svg>
-                </a>
+                </Link>
               </div>
             </article>
           ))}

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
-import { useLocation, Link } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import unasArtNailsImg from '../assets/unas_artnails.png'
+import { useLanguage } from '../context/LanguageContext'
 import './NailSalonServices.css'
 
 // Demo templates data
@@ -118,6 +119,7 @@ const templatesData = [
 ]
 
 export default function NailSalonServices() {
+  const { t } = useLanguage()
   const location = useLocation()
   const [selectedTemplateForForm, setSelectedTemplateForForm] = useState('')
   const [formData, setFormData] = useState({
@@ -172,20 +174,20 @@ export default function NailSalonServices() {
       <section className="nails-hero">
         <div className="container nails-hero__grid">
           <div className="nails-hero__content">
-            <span className="badge badge-primary">Giải Pháp Toàn Diện Cho Tiệm Nails</span>
+            <span className="badge badge-primary">{t('webSeoPage.hero.badge')}</span>
             <h1 className="nails-hero__title">
-              Thiết Kế Website Salon Nails <br />
-              <span>Chuẩn SEO Google Maps</span>
+              {t('webSeoPage.hero.title1')} <br />
+              <span>{t('webSeoPage.hero.title2')}</span>
             </h1>
             <p className="nails-hero__lead">
-              Nâng tầm thương hiệu, thu hút hàng trăm khách hàng bản địa tìm kiếm mỗi tháng. Tích hợp đặt lịch tự động, tối ưu hóa hiển thị Bản đồ giúp tăng lượt ghé tiệm thực tế từ 30% - 50%.
+              {t('webSeoPage.hero.desc')}
             </p>
             <div className="nails-hero__actions">
               <a href="https://www.unasartnails.es/" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg">
-                <span>Xem Mẫu Website Thật</span>
+                <span>{t('webSeoPage.hero.btnDemo')}</span>
               </a>
               <a href="#nails-contact-form" className="btn btn-secondary btn-lg">
-                <span>Nhận Tư Vấn Miễn Phí</span>
+                <span>{t('webSeoPage.hero.btnConsult')}</span>
               </a>
             </div>
           </div>
@@ -200,51 +202,51 @@ export default function NailSalonServices() {
         <div className="web-hosting-pricing-header">
           <h2 className="web-hosting-title">
             <span className="gold-bar"></span>
-            1. DỊCH VỤ THIẾT KẾ WEBSITE + HOSTING
+            {t('webSeoPage.hostingPricing.title')}
           </h2>
         </div>
 
         <div className="web-hosting-cards-grid">
           {/* Card 1: 1 Year Package */}
           <div className="web-hosting-card pkg-white">
-            <span className="card-package-label">Package 1</span>
-            <h3 className="card-package-name">GÓI 1 NĂM</h3>
-            <div className="card-package-price">350€</div>
+            <span className="card-package-label">{t('webSeoPage.hostingPricing.pkg1Label')}</span>
+            <h3 className="card-package-name">{t('webSeoPage.hostingPricing.pkg1Name')}</h3>
+            <div className="card-package-price">{t('webSeoPage.hostingPricing.pkg1Price')}</div>
             <div className="card-price-divider"></div>
             <ul className="card-features-list">
               <li>
                 <span className="check-icon">✔</span>
-                Lựa chọn mẫu website theo tiêu chuẩn SEO
+                {t('webSeoPage.hostingPricing.feat1')}
               </li>
               <li>
                 <span className="check-icon">✔</span>
-                Thiết kế hiện đại, theo yêu cầu
+                {t('webSeoPage.hostingPricing.feat2')}
               </li>
               <li>
                 <span className="check-icon">✔</span>
-                Set up Domain & Hosting 1 năm
+                {t('webSeoPage.hostingPricing.feat3')}
               </li>
             </ul>
           </div>
 
           {/* Card 2: 3 Year Package */}
           <div className="web-hosting-card pkg-blue">
-            <span className="card-package-label">Package 2</span>
-            <h3 className="card-package-name">GÓI 3 NĂM</h3>
-            <div className="card-package-price">650€</div>
+            <span className="card-package-label">{t('webSeoPage.hostingPricing.pkg2Label')}</span>
+            <h3 className="card-package-name">{t('webSeoPage.hostingPricing.pkg2Name')}</h3>
+            <div className="card-package-price">{t('webSeoPage.hostingPricing.pkg2Price')}</div>
             <div className="card-price-divider"></div>
             <ul className="card-features-list">
               <li>
                 <span className="check-icon">✔</span>
-                Lựa chọn mẫu website theo tiêu chuẩn SEO
+                {t('webSeoPage.hostingPricing.feat1')}
               </li>
               <li>
                 <span className="check-icon">✔</span>
-                Thiết kế hiện đại, theo yêu cầu
+                {t('webSeoPage.hostingPricing.feat2')}
               </li>
               <li>
                 <span className="check-icon">✔</span>
-                Set up Domain & Hosting 3 năm
+                {t('webSeoPage.hostingPricing.feat3_3yr')}
               </li>
             </ul>
           </div>
@@ -259,8 +261,8 @@ export default function NailSalonServices() {
             <div className="pricing-brand-col">
               <div className="pricing-brand-logo-wrap">
                 <div className="pricing-brand-logo">
-                  <span className="brand-mac">MAC</span>
-                  <span className="brand-usa">USA</span>
+                  <span className="brand-mac">VIETSOL</span>
+                  <span className="brand-usa">DIGITAL</span>
                 </div>
                 <span className="brand-marketing">MARKETING</span>
               </div>
@@ -268,8 +270,8 @@ export default function NailSalonServices() {
             </div>
 
             <div className="pricing-title-banner">
-              <span className="banner-title">SEO SERVICES</span>
-              <span className="banner-subtitle">1 STEP SUPPORT</span>
+              <span className="banner-title">{t('webSeoPage.seoPricingTable.brandSubtitle')}</span>
+              <span className="banner-subtitle">{t('webSeoPage.seoPricingTable.brandSupport')}</span>
             </div>
           </div>
 
@@ -278,29 +280,29 @@ export default function NailSalonServices() {
             {/* Header Columns row */}
             <div className="seo-web-service-header-row">
               <div className="web-service-title-cell">
-                <span>SEO WEB SERVICE</span>
+                <span>{t('webSeoPage.seoPricingTable.webServiceTitle')}</span>
               </div>
               <div className="package-header-cell top10">
                 <span className="pkg-label">TOP 10</span>
                 <span className="pkg-price">$79</span>
-                <span className="pkg-period">per month</span>
+                <span className="pkg-period">{t('webSeoPage.seoPricingTable.period')}</span>
               </div>
               <div className="package-header-cell top5">
                 <span className="pkg-label">TOP 5</span>
                 <span className="pkg-price">$139</span>
-                <span className="pkg-period">per month</span>
+                <span className="pkg-period">{t('webSeoPage.seoPricingTable.period')}</span>
               </div>
               <div className="package-header-cell top3">
                 <span className="pkg-label">TOP 3</span>
                 <span className="pkg-price">$299+</span>
-                <span className="pkg-period">per month</span>
+                <span className="pkg-period">{t('webSeoPage.seoPricingTable.period')}</span>
               </div>
             </div>
 
             {/* Row 1 */}
             <div className="seo-web-service-row row-white">
               <div className="row-desc-cell">
-                Create content + design photo to post on website and increase the website traffic
+                {t('webSeoPage.seoPricingTable.webRow1')}
               </div>
               <div className="row-val-cell" data-label="TOP 10"><span className="checkmark-green">✔</span></div>
               <div className="row-val-cell pkg-highlight-cell" data-label="TOP 5"><span className="checkmark-green">✔</span></div>
@@ -311,12 +313,12 @@ export default function NailSalonServices() {
             <div className="seo-web-service-row row-grey">
               <div className="row-desc-cell">
                 <span>
-                  <strong>Keyword:</strong> Nail Salon near me, Nail salon + zip code, Nail salon + city, Nail salon + area...
+                  {t('webSeoPage.seoPricingTable.webRow2')}
                 </span>
               </div>
-              <div className="row-val-cell font-small" data-label="TOP 10">1-2 keywords on top 10 of Google Web</div>
-              <div className="row-val-cell font-small pkg-highlight-cell" data-label="TOP 5">1-3 keywords on top 5 of Google Web</div>
-              <div className="row-val-cell font-small" data-label="TOP 3">1-3 keywords on top 3 Google Web</div>
+              <div className="row-val-cell font-small" data-label="TOP 10">{t('webSeoPage.seoPricingTable.top10Desc')}</div>
+              <div className="row-val-cell font-small pkg-highlight-cell" data-label="TOP 5">{t('webSeoPage.seoPricingTable.top5Desc')}</div>
+              <div className="row-val-cell font-small" data-label="TOP 3">{t('webSeoPage.seoPricingTable.top3Desc')}</div>
             </div>
           </div>
 
@@ -325,21 +327,19 @@ export default function NailSalonServices() {
             {/* Header Columns row */}
             <div className="seo-map-service-header-row">
               <div className="map-service-title-cell">
-                <span>SEO MAP SERVICE</span>
+                <span>{t('webSeoPage.seoPricingTable.mapServiceTitle')}</span>
               </div>
               <div className="package-header-cell-map">
                 <span className="pkg-label-map">TOP 3 $ 299</span>
-                <span className="pkg-period-map">per month</span>
+                <span className="pkg-period-map">{t('webSeoPage.seoPricingTable.period')}</span>
               </div>
             </div>
 
             {/* Row 1 */}
             <div className="seo-map-service-row row-white">
               <div className="row-desc-cell-map">
-                Ensure page quality, attract customer to Google Business Profile
+                {t('webSeoPage.seoPricingTable.mapRow1')}
               </div>
-              <div className="row-col-val-map-empty"></div>
-              <div className="row-col-val-map-empty"></div>
               <div className="row-col-val-map" data-label="TOP 3 MAP"><span className="checkmark-green">✔</span></div>
             </div>
 
@@ -347,22 +347,20 @@ export default function NailSalonServices() {
             <div className="seo-map-service-row row-grey">
               <div className="row-desc-cell-map">
                 <span>
-                  <strong>Keyword:</strong> Nail Salon /Manicure /Pedicure near me, Nail Salon /Manicure /Pedicure + zip code, Nail Salon /Manicure /Pedicure + city
+                  {t('webSeoPage.seoPricingTable.mapRow2')}
                 </span>
               </div>
-              <div className="row-col-val-map-empty"></div>
-              <div className="row-col-val-map-empty"></div>
-              <div className="row-col-val-map font-small" data-label="TOP 3 MAP">1-3 keywords on top 3 Google MAP</div>
+              <div className="row-col-val-map font-small" data-label="TOP 3 MAP">{t('webSeoPage.seoPricingTable.top3MapDesc')}</div>
             </div>
           </div>
 
           {/* Bottom Notes */}
           <div className="seo-pricing-footer-notes">
             <p className="note-text red-note">
-              <strong>NOTE:</strong> Pay every 6 months. Guaranteed result. If we can't deliver the SEO result within 6 months, we will refund 100%.
+              {t('webSeoPage.seoPricingTable.noteRed')}
             </p>
             <p className="note-text blue-note">
-              After 6 months, we highly recommend you to maintain the service to keep your ranking at the 20% Discounted price.
+              {t('webSeoPage.seoPricingTable.noteBlue')}
             </p>
           </div>
         </div>
@@ -371,8 +369,8 @@ export default function NailSalonServices() {
       {/* 3. Service Pillars Section */}
       <section className="nails-pillars container">
         <div className="section-header text-center">
-          <h2 className="section-title">Tại Sao Cửa Hàng Nails Của Bạn Cần Giải Pháp Này?</h2>
-          <p className="section-subtitle">Kết hợp hoàn hảo giữa giao diện đặt lịch sang trọng và kỹ thuật tối ưu địa phương để mang lại khách hàng thực tế.</p>
+          <h2 className="section-title">{t('webSeoPage.pillars.title')}</h2>
+          <p className="section-subtitle">{t('webSeoPage.pillars.subtitle')}</p>
         </div>
 
         <div className="nails-pillars__grid">
@@ -385,14 +383,12 @@ export default function NailSalonServices() {
                 <line x1="12" y1="17" x2="12" y2="21" />
               </svg>
             </div>
-            <h3>Thiết Kế Web Nails Độc Quyền</h3>
-            <p>
-              Giao diện tối ưu di động với các gam màu sang trọng, pastel phù hợp với ngành làm đẹp. Tích hợp trực tiếp hệ thống Booking (đặt hẹn) mượt mà giúp giảm 80% thời gian trả lời tin nhắn.
-            </p>
+            <h3>{t('webSeoPage.pillars.pillar1Title')}</h3>
+            <p>{t('webSeoPage.pillars.pillar1Desc')}</p>
             <ul>
-              <li>⚡ Tốc độ tải trang dưới 1.2s</li>
-              <li>📅 Tích hợp Acuity / Square / Setmore</li>
-              <li>🎨 Bảng menu hình ảnh móng tay cực sắc nét</li>
+              <li>{t('webSeoPage.pillars.pillar1Feat1')}</li>
+              <li>{t('webSeoPage.pillars.pillar1Feat2')}</li>
+              <li>{t('webSeoPage.pillars.pillar1Feat3')}</li>
             </ul>
           </div>
 
@@ -406,14 +402,12 @@ export default function NailSalonServices() {
                 <line x1="8" y1="11" x2="14" y2="11" />
               </svg>
             </div>
-            <h3>Tối Ưu SEO Local Từ Khóa</h3>
-            <p>
-              Đưa website của tiệm móng đứng top đầu Google khi khách hàng địa phương tìm kiếm các cụm từ khóa "Nail salon near me", "Tiệm nails uy tín", "Vẽ móng nghệ thuật".
-            </p>
+            <h3>{t('webSeoPage.pillars.pillar2Title')}</h3>
+            <p>{t('webSeoPage.pillars.pillar2Desc')}</p>
             <ul>
-              <li>🎯 Nghiên cứu từ khóa hành vi của khách hàng tiệm nails</li>
-              <li>✍️ Viết bài giới thiệu dịch vụ chuẩn cấu trúc Schema</li>
-              <li>🔗 Xây dựng hệ thống backlinks địa lý bản địa</li>
+              <li>{t('webSeoPage.pillars.pillar2Feat1')}</li>
+              <li>{t('webSeoPage.pillars.pillar2Feat2')}</li>
+              <li>{t('webSeoPage.pillars.pillar2Feat3')}</li>
             </ul>
           </div>
 
@@ -425,65 +419,58 @@ export default function NailSalonServices() {
                 <circle cx="12" cy="10" r="3" />
               </svg>
             </div>
-            <h3>SEO Google Maps (Google My Business)</h3>
-            <p>
-              Tối ưu hồ sơ doanh nghiệp để hiển thị trong top 3 kết quả tìm kiếm bản đồ. Hướng dẫn thiết lập hệ thống tự động xin đánh giá 5 sao từ khách hàng vừa làm xong dịch vụ.
-            </p>
+            <h3>{t('webSeoPage.pillars.pillar3Title')}</h3>
+            <p>{t('webSeoPage.pillars.pillar3Desc')}</p>
             <ul>
-              <li>📍 Đóng ghim tọa độ chuẩn xác trên bản đồ</li>
-              <li>⭐ Quy trình tăng đánh giá 5 sao an toàn, tự động</li>
-              <li>📸 Tải lên hình ảnh tiệm móng định vị GPS ẩn</li>
+              <li>{t('webSeoPage.pillars.pillar3Feat1')}</li>
+              <li>{t('webSeoPage.pillars.pillar3Feat2')}</li>
+              <li>{t('webSeoPage.pillars.pillar3Feat3')}</li>
             </ul>
           </div>
         </div>
       </section>
 
-
-
-
-
       {/* 5. Quality Comparison Section */}
       <section className="nails-comparison container">
         <div className="section-header text-center">
-          <span className="badge badge-primary">So Sánh Thực Tế</span>
-          <h2 className="section-title">Điểm Khác Biệt Của Website Nails Vietsol</h2>
-          <p className="section-subtitle">Vì sao website của chúng tôi giúp bạn tăng doanh thu thực chất thay vì chỉ là trang giới thiệu tĩnh.</p>
+          <h2 className="section-title">{t('webSeoPage.comparison.title')}</h2>
+          <p className="section-subtitle">{t('webSeoPage.comparison.subtitle')}</p>
         </div>
 
         <div className="comparison-table-wrapper">
           <table className="comparison-table">
             <thead>
               <tr>
-                <th>Tính Năng / Đặc Điểm</th>
-                <th className="vietsol-column">Website Vietsol</th>
-                <th className="other-column">Website Giá Rẻ Thông Thường</th>
+                <th>{t('webSeoPage.comparison.featCol')}</th>
+                <th className="vietsol-column">{t('webSeoPage.comparison.vietsolCol')}</th>
+                <th className="other-column">{t('webSeoPage.comparison.otherCol')}</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td><strong>Hệ Thống Đặt Hẹn (Booking)</strong></td>
-                <td className="vietsol-cell">✓ Tích hợp trực quan, nhắc lịch tự động qua SMS/Email giúp giảm 90% số lượng khách bùng lịch.</td>
-                <td className="other-cell">✗ Không có hoặc chỉ là form gửi email liên hệ tĩnh, chủ tiệm phải gọi điện xác nhận lại.</td>
+                <td><strong>{t('webSeoPage.comparison.row1Title')}</strong></td>
+                <td className="vietsol-cell">{t('webSeoPage.comparison.row1Vietsol')}</td>
+                <td className="other-cell">{t('webSeoPage.comparison.row1Other')}</td>
               </tr>
               <tr>
-                <td><strong>Tối Ưu SEO & Bản Đồ Google</strong></td>
-                <td className="vietsol-cell">✓ Cấu trúc mã nguồn chuẩn SEO Schema Local, liên kết chặt chẽ Maps để hiển thị Top 3 tìm kiếm.</td>
-                <td className="other-cell">✗ Không được tối ưu, Google Maps không đồng bộ, website không xuất hiện khi tìm kiếm.</td>
+                <td><strong>{t('webSeoPage.comparison.row2Title')}</strong></td>
+                <td className="vietsol-cell">{t('webSeoPage.comparison.row2Vietsol')}</td>
+                <td className="other-cell">{t('webSeoPage.comparison.row2Other')}</td>
               </tr>
               <tr>
-                <td><strong>Tốc Độ Tải Trang & Giao Diện Mobile</strong></td>
-                <td className="vietsol-cell">✓ Tốc độ cực nhanh dưới 1.5 giây, thiết kế tối giản ưu tiên 100% người dùng thao tác trên điện thoại.</td>
-                <td className="other-cell">✗ Tải chậm trên 5s, bố cục vỡ khi xem trên điện thoại gây mất 50% số khách hàng tiềm năng.</td>
+                <td><strong>{t('webSeoPage.comparison.row3Title')}</strong></td>
+                <td className="vietsol-cell">{t('webSeoPage.comparison.row3Vietsol')}</td>
+                <td className="other-cell">{t('webSeoPage.comparison.row3Other')}</td>
               </tr>
               <tr>
-                <td><strong>Trình Quản Lý Mẫu Móng & Giá Cả</strong></td>
-                <td className="vietsol-cell">✓ Hệ thống quản lý hình ảnh sinh động trực quan dễ chỉnh sửa giá dịch vụ, thêm bớt album móng.</td>
-                <td className="other-cell">✗ Giao diện quản lý khó dùng hoặc không có, mỗi lần sửa đổi giá đều phải thuê code lại.</td>
+                <td><strong>{t('webSeoPage.comparison.row4Title')}</strong></td>
+                <td className="vietsol-cell">{t('webSeoPage.comparison.row4Vietsol')}</td>
+                <td className="other-cell">{t('webSeoPage.comparison.row4Other')}</td>
               </tr>
               <tr>
-                <td><strong>Chi Phí Trực Tuyến & Cọc Lịch</strong></td>
-                <td className="vietsol-cell">✓ Cho phép cấu hình cọc trước để giữ chỗ qua Stripe/PayPal. Không tính phí trên mỗi lượt đặt hẹn.</td>
-                <td className="other-cell">✗ Hoặc không hỗ trợ cọc trước, hoặc sử dụng dịch vụ trung gian đắt đỏ lấy phí hoa hồng % booking.</td>
+                <td><strong>{t('webSeoPage.comparison.row5Title')}</strong></td>
+                <td className="vietsol-cell">{t('webSeoPage.comparison.row5Vietsol')}</td>
+                <td className="other-cell">{t('webSeoPage.comparison.row5Other')}</td>
               </tr>
             </tbody>
           </table>
@@ -494,30 +481,30 @@ export default function NailSalonServices() {
       <section className="nails-workflow">
         <div className="container">
           <div className="section-header text-center">
-            <h2 className="section-title">Quy Trình Triển Khai 4 Bước Tinh Gọn</h2>
-            <p className="section-subtitle">Chúng tôi chuẩn bị kỹ lưỡng mọi khâu để bàn giao website và kích hoạt SEO Maps nhanh chóng chỉ trong 7 đến 10 ngày.</p>
+            <h2 className="section-title">{t('webSeoPage.workflow.title')}</h2>
+            <p className="section-subtitle">{t('webSeoPage.workflow.subtitle')}</p>
           </div>
 
           <div className="nails-workflow__grid">
             <div className="workflow-step">
               <div className="step-num">01</div>
-              <h3>Tư Vấn & Chọn Mẫu</h3>
-              <p>Khảo sát nhu cầu thực tế của tiệm, phân tích đối thủ cạnh tranh tại địa phương và chọn mẫu giao diện nails tối ưu nhất.</p>
+              <h3>{t('webSeoPage.workflow.step1Title')}</h3>
+              <p>{t('webSeoPage.workflow.step1Desc')}</p>
             </div>
             <div className="workflow-step">
               <div className="step-num">02</div>
-              <h3>Thiết Kế & Tích Hợp Đặt Lịch</h3>
-              <p>Xây dựng nội dung website, tải ảnh mẫu móng của riêng tiệm, cấu hình menu giá và kết nối hệ thống Booking tự động.</p>
+              <h3>{t('webSeoPage.workflow.step2Title')}</h3>
+              <p>{t('webSeoPage.workflow.step2Desc')}</p>
             </div>
             <div className="workflow-step">
               <div className="step-num">03</div>
-              <h3>Tối Ưu SEO Maps Địa Phương</h3>
-              <p>Đồng bộ thông tin doanh nghiệp, xác minh tọa độ bản đồ, viết bài tối ưu hóa từ khóa local để chuẩn bị cho chiến dịch đẩy top Google.</p>
+              <h3>{t('webSeoPage.workflow.step3Title')}</h3>
+              <p>{t('webSeoPage.workflow.step3Desc')}</p>
             </div>
             <div className="workflow-step">
               <div className="step-num">04</div>
-              <h3>Bàn Giao & Hướng Dẫn Vận Hành</h3>
-              <p>Hướng dẫn chủ tiệm cách xem lịch đặt hẹn trên điện thoại, cách phản hồi đánh giá Maps và cập nhật hình ảnh móng mới.</p>
+              <h3>{t('webSeoPage.workflow.step4Title')}</h3>
+              <p>{t('webSeoPage.workflow.step4Desc')}</p>
             </div>
           </div>
         </div>
@@ -527,16 +514,14 @@ export default function NailSalonServices() {
       <section id="nails-contact-form" className="nails-contact-section container">
         <div className="nails-contact__grid">
           <div className="nails-contact__info">
-            <span className="badge badge-primary">Liên Hệ Ngay</span>
-            <h2>Bắt Đầu Đưa Tiệm Nails Của Bạn Lên Bản Đồ Số!</h2>
-            <p>
-              Hãy điền thông tin bên cạnh để nhận cuộc gọi tư vấn miễn phí phân tích thứ hạng SEO tiệm nails của bạn trên Google Maps tại khu vực đang hoạt động.
-            </p>
+            <span className="badge badge-primary">{t('webSeoPage.form.badge')}</span>
+            <h2>{t('webSeoPage.form.title')}</h2>
+            <p>{t('webSeoPage.form.desc')}</p>
             <div className="info-item">
               <span className="info-icon">📞</span>
               <div>
-                <strong>Hotline / Zalo hỗ trợ:</strong>
-                <p>+32 472 90 28 34 (Hỗ trợ chủ tiệm Nails toàn châu Âu & Mỹ)</p>
+                <strong>{t('webSeoPage.form.hotline')}</strong>
+                <p>{t('webSeoPage.form.hotlineVal')}</p>
               </div>
             </div>
             <div className="info-item">
@@ -549,80 +534,80 @@ export default function NailSalonServices() {
             <div className="info-item">
               <span className="info-icon">💬</span>
               <div>
-                <strong>Tư vấn trực tiếp:</strong>
-                <p>Hỗ trợ Setup tích hợp Booking qua Zalo / Viber / WhatsApp nhanh chóng.</p>
+                <strong>{t('webSeoPage.form.directConsult')}</strong>
+                <p>{t('webSeoPage.form.directConsultVal')}</p>
               </div>
             </div>
           </div>
 
           <div className="nails-contact__form-wrapper">
-            <h3>Đăng Ký Tư Vấn & Nhận Demo Bản Đầy Đủ</h3>
+            <h3>{t('webSeoPage.form.formTitle')}</h3>
             {formSubmitted ? (
               <div className="form-success-alert">
-                <h4>🎉 Đăng ký thành công!</h4>
-                <p>Cảm ơn anh/chị đã quan tâm. Đội ngũ Vietsol sẽ liên hệ hỗ trợ phân tích SEO tiệm nails của anh/chị qua SĐT/Zalo trong thời gian sớm nhất.</p>
+                <h4>{t('webSeoPage.form.successTitle')}</h4>
+                <p>{t('webSeoPage.form.successDesc')}</p>
                 <button className="btn btn-primary btn-sm" onClick={() => setFormSubmitted(false)}>
-                  <span>Gửi yêu cầu mới</span>
+                  <span>{t('webSeoPage.form.btnNewRequest')}</span>
                 </button>
               </div>
             ) : (
               <form onSubmit={handleFormSubmit}>
                 <div className="form-group">
-                  <label htmlFor="name">Họ và Tên chủ tiệm *</label>
+                  <label htmlFor="name">{t('webSeoPage.form.labelName')}</label>
                   <input
                     type="text"
                     id="name"
                     name="name"
                     required
-                    placeholder="Ví dụ: Nguyễn Thị Mai"
+                    placeholder={t('webSeoPage.form.placeholderName')}
                     value={formData.name}
                     onChange={handleFormChange}
                   />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="phone">Số Điện Thoại / WhatsApp / Zalo *</label>
+                  <label htmlFor="phone">{t('webSeoPage.form.labelPhone')}</label>
                   <input
                     type="tel"
                     id="phone"
                     name="phone"
                     required
-                    placeholder="Ví dụ: +49 123 456 789 hoặc SĐT Việt Nam"
+                    placeholder={t('webSeoPage.form.placeholderPhone')}
                     value={formData.phone}
                     onChange={handleFormChange}
                   />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="salonName">Tên Tiệm Nails (Salon Name) *</label>
+                  <label htmlFor="salonName">{t('webSeoPage.form.labelSalonName')}</label>
                   <input
                     type="text"
                     id="salonName"
                     name="salonName"
                     required
-                    placeholder="Ví dụ: Lily Blossom Nails & Spa"
+                    placeholder={t('webSeoPage.form.placeholderSalon')}
                     value={formData.salonName}
                     onChange={handleFormChange}
                   />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="location">Địa Chỉ Tiệm Nails (Thành phố / Quốc gia)</label>
+                  <label htmlFor="location">{t('webSeoPage.form.labelLocation')}</label>
                   <input
                     type="text"
                     id="location"
                     name="location"
-                    placeholder="Ví dụ: München, Germany"
+                    placeholder={t('webSeoPage.form.placeholderLocation')}
                     value={formData.location}
                     onChange={handleFormChange}
                   />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="selectedTemplate">Mẫu Website Đã Chọn</label>
+                  <label htmlFor="selectedTemplate">{t('webSeoPage.form.labelTemplate')}</label>
                   <select
                     id="selectedTemplate"
                     name="selectedTemplate"
                     value={selectedTemplateForForm}
                     onChange={(e) => setSelectedTemplateForForm(e.target.value)}
                   >
-                    <option value="">-- Chưa chọn (Tư vấn thêm) --</option>
+                    <option value="">{t('webSeoPage.form.selectDefault')}</option>
                     {templatesData.map((tpl) => (
                       <option key={tpl.id} value={tpl.name}>
                         {tpl.name} ({tpl.themeName})
@@ -631,18 +616,18 @@ export default function NailSalonServices() {
                   </select>
                 </div>
                 <div className="form-group">
-                  <label htmlFor="message">Lời nhắn hoặc yêu cầu riêng (Ví dụ: Tiệm cần tích hợp đặt lịch Acuity)</label>
+                  <label htmlFor="message">{t('webSeoPage.form.labelMessage')}</label>
                   <textarea
                     id="message"
                     name="message"
                     rows="3"
-                    placeholder="Nhập lời nhắn của bạn..."
+                    placeholder={t('webSeoPage.form.placeholderMessage')}
                     value={formData.message}
                     onChange={handleFormChange}
                   ></textarea>
                 </div>
                 <button type="submit" className="btn btn-primary btn-block">
-                  <span>Gửi Đăng Ký Ngay</span>
+                  <span>{t('webSeoPage.form.btnSubmit')}</span>
                 </button>
               </form>
             )}

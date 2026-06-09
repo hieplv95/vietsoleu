@@ -1,30 +1,32 @@
 import { Link, useLocation } from 'react-router-dom'
 import logoImg from '../assets/logo-yocheckin.png'
+import { useLanguage } from '../context/LanguageContext'
 import './Footer.css'
 
-const footerLinks = {
-  'Tính Năng': [
-    { label: 'Thiết kế Web & SEO Nails', href: '/dich-vu-nails' },
-    { label: 'Quản lý khách hàng', href: '#features' },
-    { label: 'SMS tự động', href: '#features' },
-    { label: 'Tăng Google Review', href: '#features' },
-  ],
-  'Tài Nguyên': [
-    { label: 'Trung tâm hỗ trợ', href: '#' },
-    { label: 'Tài liệu hướng dẫn', href: '#' },
-    { label: 'Cộng đồng', href: '#' },
-    { label: 'Blog', href: '#blog' },
-  ],
-  'Công Ty': [
-    { label: 'Về chúng tôi', href: '#about' },
-    { label: 'Tuyển dụng', href: '#' },
-    { label: 'Đối tác', href: '#' },
-    { label: 'Liên hệ', href: '#contact' },
-  ],
-}
-
 export default function Footer() {
+  const { t } = useLanguage()
   const location = useLocation()
+
+  const footerLinks = {
+    [t('footer.col_features')]: [
+      { label: t('footer.link_webSeo'), href: '/dich-vu-nails' },
+      { label: t('footer.link_clientMgmt'), href: '#features' },
+      { label: t('footer.link_sms'), href: '#features' },
+      { label: t('footer.link_review'), href: '#features' },
+    ],
+    [t('footer.col_resources')]: [
+      { label: t('footer.link_support'), href: '#' },
+      { label: t('footer.link_guide'), href: '#' },
+      { label: t('footer.link_community'), href: '#' },
+      { label: t('footer.link_blog'), href: '/blog' },
+    ],
+    [t('footer.col_company')]: [
+      { label: t('footer.link_about'), href: '#about' },
+      { label: t('footer.link_jobs'), href: '#' },
+      { label: t('footer.link_partners'), href: '#' },
+      { label: t('footer.link_contact'), href: '#contact' },
+    ],
+  }
 
   const handleHashLinkClick = (e, href) => {
     if (href.startsWith('#')) {
@@ -49,18 +51,18 @@ export default function Footer() {
             </div>
           </div>
           <p className="footer__tagline">
-            VIETSOL — Vietnam Digital Marketing Solutions in Europe
+            {t('footer.tagline')}
           </p>
           <p className="footer__tagline-sub">
-            Giải pháp marketing số cho người Việt tại Châu Âu
+            {t('footer.subtagline')}
           </p>
 
           {/* Newsletter */}
           <div className="footer__newsletter">
-            <p className="footer__newsletter-label">Nhận tin tức mới nhất</p>
+            <p className="footer__newsletter-label">{t('footer.newsletter')}</p>
             <div className="footer__newsletter-form">
-              <input type="email" placeholder="Email của bạn" className="footer__newsletter-input" />
-              <button className="footer__newsletter-btn">Đăng ký</button>
+              <input type="email" placeholder={t('footer.emailPlaceholder')} className="footer__newsletter-input" />
+              <button className="footer__newsletter-btn">{t('footer.subscribe')}</button>
             </div>
           </div>
 
@@ -113,11 +115,11 @@ export default function Footer() {
 
       <div className="footer__bottom">
         <div className="container footer__bottom-inner">
-          <p>© 2024 Vietsol Digital Marketing Solutions. All rights reserved.</p>
+          <p>{t('footer.copyright')}</p>
           <div className="footer__bottom-links">
-            <a href="#">Điều khoản dịch vụ</a>
-            <a href="#">Chính sách bảo mật</a>
-            <a href="#">Cookie</a>
+            <a href="#">{t('footer.terms')}</a>
+            <a href="#">{t('footer.privacy')}</a>
+            <a href="#">{t('footer.cookie')}</a>
           </div>
         </div>
       </div>

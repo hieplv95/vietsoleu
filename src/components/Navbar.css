@@ -130,8 +130,8 @@
   color: var(--clr-primary-light);
 }
 
-/* Theme Toggle */
-.navbar__theme-toggle {
+/* Language Toggle */
+.navbar__lang-toggle {
   display: flex;
   align-items: center;
   gap: 6px;
@@ -147,7 +147,7 @@
   font-family: inherit;
 }
 
-.navbar__theme-toggle:hover {
+.navbar__lang-toggle:hover {
   color: var(--clr-primary-light);
   border-color: var(--clr-primary);
   background: rgba(108, 71, 255, 0.1);
@@ -211,7 +211,7 @@
 
 @media (max-width: 1024px) {
   .navbar__whatsapp span { display: none; }
-  .navbar__theme-toggle span { display: none; }
+  .navbar__lang-toggle span { display: none; }
   .navbar__logo-icon-container {
     width: 70px;
     height: 70px;
@@ -263,7 +263,7 @@
   .navbar__whatsapp {
     display: none;
   }
-  .navbar__theme-toggle span {
+  .navbar__lang-toggle span {
     display: none;
   }
   .navbar__actions {

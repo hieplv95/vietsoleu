@@ -1,8 +1,10 @@
 import { useEffect, useRef } from 'react'
 import tabletImg from '../assets/yocheckin-tablet.png'
+import { useLanguage } from '../context/LanguageContext'
 import './Hero.css'
 
 export default function Hero() {
+  const { t } = useLanguage()
   const heroRef = useRef(null)
 
   useEffect(() => {
@@ -34,23 +36,22 @@ export default function Hero() {
         <div className="hero__left">
           <div className="hero__badge">
             <span className="hero__badge-dot"></span>
-            Phần mềm Mới ra mắt
+            {t('hero.badge')}
           </div>
 
           <h1 className="hero__title">
-            Giải pháp marketing & Quản lý
-            <span className="hero__title-gradient"> thông minh</span>
-            <br />cho tiệm nails của bạn
+            {t('hero.title1')}
+            <span className="hero__title-gradient">{t('hero.titleGradient')}</span>
+            <br />{t('hero.title2')}
           </h1>
 
           <p className="hero__desc">
-            Phần mềm <strong>YoCheckIn</strong> do đội ngũ Vietsol phát triển — chính thức ra mắt
-            cho người Việt tại Châu Âu. Tăng review 5* Google maps, ẩn review xấu,Quản lý khách hàng, tăng doanh thu và chăm sóc khách hàng tự động và còn rất nhiều chức năng khác
+            {t('hero.desc')}
           </p>
 
           <div className="hero__actions">
             <a href="https://wa.me/+32" className="btn btn-primary btn-lg" target="_blank" rel="noreferrer">
-              <span>Dùng thử 30 ngày miễn phí</span>
+              <span>{t('hero.btnTrial')}</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
                 <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
               </svg>
@@ -60,7 +61,7 @@ export default function Hero() {
                 <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.5" />
                 <path d="M10 8l6 4-6 4V8z" fill="currentColor" />
               </svg>
-              Xem phần mềm
+              {t('hero.btnView')}
             </a>
           </div>
 
@@ -70,7 +71,7 @@ export default function Hero() {
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
                 <path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" stroke="#00d4b1" strokeWidth="2" />
               </svg>
-              Không cần thẻ tín dụng
+              {t('hero.trustNoCard')}
             </div>
             <div className="hero__trust-sep">·</div>
             <div className="hero__trust-item">
@@ -78,14 +79,14 @@ export default function Hero() {
                 <rect x="3" y="11" width="18" height="11" rx="2" stroke="#6c47ff" strokeWidth="2" />
                 <path d="M7 11V7a5 5 0 0110 0v4" stroke="#6c47ff" strokeWidth="2" strokeLinecap="round" />
               </svg>
-              Bảo mật GDPR
+              {t('hero.trustGdpr')}
             </div>
             <div className="hero__trust-sep">·</div>
             <div className="hero__trust-item">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
                 <path d="M3 10h18M7 15h1m4 0h1M7 19h1m4 0h1m4-4h1m0 4h1M3 6a3 3 0 013-3h12a3 3 0 013 3v14a3 3 0 01-3 3H6a3 3 0 01-3-3V6z" stroke="#f5a623" strokeWidth="1.5" strokeLinecap="round" />
               </svg>
-              Hỗ trợ tiếng Việt cùng nhiều ngôn ngữ
+              {t('hero.trustLang')}
             </div>
           </div>
         </div>
@@ -104,8 +105,8 @@ export default function Hero() {
           <div className="hero__floating-badge">
             <div className="hero__floating-badge-icon">⭐</div>
             <div>
-              <div className="hero__floating-badge-val">4.9/5</div>
-              <div className="hero__floating-badge-sub">500+ tiệm tin dùng</div>
+              <div className="hero__floating-badge-val">{t('hero.floatingBadgeVal')}</div>
+              <div className="hero__floating-badge-sub">{t('hero.floatingBadgeSub')}</div>
             </div>
           </div>
         </div>
@@ -117,7 +118,7 @@ export default function Hero() {
         <div className="hero__scroll-mouse">
           <div className="hero__scroll-wheel"></div>
         </div>
-        <span>Cuộn xuống</span>
+        <span>{t('hero.scrollDown')}</span>
       </div>
     </section>
   )

@@ -1,58 +1,62 @@
+import { useLanguage } from '../context/LanguageContext'
 import './Services.css'
 
-const services = [
-  {
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-        <rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" strokeWidth="1.8"/>
-        <path d="M8 21h8M12 17v4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
-        <path d="M7 8h4M7 11h6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
-        <circle cx="16" cy="9.5" r="2" stroke="currentColor" strokeWidth="1.5"/>
-      </svg>
-    ),
-    color: '#6c47ff',
-    title: 'Xây dựng Website & App',
-    desc: 'Thiết kế website chuyên nghiệp, chuẩn SEO, tối ưu trên mọi thiết bị. Phù hợp với thương hiệu và phong cách của từng tiệm Nails tại Châu Âu.',
-  },
-  {
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-        <path d="M17 2H7a2 2 0 00-2 2v16a2 2 0 002 2h10a2 2 0 002-2V4a2 2 0 00-2-2z" stroke="currentColor" strokeWidth="1.8"/>
-        <path d="M9 7h6M9 11h4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
-        <circle cx="12" cy="17" r="1.2" fill="currentColor"/>
-      </svg>
-    ),
-    color: '#00d4b1',
-    title: 'Social Media Marketing',
-    desc: 'Sáng tạo nội dung, lên lịch tự động và chạy quảng cáo Facebook/Instagram nhắm đúng đối tượng khách hàng tiệm nail tại EU.',
-  },
-  {
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-        <circle cx="11" cy="11" r="7" stroke="currentColor" strokeWidth="1.8"/>
-        <path d="M21 21l-4.35-4.35" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
-        <path d="M8 11h6M11 8v6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
-      </svg>
-    ),
-    color: '#f5a623',
-    title: 'SEO & Google Marketing',
-    desc: 'Tối ưu từ khóa địa phương, tăng thứ hạng Google Maps và website, giúp khách hàng tìm thấy tiệm của bạn nhanh hơn đối thủ.',
-  },
-  {
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-        <rect x="2" y="7" width="20" height="14" rx="2" stroke="currentColor" strokeWidth="1.8"/>
-        <path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
-        <path d="M12 12v3M10 13.5h4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
-      </svg>
-    ),
-    color: '#ff6b35',
-    title: 'Hệ thống POS & Merchant',
-    desc: 'Tích hợp phần mềm YoCheckIn với hệ thống POS, quản lý thanh toán, tích điểm khách hàng và báo cáo doanh thu theo thời gian thực.',
-  },
-]
-
 export default function Services() {
+  const { t } = useLanguage()
+
+  const services = [
+    {
+      icon: (
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+          <rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" strokeWidth="1.8"/>
+          <path d="M8 21h8M12 17v4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
+          <path d="M7 8h4M7 11h6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
+          <circle cx="16" cy="9.5" r="2" stroke="currentColor" strokeWidth="1.5"/>
+        </svg>
+      ),
+      color: '#6c47ff',
+      title: t('services.cardWebTitle'),
+      desc: t('services.cardWebDesc'),
+    },
+    {
+      icon: (
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+          <path d="M17 2H7a2 2 0 00-2 2v16a2 2 0 002 2h10a2 2 0 002-2V4a2 2 0 00-2-2z" stroke="currentColor" strokeWidth="1.8"/>
+          <path d="M9 7h6M9 11h4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
+          <circle cx="12" cy="17" r="1.2" fill="currentColor"/>
+        </svg>
+      ),
+      color: '#00d4b1',
+      title: t('services.cardSocialTitle'),
+      desc: t('services.cardSocialDesc'),
+    },
+    {
+      icon: (
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+          <circle cx="11" cy="11" r="7" stroke="currentColor" strokeWidth="1.8"/>
+          <path d="M21 21l-4.35-4.35" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
+          <path d="M8 11h6M11 8v6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
+        </svg>
+      ),
+      color: '#f5a623',
+      title: t('services.cardSeoTitle'),
+      desc: t('services.cardSeoDesc'),
+    },
+    {
+      icon: (
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+          <rect x="2" y="7" width="20" height="14" rx="2" stroke="currentColor" strokeWidth="1.8"/>
+          <path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
+          <path d="M12 12v3M10 13.5h4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
+        </svg>
+      ),
+      color: '#ff6b35',
+      title: t('services.cardPosTitle'),
+      desc: t('services.cardPosDesc'),
+      isUnderConstruction: true,
+    },
+  ]
+
   return (
     <section className="services section" id="services">
       {/* Background orbs */}
@@ -62,14 +66,13 @@ export default function Services() {
       <div className="container">
         {/* Header */}
         <div className="services__header text-center">
-          <div className="section-label">Dịch vụ của chúng tôi</div>
+          <div className="section-label">{t('services.label')}</div>
           <h2 className="section-title">
-            Giải pháp toàn diện cho{' '}
-            <span className="services__title-accent">tiệm Nails</span>
+            {t('services.title')}{' '}
+            <span className="services__title-accent">{t('services.titleAccent')}</span>
           </h2>
           <p className="section-desc">
-            Từ Digital Marketing đến POS & Merchant — Vietsol cung cấp mọi công cụ giúp tiệm
-            Nails của bạn phát triển bền vững tại Châu Âu.
+            {t('services.desc')}
           </p>
         </div>
 
@@ -84,12 +87,18 @@ export default function Services() {
               <h3 className="services__card-title">{svc.title}</h3>
               <p className="services__card-desc">{svc.desc}</p>
               <div className="services__card-footer">
-                <a href="#contact" className="services__link">
-                  Tìm hiểu thêm
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-                    <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                  </svg>
-                </a>
+                {svc.isUnderConstruction ? (
+                  <span className="services__link services__link--construction">
+                    {t('services.underConstruction')}
+                  </span>
+                ) : (
+                  <a href="#contact" className="services__link">
+                    {t('services.linkLearnMore')}
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                      <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                    </svg>
+                  </a>
+                )}
               </div>
             </div>
           ))}
@@ -98,11 +107,11 @@ export default function Services() {
         {/* Bottom CTA strip */}
         <div className="services__strip">
           <div className="services__strip-text">
-            <span className="services__strip-tag">📦 Gói trọn bộ</span>
-            <p>Sử dụng trọn gói dịch vụ, tiết kiệm <strong>từ €500 – €1.000/tháng</strong> so với thuê riêng lẻ</p>
+            <span className="services__strip-tag">{t('services.stripTag')}</span>
+            <p>{t('services.stripText')}</p>
           </div>
           <a href="https://wa.me/+32" className="btn btn-primary" target="_blank" rel="noreferrer">
-            <span>Liên hệ tư vấn</span>
+            <span>{t('services.stripBtn')}</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
               <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
             </svg>

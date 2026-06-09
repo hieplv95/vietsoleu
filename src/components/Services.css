@@ -142,6 +142,16 @@
   gap: 10px;
 }
 
+.services__link--construction {
+  opacity: 0.6;
+  cursor: default;
+  pointer-events: none;
+}
+
+.services__link--construction:hover {
+  gap: 6px;
+}
+
 /* Bottom CTA strip */
 .services__strip {
   display: flex;

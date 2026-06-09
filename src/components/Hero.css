@@ -5,7 +5,7 @@
   width: 100%;
   display: flex;
   align-items: center;
-  padding-top: 90px;
+  padding-top: 130px;
   padding-bottom: 60px;
   overflow: hidden;
   background: var(--clr-bg);
@@ -500,7 +500,7 @@
 /* Tablet: stack to single column */
 @media (max-width: 1024px) {
   .hero {
-    padding-top: 90px;
+    padding-top: 130px;
     padding-bottom: 4rem;
   }
   .hero__inner {
@@ -540,7 +540,7 @@
 /* Mobile */
 @media (max-width: 768px) {
   .hero {
-    padding-top: 84px;
+    padding-top: 110px;
     padding-bottom: 3.5rem;
     min-height: auto;
   }
@@ -595,7 +595,7 @@
 /* Small mobile */
 @media (max-width: 480px) {
   .hero {
-    padding-top: 80px;
+    padding-top: 100px;
     padding-bottom: 2.5rem;
   }
   .hero__inner {

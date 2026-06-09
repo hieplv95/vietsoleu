@@ -1,3 +1,4 @@
+// App main routing configuration
 import { useEffect } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import './index.css'
@@ -5,6 +6,9 @@ import Navbar from './components/Navbar'
 import Home from './components/Home'
 import NailSalonServices from './components/NailSalonServices'
 import NailTemplateViewer from './components/NailTemplateViewer'
+import SocialMediaMarketing from './components/SocialMediaMarketing'
+import BlogPost from './components/BlogPost'
+import BlogPage from './components/BlogPage'
 import Footer from './components/Footer'
 
 function App() {
@@ -36,6 +40,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/dich-vu-nails" element={<NailSalonServices />} />
+          <Route path="/social-media-marketing" element={<SocialMediaMarketing />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/:postId" element={<BlogPost />} />
           <Route path="/demo/:templateId" element={<NailTemplateViewer />} />
         </Routes>
       </main>

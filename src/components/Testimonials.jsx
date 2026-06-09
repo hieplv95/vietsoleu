@@ -1,61 +1,63 @@
 import { useState } from 'react'
+import { useLanguage } from '../context/LanguageContext'
 import avatarWoman1 from '../assets/avatar-woman-1.jpg'
 import avatarMan from '../assets/avatar-man.png'
 import avatarWoman2 from '../assets/avatar-woman-2.png'
 import avatarWoman3 from '../assets/avatar-woman-3.jpg'
 import './Testimonials.css'
 
-const testimonials = [
-  {
-    quote: 'Phần mềm YoCheckIn giúp tiệm mình tăng lượng đánh giá Google Maps từ 12 lên 89 chỉ trong 2 tháng. Khách hàng quay lại nhiều hơn rõ rệt!',
-    name: 'Chị Hoa Nguyễn',
-    role: 'Chủ tiệm Nails Paris Beauty',
-    location: 'Paris, Pháp',
-    stat: '+150%',
-    statLabel: 'đánh giá Google Maps',
-    avatar: avatarWoman1,
-  },
-  {
-    quote: 'SMS tự động gửi nhắc nhở khách lâu không quay lại — tỷ lệ khách quay lại tăng lên 35%. Đội ngũ hỗ trợ rất nhiệt tình và nói tiếng Việt!',
-    name: 'Anh Tuấn Lê',
-    role: 'Chủ tiệm Nails Royal',
-    location: 'Brussels, Bỉ',
-    stat: '+35%',
-    statLabel: 'tỷ lệ khách quay lại',
-    avatar: avatarMan,
-  },
-  {
-    quote: 'Hệ thống tích điểm rất được lòng khách hàng. Họ cảm thấy được trân trọng và hay giới thiệu bạn bè đến tiệm nhiều hơn.',
-    name: 'Chị Mai Trần',
-    role: 'Chủ tiệm Nails Luxury',
-    location: 'Amsterdam, Hà Lan',
-    stat: '+52%',
-    statLabel: 'khách hàng mới từ giới thiệu',
-    avatar: avatarWoman2,
-  },
-  {
-    quote: 'Giao diện quản lý thân thiện, dễ sử dụng giúp tôi quản lý tiệm nails hiệu quả hơn, ngoài ra các chiến dịch marketing thực sự rất tốt khách quay lại nhiều.',
-    name: 'Chị Ana Nguyen',
-    role: 'Chủ tiệm Queen Nails',
-    location: 'Munich, Đức',
-    stat: '+82%',
-    statLabel: 'khách hàng mới từ giới thiệu',
-    avatar: avatarWoman3,
-  },
-]
-
 export default function Testimonials() {
+  const { t } = useLanguage()
   const [active, setActive] = useState(0)
+
+  const testimonials = [
+    {
+      quote: t('testimonialsSection.t1.quote'),
+      name: t('testimonialsSection.t1.name'),
+      role: t('testimonialsSection.t1.role'),
+      location: t('testimonialsSection.t1.location'),
+      stat: t('testimonialsSection.t1.stat'),
+      statLabel: t('testimonialsSection.t1.statLabel'),
+      avatar: avatarWoman1,
+    },
+    {
+      quote: t('testimonialsSection.t2.quote'),
+      name: t('testimonialsSection.t2.name'),
+      role: t('testimonialsSection.t2.role'),
+      location: t('testimonialsSection.t2.location'),
+      stat: t('testimonialsSection.t2.stat'),
+      statLabel: t('testimonialsSection.t2.statLabel'),
+      avatar: avatarMan,
+    },
+    {
+      quote: t('testimonialsSection.t3.quote'),
+      name: t('testimonialsSection.t3.name'),
+      role: t('testimonialsSection.t3.role'),
+      location: t('testimonialsSection.t3.location'),
+      stat: t('testimonialsSection.t3.stat'),
+      statLabel: t('testimonialsSection.t3.statLabel'),
+      avatar: avatarWoman2,
+    },
+    {
+      quote: t('testimonialsSection.t4.quote'),
+      name: t('testimonialsSection.t4.name'),
+      role: t('testimonialsSection.t4.role'),
+      location: t('testimonialsSection.t4.location'),
+      stat: t('testimonialsSection.t4.stat'),
+      statLabel: t('testimonialsSection.t4.statLabel'),
+      avatar: avatarWoman3,
+    },
+  ]
 
   return (
     <section className="testimonials section" id="testimonials">
       <div className="testimonials__bg"></div>
       <div className="container">
         <div className="text-center">
-          <div className="section-label">Customer Testimonials</div>
-          <h2 className="section-title">Khách hàng nói gì về chúng tôi</h2>
+          <div className="section-label">{t('testimonialsSection.label')}</div>
+          <h2 className="section-title">{t('testimonialsSection.title')}</h2>
           <p className="section-desc">
-            Hàng trăm chủ tiệm Nails người Việt tại Châu Âu đang tin dùng giải pháp của Vietsol.
+            {t('testimonialsSection.desc')}
           </p>
         </div>
 
