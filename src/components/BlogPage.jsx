@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useLanguage } from '../context/LanguageContext'
 import './BlogPage.css'
+import blogNoelCover from '../assets/blog_noel_cover.png'
 
 export default function BlogPage() {
   const { t, language } = useLanguage()
@@ -30,6 +31,7 @@ export default function BlogPage() {
       readTime: t('blogSection.post1.readTime'),
       emoji: '🎄',
       color: '#ff6b35',
+      image: blogNoelCover,
     },
     {
       id: 'cach-tang-danh-gia-google-maps',
@@ -98,7 +100,11 @@ export default function BlogPage() {
           {filteredPosts.map((post) => (
             <article key={post.id} className="blog-dir-card card" style={{ '--post-color': post.color }}>
               <div className="blog-dir-card__thumb" style={{ background: `${post.color}15` }}>
-                <span className="blog-dir-card__emoji">{post.emoji}</span>
+                {post.image ? (
+                  <img src={post.image} alt={post.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                ) : (
+                  <span className="blog-dir-card__emoji">{post.emoji}</span>
+                )}
                 <div className="blog-dir-card__category" style={{ color: post.color, background: `${post.color}18` }}>
                   {post.category}
                 </div>

@@ -3,6 +3,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom'
 import { useLanguage } from '../context/LanguageContext'
 import { blogPosts } from '../data/blogPosts'
 import './BlogPost.css'
+import blogNoelCover from '../assets/blog_noel_cover.png'
 
 export default function BlogPost() {
   const { postId } = useParams()
@@ -23,6 +24,11 @@ export default function BlogPost() {
     // If not found in current language, try 'vi' fallback
     post = blogPosts['vi'][postId]
   }
+
+  const postImageMap = {
+    '10-y-tuong-giup-tiem-nails-hut-khach-vao-dip-noel': blogNoelCover
+  }
+  const postImage = postImageMap[postId]
 
   if (!post) {
     return (
@@ -107,7 +113,11 @@ export default function BlogPost() {
           
           {/* Main Visual container */}
           <div className="blog-post-header__banner" style={{ background: `linear-gradient(135deg, ${post.color}15, ${post.color}25)` }}>
-            <span className="blog-post-header__emoji">{post.emoji}</span>
+            {postImage ? (
+              <img src={postImage} alt={post.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+            ) : (
+              <span className="blog-post-header__emoji">{post.emoji}</span>
+            )}
           </div>
         </header>
 
