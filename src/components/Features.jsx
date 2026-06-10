@@ -4,9 +4,6 @@ import './Features.css'
 
 export default function Features() {
   const { t } = useLanguage()
-  const [activeTab, setActiveTab] = useState(0)
-
-  const tabs = [t('featuresSection.tabNails'), t('featuresSection.tabRest')]
 
   const features = [
     {
@@ -86,18 +83,7 @@ export default function Features() {
           </p>
         </div>
 
-        {/* Tabs */}
-        <div className="features__tabs">
-          {tabs.map((tab, i) => (
-            <button
-              key={i}
-              className={`features__tab ${activeTab === i ? 'features__tab--active' : ''}`}
-              onClick={() => setActiveTab(i)}
-            >
-              {tab}
-            </button>
-          ))}
-        </div>
+
 
         {/* Pain points */}
         <div className="features__pain">

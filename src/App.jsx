@@ -40,7 +40,7 @@ function App() {
       <main style={{ width: '100%' }}>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/dich-vu-nails" element={<NailSalonServices />} />
+          <Route path="/thiet-ke-website-nails" element={<NailSalonServices />} />
           <Route path="/social-media-marketing" element={<SocialMediaMarketing />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:postId" element={<BlogPost />} />

@@ -48,7 +48,7 @@ const templatesData = [
     tag: 'Vibrant',
     tagColor: '#bd00ff',
     description: 'Giao diện Dark Mode huyền bí với các dải màu neon phát sáng cuốn hút. Cực kỳ thích hợp cho các tiệm nail art nghệ thuật độc đáo.',
-    features: ['Bộ sưu tập Nail Art cuộn vô hạn', 'Bảng xếp hạng mẫu hot tuần', 'Chat tư vấn Zalo/WhatsApp 24/7']
+    features: ['Bộ sưu tập Nail Art cuộn vô hạn', 'Bảng xếp hạng mẫu hot tuần', 'Chat tư vấn WhatsApp 24/7']
   },
   {
     id: 'urban-polish',
@@ -156,9 +156,16 @@ export default function NailSalonServices() {
 
   const handleFormSubmit = (e) => {
     e.preventDefault()
-    // Simulated form submission
+    
+    const whatsappNumber = '34642805848'
+    const message = `Chào Vietsol, tôi muốn nhận tư vấn thiết kế Web & SEO Nails:\n- Họ tên: ${formData.name}\n- Số điện thoại: ${formData.phone}\n- Tên tiệm: ${formData.salonName}\n- Địa chỉ tiệm: ${formData.location || 'Không có'}\n- Mẫu website đã chọn: ${selectedTemplateForForm || 'Tự chọn/Tư vấn thêm'}\n- Lời nhắn: ${formData.message || 'Không có'}`
+    
+    const encodedMessage = encodeURIComponent(message)
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`
+    
+    window.open(whatsappUrl, '_blank')
+    
     setFormSubmitted(true)
-    // Clear form
     setFormData({
       name: '',
       phone: '',

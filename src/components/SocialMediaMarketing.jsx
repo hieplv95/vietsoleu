@@ -28,9 +28,16 @@ export default function SocialMediaMarketing() {
 
   const handleFormSubmit = (e) => {
     e.preventDefault()
-    // Simulated form submission
+    
+    const whatsappNumber = '34642805848'
+    const message = `Chào Vietsol, tôi muốn nhận tư vấn dịch vụ Social Media Marketing:\n- Họ tên: ${formData.name}\n- Số điện thoại: ${formData.phone}\n- Tên tiệm: ${formData.salonName}\n- Địa chỉ tiệm: ${formData.location || 'Không có'}\n- Lời nhắn: ${formData.message || 'Không có'}`
+    
+    const encodedMessage = encodeURIComponent(message)
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`
+    
+    window.open(whatsappUrl, '_blank')
+    
     setFormSubmitted(true)
-    // Clear form
     setFormData({
       name: '',
       phone: '',

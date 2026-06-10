@@ -16,7 +16,7 @@ export default function Navbar() {
       href: '#features',
       dropdown: [
         { label: t('navbar.yocheckin'), href: '#features' },
-        { label: t('navbar.webSeo'), href: '/dich-vu-nails' },
+        { label: t('navbar.webSeo'), href: '/thiet-ke-website-nails' },
         { label: t('navbar.socialAds'), href: '/social-media-marketing' },
       ]
     },

@@ -7,7 +7,7 @@ export default function FloatingChat() {
 
   return (
     <a
-      href="https://wa.me/32472902834"
+      href="https://wa.me/34642805848"
       className="floating-chat"
       target="_blank"
       rel="noreferrer"

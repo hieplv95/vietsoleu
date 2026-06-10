@@ -116,6 +116,16 @@
   animation: dropdownFadeIn 0.2s ease;
 }
 
+.navbar__dropdown::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 0;
+  right: 0;
+  height: 12px;
+  background: transparent;
+}
+
 .navbar__dropdown-link {
   display: block;
   padding: 0.625rem 0.875rem;

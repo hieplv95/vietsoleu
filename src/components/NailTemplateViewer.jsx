@@ -280,7 +280,7 @@ export default function NailTemplateViewer() {
       {/* 1. Preview Top Bar (Vietsoleu control frame) */}
       <div className="preview-top-bar">
         <div className="preview-top-bar__left">
-          <button onClick={() => navigate('/dich-vu-nails')} className="preview-back-btn">
+          <button onClick={() => navigate('/thiet-ke-website-nails')} className="preview-back-btn">
             ← Quay lại trang chính
           </button>
           <div className="preview-template-selector">
@@ -316,7 +316,7 @@ export default function NailTemplateViewer() {
         <div className="preview-top-bar__right">
           <span className="template-current-badge">Bản Xem Thử Website Thực Tế</span>
           <Link
-            to={`/dich-vu-nails?selectTemplate=${encodeURIComponent(config.name)}`}
+            to={`/thiet-ke-website-nails?selectTemplate=${encodeURIComponent(config.name)}`}
             className="preview-select-btn"
           >
             Chọn Mẫu Này

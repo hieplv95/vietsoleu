@@ -110,7 +110,7 @@ export default function Services() {
             <span className="services__strip-tag">{t('services.stripTag')}</span>
             <p>{t('services.stripText')}</p>
           </div>
-          <a href="https://wa.me/+32" className="btn btn-primary" target="_blank" rel="noreferrer">
+          <a href="https://wa.me/34642805848" className="btn btn-primary" target="_blank" rel="noreferrer">
             <span>{t('services.stripBtn')}</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
               <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>

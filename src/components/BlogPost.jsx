@@ -165,7 +165,7 @@ export default function BlogPost() {
               <div className="widget-icon">⚡</div>
               <h4 className="widget-title">{labelAboutTitle}</h4>
               <p className="widget-desc">{labelAboutDesc}</p>
-              <a href="https://wa.me/+32" className="btn btn-primary btn-sm widget-btn" target="_blank" rel="noreferrer">
+              <a href="https://wa.me/34642805848" className="btn btn-primary btn-sm widget-btn" target="_blank" rel="noreferrer">
                 <span>{labelAboutBtn}</span>
               </a>
             </div>
@@ -189,7 +189,7 @@ export default function BlogPost() {
             <h3 className="blog-post-cta__title">{labelCtaTitle}</h3>
             <p className="blog-post-cta__desc">{labelCtaDesc}</p>
             <div className="blog-post-cta__actions">
-              <a href="https://wa.me/+32" className="btn btn-primary btn-lg" target="_blank" rel="noreferrer">
+              <a href="https://wa.me/34642805848" className="btn btn-primary btn-lg" target="_blank" rel="noreferrer">
                 <span>{labelCtaBtn}</span>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
                   <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
