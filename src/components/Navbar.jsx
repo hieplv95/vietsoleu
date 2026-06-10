@@ -140,7 +140,7 @@ export default function Navbar() {
             <span className="navbar__lang-text-mobile">{language === 'vi' ? 'VN' : 'EN'}</span>
           </button>
 
-          <a href="https://wa.me/+32" className="btn btn-primary btn-sm" target="_blank" rel="noreferrer">
+          <a href="https://yocheckin.com/auth/register" className="btn btn-primary btn-sm" target="_blank" rel="noreferrer">
             <span>{t('navbar.freeTrial')}</span>
           </a>
           <button

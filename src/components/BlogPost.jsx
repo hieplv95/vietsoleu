@@ -175,7 +175,7 @@ export default function BlogPost() {
               <div className="widget-icon" style={{ color: '#00d4b1' }}>🚀</div>
               <h4 className="widget-title">{labelSoftwareTitle}</h4>
               <p className="widget-desc">{labelSoftwareDesc}</p>
-              <a href="https://wa.me/+32" className="btn btn-secondary btn-sm widget-btn" target="_blank" rel="noreferrer">
+              <a href="https://yocheckin.com/auth/register" className="btn btn-secondary btn-sm widget-btn" target="_blank" rel="noreferrer">
                 <span>{labelSoftwareBtn}</span>
               </a>
             </div>

@@ -106,7 +106,7 @@ export default function Features() {
             <p>{t('featuresSection.painText1')}<strong>{t('featuresSection.painText1Bold')}</strong>{t('featuresSection.painText1End')}</p>
             <p>{t('featuresSection.painText2')}<strong>{t('featuresSection.painText2Bold')}</strong>{t('featuresSection.painText2End')}</p>
           </div>
-          <a href="https://wa.me/+32" className="btn btn-primary btn-sm" target="_blank" rel="noreferrer">
+          <a href="https://yocheckin.com/auth/register" className="btn btn-primary btn-sm" target="_blank" rel="noreferrer">
             <span>{t('featuresSection.btnSolve')}</span>
           </a>
         </div>

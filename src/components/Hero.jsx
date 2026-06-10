@@ -50,7 +50,7 @@ export default function Hero() {
           </p>
 
           <div className="hero__actions">
-            <a href="https://wa.me/+32" className="btn btn-primary btn-lg" target="_blank" rel="noreferrer">
+            <a href="https://yocheckin.com/auth/register" className="btn btn-primary btn-lg" target="_blank" rel="noreferrer">
               <span>{t('hero.btnTrial')}</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
                 <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
