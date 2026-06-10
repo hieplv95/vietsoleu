@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useLanguage } from '../context/LanguageContext'
 import './Services.css'
 
@@ -17,6 +18,7 @@ export default function Services() {
       color: '#6c47ff',
       title: t('services.cardWebTitle'),
       desc: t('services.cardWebDesc'),
+      path: '/thiet-ke-website-nails',
     },
     {
       icon: (
@@ -29,6 +31,7 @@ export default function Services() {
       color: '#00d4b1',
       title: t('services.cardSocialTitle'),
       desc: t('services.cardSocialDesc'),
+      path: '/social-media-marketing',
     },
     {
       icon: (
@@ -41,6 +44,7 @@ export default function Services() {
       color: '#f5a623',
       title: t('services.cardSeoTitle'),
       desc: t('services.cardSeoDesc'),
+      path: '/thiet-ke-website-nails',
     },
     {
       icon: (
@@ -92,12 +96,12 @@ export default function Services() {
                     {t('services.underConstruction')}
                   </span>
                 ) : (
-                  <a href="#contact" className="services__link">
+                  <Link to={svc.path} className="services__link">
                     {t('services.linkLearnMore')}
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
                       <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
                     </svg>
-                  </a>
+                  </Link>
                 )}
               </div>
             </div>
