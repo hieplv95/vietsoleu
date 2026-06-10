@@ -131,12 +131,13 @@ export default function Navbar() {
             title={language === 'vi' ? 'English' : 'Tiếng Việt'}
           >
             {/* Globe Icon */}
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg className="navbar__lang-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <circle cx="12" cy="12" r="10"/>
               <line x1="2" y1="12" x2="22" y2="12"/>
               <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
             </svg>
-            <span>{language === 'vi' ? 'EN' : 'VI'}</span>
+            <span className="navbar__lang-text-desktop">{language === 'vi' ? 'EN' : 'VI'}</span>
+            <span className="navbar__lang-text-mobile">{language === 'vi' ? 'VN' : 'EN'}</span>
           </button>
 
           <a href="https://wa.me/+32" className="btn btn-primary btn-sm" target="_blank" rel="noreferrer">

@@ -153,6 +153,18 @@
   background: rgba(108, 71, 255, 0.1);
 }
 
+.navbar__lang-text-desktop {
+  display: inline;
+}
+
+.navbar__lang-text-mobile {
+  display: none;
+}
+
+.navbar__lang-icon {
+  display: block;
+}
+
 /* WhatsApp */
 .navbar__whatsapp {
   display: flex;
@@ -211,7 +223,9 @@
 
 @media (max-width: 1024px) {
   .navbar__whatsapp span { display: none; }
-  .navbar__lang-toggle span { display: none; }
+  .navbar__lang-icon { display: none; }
+  .navbar__lang-text-desktop { display: none; }
+  .navbar__lang-text-mobile { display: inline-block; }
   .navbar__logo-icon-container {
     width: 70px;
     height: 70px;
@@ -272,8 +286,14 @@
   .navbar__whatsapp {
     display: none;
   }
-  .navbar__lang-toggle span {
+  .navbar__lang-icon {
     display: none;
+  }
+  .navbar__lang-text-desktop {
+    display: none;
+  }
+  .navbar__lang-text-mobile {
+    display: inline-block;
   }
   .navbar__actions {
     gap: 0.5rem;
