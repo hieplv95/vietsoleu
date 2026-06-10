@@ -15,7 +15,7 @@ export default function Navbar() {
       label: t('navbar.services'),
       href: '#features',
       dropdown: [
-        { label: t('navbar.yocheckin'), href: '#features' },
+        { label: t('navbar.yocheckin'), href: 'https://yocheckin.com/' },
         { label: t('navbar.webSeo'), href: '/thiet-ke-website-nails' },
         { label: t('navbar.socialAds'), href: '/social-media-marketing' },
       ]
@@ -100,22 +100,39 @@ export default function Navbar() {
               </Link>
               {link.dropdown && activeDropdown === i && (
                 <div className="navbar__dropdown">
-                  {link.dropdown.map((item, j) => (
-                    <Link
-                      key={j}
-                      to={item.href.startsWith('#') ? `/${item.href}` : item.href}
-                      className="navbar__dropdown-link"
-                      onClick={(e) => {
-                        handleHashLinkClick(e, item.href)
-                        setActiveDropdown(null)
-                        if (!item.href.startsWith('#')) {
+                  {link.dropdown.map((item, j) => {
+                    const isExternal = item.href.startsWith('http');
+                    return isExternal ? (
+                      <a
+                        key={j}
+                        href={item.href}
+                        className="navbar__dropdown-link"
+                        target="_blank"
+                        rel="noreferrer"
+                        onClick={() => {
+                          setActiveDropdown(null)
                           setMenuOpen(false)
-                        }
-                      }}
-                    >
-                      {item.label}
-                    </Link>
-                  ))}
+                        }}
+                      >
+                        {item.label}
+                      </a>
+                    ) : (
+                      <Link
+                        key={j}
+                        to={item.href.startsWith('#') ? `/${item.href}` : item.href}
+                        className="navbar__dropdown-link"
+                        onClick={(e) => {
+                          handleHashLinkClick(e, item.href)
+                          setActiveDropdown(null)
+                          if (!item.href.startsWith('#')) {
+                            setMenuOpen(false)
+                          }
+                        }}
+                      >
+                        {item.label}
+                      </Link>
+                    );
+                  })}
                 </div>
               )}
             </div>
