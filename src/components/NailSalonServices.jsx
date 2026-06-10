@@ -121,7 +121,8 @@ const templatesData = [
 export default function NailSalonServices() {
   const { t } = useLanguage()
   const location = useLocation()
-  const [selectedTemplateForForm, setSelectedTemplateForForm] = useState('')
+  const [selectedServiceForForm, setSelectedServiceForForm] = useState('')
+  const [chosenTemplate, setChosenTemplate] = useState('')
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -140,7 +141,8 @@ export default function NailSalonServices() {
     const templateParam = params.get('selectTemplate')
     if (templateParam) {
       const timer = setTimeout(() => {
-        setSelectedTemplateForForm(templateParam)
+        setSelectedServiceForForm('Tư vấn thiết kế website')
+        setChosenTemplate(templateParam)
         const formSection = document.getElementById('nails-contact-form')
         if (formSection) {
           formSection.scrollIntoView({ behavior: 'smooth' })
@@ -158,7 +160,11 @@ export default function NailSalonServices() {
     e.preventDefault()
     
     const whatsappNumber = '34642805848'
-    const message = `Chào Vietsol, tôi muốn nhận tư vấn thiết kế Web & SEO Nails:\n- Họ tên: ${formData.name}\n- Số điện thoại: ${formData.phone}\n- Tên tiệm: ${formData.salonName}\n- Địa chỉ tiệm: ${formData.location || 'Không có'}\n- Mẫu website đã chọn: ${selectedTemplateForForm || 'Tự chọn/Tư vấn thêm'}\n- Lời nhắn: ${formData.message || 'Không có'}`
+    const serviceText = selectedServiceForForm === 'Tư vấn thiết kế website' && chosenTemplate
+      ? `Tư vấn thiết kế website (Mẫu đã chọn: ${chosenTemplate})`
+      : (selectedServiceForForm || 'Chưa chọn (Tư vấn thêm)')
+
+    const message = `Chào Vietsol, tôi muốn nhận tư vấn thiết kế Web & SEO Nails:\n- Họ tên: ${formData.name}\n- Số điện thoại: ${formData.phone}\n- Tên tiệm: ${formData.salonName}\n- Địa chỉ tiệm: ${formData.location || 'Không có'}\n- Dịch vụ muốn tư vấn: ${serviceText}\n- Lời nhắn: ${formData.message || 'Không có'}`
     
     const encodedMessage = encodeURIComponent(message)
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`
@@ -611,15 +617,12 @@ export default function NailSalonServices() {
                   <select
                     id="selectedTemplate"
                     name="selectedTemplate"
-                    value={selectedTemplateForForm}
-                    onChange={(e) => setSelectedTemplateForForm(e.target.value)}
+                    value={selectedServiceForForm}
+                    onChange={(e) => setSelectedServiceForForm(e.target.value)}
                   >
                     <option value="">{t('webSeoPage.form.selectDefault')}</option>
-                    {templatesData.map((tpl) => (
-                      <option key={tpl.id} value={tpl.name}>
-                        {tpl.name} ({tpl.themeName})
-                      </option>
-                    ))}
+                    <option value="Tư vấn thiết kế website">{t('webSeoPage.form.selectServiceWeb')}</option>
+                    <option value="Tư vấn SEO google maps">{t('webSeoPage.form.selectServiceSeo')}</option>
                   </select>
                 </div>
                 <div className="form-group">

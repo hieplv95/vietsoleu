@@ -178,30 +178,115 @@
   margin: 0;
 }
 
-/* 3. Video Section */
-.social-video-section {
+/* 3. Google Maps Ads Section */
+.social-maps-section {
   padding: 6rem 0;
-  background: rgba(224, 122, 155, 0.02);
-}
-
-.video-player-wrapper {
+  background: radial-gradient(circle at center, rgba(224, 122, 155, 0.04) 0%, rgba(212, 175, 55, 0.02) 100%);
   position: relative;
-  width: 100%;
-  max-width: 800px;
-  aspect-ratio: 16/9;
-  margin: 0 auto;
-  border-radius: 24px;
-  overflow: hidden;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
-  border: 1px solid var(--nails-glass-border);
 }
 
-.video-player-wrapper iframe {
+.maps-intro-card {
+  max-width: 900px;
+  margin: 0 auto 3.5rem;
+  text-align: center;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--nails-text);
+  font-weight: 500;
+  background: var(--nails-card-bg);
+  border: 1px solid rgba(224, 122, 155, 0.15);
+  border-radius: 24px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.maps-intro-card p {
+  margin: 0;
+  color: var(--nails-text);
+  font-weight: 600;
+}
+
+.maps-ads-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5rem;
+  margin-top: 3.5rem;
+}
+
+.maps-ads-card {
+  flex: 1 1 320px;
+  max-width: 380px;
+  background: var(--nails-card-bg);
+  border: 1px solid var(--nails-glass-border);
+  border-radius: 24px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.maps-ads-card::before {
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--nails-primary), var(--nails-secondary));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.maps-ads-card:hover::before {
+  opacity: 1;
+}
+
+.maps-ads-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(224, 122, 155, 0.12);
+  border-color: rgba(224, 122, 155, 0.25);
+}
+
+.maps-ads-icon-wrapper {
+  width: 60px;
+  height: 60px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(224, 122, 155, 0.1) 0%, rgba(212, 175, 55, 0.1) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--nails-primary);
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.maps-ads-card:hover .maps-ads-icon-wrapper {
+  transform: scale(1.1) rotate(5deg);
+  background: linear-gradient(135deg, var(--nails-primary) 0%, var(--nails-secondary) 100%);
+  color: white;
+}
+
+.maps-ads-card h3 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--nails-text);
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.maps-ads-card p {
+  font-size: 0.95rem;
+  color: var(--nails-text-muted);
+  line-height: 1.6;
+  margin: 0;
 }
 
 /* 4. Pricing Section */
@@ -523,3 +608,359 @@
     padding: 2rem;
   }
 }
+
+/* 3.1 Google Maps Ads Demo Showroom & Phone Mockup */
+.maps-demo-container {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto 4rem;
+  background: var(--nails-card-bg);
+  border: 1px solid var(--nails-glass-border);
+  border-radius: 30px;
+  padding: 3rem;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+@media (max-width: 991px) {
+  .maps-demo-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2rem;
+    padding: 2rem;
+  }
+}
+
+.maps-demo-text {
+  text-align: left;
+}
+
+@media (max-width: 991px) {
+  .maps-demo-text {
+    text-align: center;
+  }
+}
+
+.maps-demo-text h3 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--nails-text);
+  margin: 1rem 0 1.5rem;
+}
+
+.maps-demo-text p {
+  font-size: 1.05rem;
+  color: var(--nails-text-muted);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.maps-demo-features {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.demo-feat-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.95rem;
+  color: var(--nails-text);
+}
+
+@media (max-width: 991px) {
+  .demo-feat-item {
+    justify-content: center;
+  }
+}
+
+.feat-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.feat-dot.green {
+  background-color: #10b981;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+}
+
+.feat-dot.blue {
+  background-color: #3b82f6;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+
+.maps-demo-mockup-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Phone Mockup Frame */
+.phone-mockup {
+  position: relative;
+  width: 280px;
+  height: 560px;
+  background: #111;
+  border: 12px solid #222;
+  border-radius: 40px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25), 0 0 0 2px rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.phone-mockup:hover {
+  transform: translateY(-5px) scale(1.02);
+}
+
+.phone-speaker {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 6px;
+  background: #333;
+  border-radius: 3px;
+  z-index: 10;
+}
+
+.phone-screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.phone-screen::-webkit-scrollbar {
+  display: none;
+}
+
+.phone-screenshot {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.phone-home-button {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 35px;
+  height: 4px;
+  background: #333;
+  border-radius: 2px;
+  z-index: 10;
+}
+
+/* 3. Instagram Ads Section */
+.social-instagram-section {
+  padding: 6rem 0;
+  background: radial-gradient(circle at center, rgba(220, 39, 67, 0.03) 0%, rgba(188, 24, 136, 0.01) 100%);
+  position: relative;
+}
+
+.instagram-intro-card {
+  max-width: 900px;
+  margin: 0 auto 3.5rem;
+  text-align: center;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--nails-text);
+  font-weight: 500;
+  background: var(--nails-card-bg);
+  border: 1px solid rgba(220, 39, 67, 0.12);
+  border-radius: 24px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.instagram-intro-card p {
+  margin: 0;
+  color: var(--nails-text);
+  font-weight: 600;
+}
+
+.instagram-demo-container {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 3rem;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto 4rem;
+  background: var(--nails-card-bg);
+  border: 1px solid var(--nails-glass-border);
+  border-radius: 30px;
+  padding: 3rem;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+@media (max-width: 991px) {
+  .instagram-demo-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2.5rem;
+    padding: 2rem;
+  }
+}
+
+.instagram-demo-text {
+  text-align: left;
+}
+
+@media (max-width: 991px) {
+  .instagram-demo-text {
+    text-align: center;
+  }
+}
+
+.instagram-demo-text h3 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--nails-text);
+  margin: 1rem 0 1.5rem;
+}
+
+.instagram-demo-text p {
+  font-size: 1.05rem;
+  color: var(--nails-text-muted);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.instagram-demo-image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.instagram-demo-img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.instagram-demo-img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 20px 45px rgba(220, 39, 67, 0.1);
+}
+
+.btn-instagram-accent {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 12px;
+  font-weight: 700;
+  display: inline-block;
+  box-shadow: 0 8px 25px rgba(220, 39, 67, 0.25);
+  transition: all 0.3s ease;
+}
+
+.btn-instagram-accent:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(220, 39, 67, 0.4);
+  color: white;
+}
+
+/* Instagram Ads Reasons Cards */
+.instagram-ads-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5rem;
+  margin-top: 3.5rem;
+}
+
+.instagram-ads-card {
+  flex: 1 1 320px;
+  max-width: 380px;
+  background: var(--nails-card-bg);
+  border: 1px solid var(--nails-glass-border);
+  border-radius: 24px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.instagram-ads-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #f09433, #dc2743, #bc1888);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.instagram-ads-card:hover::before {
+  opacity: 1;
+}
+
+.instagram-ads-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(220, 39, 67, 0.12);
+  border-color: rgba(220, 39, 67, 0.25);
+}
+
+.instagram-ads-icon-wrapper {
+  width: 60px;
+  height: 60px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(220, 39, 67, 0.1) 0%, rgba(240, 148, 51, 0.1) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #dc2743;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.instagram-ads-card:hover .instagram-ads-icon-wrapper {
+  transform: scale(1.1) rotate(5deg);
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  color: white;
+}
+
+.instagram-ads-card h3 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--nails-text);
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.instagram-ads-card p {
+  font-size: 0.95rem;
+  color: var(--nails-text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+

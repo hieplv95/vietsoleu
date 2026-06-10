@@ -6,6 +6,8 @@ import f3Img from '../assets/social_benefit_3.png'
 import f4Img from '../assets/social_benefit_4.png'
 import { useLanguage } from '../context/LanguageContext'
 import './SocialMediaMarketing.css'
+import googleMapsAdsDemoImg from '../assets/google_maps_ads_demo.png'
+import instagramAdsTypesImg from '../assets/instagram_ads_types.png'
 
 export default function SocialMediaMarketing() {
   const { t } = useLanguage()
@@ -136,24 +138,207 @@ export default function SocialMediaMarketing() {
         </div>
       </section>
 
-      {/* 3. Video Section */}
-      <section className="social-video-section">
+      {/* 3. Google Maps Ads Section */}
+      <section className="social-maps-section">
         <div className="container">
           <div className="section-header text-center">
-            <h2 className="section-title">{t('socialPage.video.title')}</h2>
+            <h2 className="section-title">{t('socialPage.mapsAds.title')}</h2>
             <p className="section-subtitle">
-              {t('socialPage.video.subtitle')}
+              {t('socialPage.mapsAds.subtitle')}
             </p>
           </div>
 
-          <div className="video-player-wrapper">
-            <iframe 
-              src="https://www.youtube.com/embed/BoXXhso2MJc?feature=oembed" 
-              title="Video giới thiệu Dịch vụ Social Media"
-              frameBorder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-              allowFullScreen
-            ></iframe>
+          <div className="maps-intro-card">
+            <p>{t('socialPage.mapsAds.intro')}</p>
+          </div>
+
+          {/* Real Demo Showcase Section */}
+          <div className="maps-demo-container">
+            <div className="maps-demo-text">
+              <span className="badge badge-primary">{t('socialPage.mapsAdsDemo.badge')}</span>
+              <h3>{t('socialPage.mapsAdsDemo.title')}</h3>
+              <p>{t('socialPage.mapsAdsDemo.desc')}</p>
+              <div className="maps-demo-features">
+                <div className="demo-feat-item">
+                  <span className="feat-dot green"></span>
+                  <span>{t('socialPage.mapsAdsDemo.feat1')}</span>
+                </div>
+                <div className="demo-feat-item">
+                  <span className="feat-dot blue"></span>
+                  <span>{t('socialPage.mapsAdsDemo.feat2')}</span>
+                </div>
+              </div>
+            </div>
+            <div className="maps-demo-mockup-wrapper">
+              <div className="phone-mockup">
+                <div className="phone-speaker"></div>
+                <div className="phone-screen">
+                  <img src={googleMapsAdsDemoImg} alt="Google Maps Ads Demo" className="phone-screenshot" />
+                </div>
+                <div className="phone-home-button"></div>
+              </div>
+            </div>
+          </div>
+
+          <div className="maps-ads-flex">
+            {/* Card 1 */}
+            <div className="maps-ads-card">
+              <div className="maps-ads-icon-wrapper">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  <line x1="11" y1="8" x2="11" y2="14"></line>
+                  <line x1="8" y1="11" x2="14" y2="11"></line>
+                </svg>
+              </div>
+              <h3>{t('socialPage.mapsAds.reason1Title')}</h3>
+              <p>{t('socialPage.mapsAds.reason1Desc')}</p>
+            </div>
+
+            {/* Card 2 */}
+            <div className="maps-ads-card">
+              <div className="maps-ads-icon-wrapper">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+                </svg>
+              </div>
+              <h3>{t('socialPage.mapsAds.reason2Title')}</h3>
+              <p>{t('socialPage.mapsAds.reason2Desc')}</p>
+            </div>
+
+            {/* Card 3 */}
+            <div className="maps-ads-card">
+              <div className="maps-ads-icon-wrapper">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+              </div>
+              <h3>{t('socialPage.mapsAds.reason3Title')}</h3>
+              <p>{t('socialPage.mapsAds.reason3Desc')}</p>
+            </div>
+
+            {/* Card 4 */}
+            <div className="maps-ads-card">
+              <div className="maps-ads-icon-wrapper">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </div>
+              <h3>{t('socialPage.mapsAds.reason4Title')}</h3>
+              <p>{t('socialPage.mapsAds.reason4Desc')}</p>
+            </div>
+
+            {/* Card 5 */}
+            <div className="maps-ads-card">
+              <div className="maps-ads-icon-wrapper">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="12" y1="1" x2="12" y2="23"></line>
+                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                </svg>
+              </div>
+              <h3>{t('socialPage.mapsAds.reason5Title')}</h3>
+              <p>{t('socialPage.mapsAds.reason5Desc')}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. Instagram Ads Section */}
+      <section className="social-instagram-section">
+        <div className="container">
+          <div className="section-header text-center">
+            <h2 className="section-title">{t('socialPage.instagramAds.title')}</h2>
+            <p className="section-subtitle">
+              {t('socialPage.instagramAds.subtitle')}
+            </p>
+          </div>
+
+          <div className="instagram-intro-card">
+            <p>{t('socialPage.instagramAds.intro')}</p>
+          </div>
+
+          {/* Instagram Ads Types Showcase */}
+          <div className="instagram-demo-container">
+            <div className="instagram-demo-text">
+              <span className="badge badge-primary">{t('socialPage.instagramAds.demoBadge')}</span>
+              <h3>{t('socialPage.instagramAds.demoTitle')}</h3>
+              <p>{t('socialPage.instagramAds.demoDesc')}</p>
+              <div className="instagram-demo-actions">
+                <a href="#social-contact-form" className="btn btn-instagram-accent">
+                  <span>Quảng cáo ngay</span>
+                </a>
+              </div>
+            </div>
+            <div className="instagram-demo-image-wrapper">
+              <img src={instagramAdsTypesImg} alt="Các loại quảng cáo Instagram" className="instagram-demo-img" />
+            </div>
+          </div>
+
+          <div className="instagram-ads-flex">
+            {/* Card 1 */}
+            <div className="instagram-ads-card">
+              <div className="instagram-ads-icon-wrapper">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </div>
+              <h3>{t('socialPage.instagramAds.reason1Title')}</h3>
+              <p>{t('socialPage.instagramAds.reason1Desc')}</p>
+            </div>
+
+            {/* Card 2 */}
+            <div className="instagram-ads-card">
+              <div className="instagram-ads-icon-wrapper">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <h3>{t('socialPage.instagramAds.reason2Title')}</h3>
+              <p>{t('socialPage.instagramAds.reason2Desc')}</p>
+            </div>
+
+            {/* Card 3 */}
+            <div className="instagram-ads-card">
+              <div className="instagram-ads-icon-wrapper">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                  <path d="M2 17l10 5 10-5"></path>
+                  <path d="M2 12l10 5 10-5"></path>
+                </svg>
+              </div>
+              <h3>{t('socialPage.instagramAds.reason3Title')}</h3>
+              <p>{t('socialPage.instagramAds.reason3Desc')}</p>
+            </div>
+
+            {/* Card 4 */}
+            <div className="instagram-ads-card">
+              <div className="instagram-ads-icon-wrapper">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+              </div>
+              <h3>{t('socialPage.instagramAds.reason4Title')}</h3>
+              <p>{t('socialPage.instagramAds.reason4Desc')}</p>
+            </div>
+
+            {/* Card 5 */}
+            <div className="instagram-ads-card">
+              <div className="instagram-ads-icon-wrapper">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M17 2.1l4 4-4 4"></path>
+                  <path d="M3 12.2v-2a4 4 0 0 1 4-4h14M7 21.9l-4-4 4-4"></path>
+                  <path d="M21 11.8v2a4 4 0 0 1-4 4H3"></path>
+                </svg>
+              </div>
+              <h3>{t('socialPage.instagramAds.reason5Title')}</h3>
+              <p>{t('socialPage.instagramAds.reason5Desc')}</p>
+            </div>
           </div>
         </div>
       </section>
