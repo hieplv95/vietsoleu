@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom'
-import logoImg from '../assets/logo-yocheckin.png'
+import logoImg from '../assets/logo-vietsol.png'
 import { useLanguage } from '../context/LanguageContext'
 import './Footer.css'
 
@@ -47,7 +47,7 @@ export default function Footer() {
         <div className="footer__brand">
           <div className="footer__logo">
             <div className="footer__logo-icon-container">
-              <img src={logoImg} alt="YoCheckIn Logo" className="footer__logo-icon-cropped" />
+              <img src={logoImg} alt="VietSol Logo" className="footer__logo-icon-cropped" />
             </div>
           </div>
           <p className="footer__tagline">

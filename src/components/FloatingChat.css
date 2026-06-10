@@ -1,0 +1,137 @@
+.floating-chat {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: #ffffff;
+  text-decoration: none;
+  padding: 14px 24px;
+  border-radius: 999px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.35);
+  z-index: 9999;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  user-select: none;
+}
+
+.floating-chat:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 12px 35px rgba(37, 211, 102, 0.5);
+  color: #ffffff;
+}
+
+.floating-chat:active {
+  transform: translateY(-2px) scale(0.98);
+}
+
+.floating-chat__icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.floating-chat__icon {
+  display: block;
+}
+
+.floating-chat__text {
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+/* Pulsing background ring */
+.floating-chat__pulse {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 999px;
+  border: 2px solid #25D366;
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+  animation: floatingChatPulse 2.5s cubic-bezier(0.25, 0, 0, 1) infinite;
+}
+
+@keyframes floatingChatPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  60% {
+    transform: scale(1.25, 1.4);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.25, 1.4);
+    opacity: 0;
+  }
+}
+
+/* Slide in animation when component mounts */
+@keyframes floatingChatSlideIn {
+  from {
+    transform: translateY(40px) scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.floating-chat {
+  animation: floatingChatSlideIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  animation-delay: 0.8s;
+}
+
+/* Responsive viewports */
+@media (max-width: 768px) {
+  .floating-chat {
+    bottom: 24px;
+    right: 24px;
+    padding: 12px 20px;
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .floating-chat {
+    bottom: 20px;
+    right: 20px;
+    padding: 14px;
+    border-radius: 50%;
+    gap: 0;
+  }
+  .floating-chat__text {
+    display: none;
+  }
+  .floating-chat__pulse {
+    border-radius: 50%;
+    animation: floatingChatPulseCircle 2.5s cubic-bezier(0.25, 0, 0, 1) infinite;
+  }
+}
+
+@keyframes floatingChatPulseCircle {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  60% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}

@@ -10,6 +10,7 @@ import SocialMediaMarketing from './components/SocialMediaMarketing'
 import BlogPost from './components/BlogPost'
 import BlogPage from './components/BlogPage'
 import Footer from './components/Footer'
+import FloatingChat from './components/FloatingChat'
 
 function App() {
   const { pathname, hash } = useLocation()
@@ -47,6 +48,7 @@ function App() {
         </Routes>
       </main>
       {!isDemoPage && <Footer />}
+      {!isDemoPage && <FloatingChat />}
     </div>
   )
 }
