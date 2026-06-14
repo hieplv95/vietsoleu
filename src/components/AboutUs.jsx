@@ -10,6 +10,8 @@ export default function AboutUs() {
     window.scrollTo({ top: 0, behavior: 'smooth' })
     document.title = language === 'vi' 
       ? 'Về chúng tôi - VietSol Digital Marketing' 
+      : language === 'es'
+      ? 'Sobre Nosotros - VietSol Digital Marketing'
       : 'About Us - VietSol Digital Marketing'
   }, [language])
 
@@ -74,7 +76,7 @@ export default function AboutUs() {
           <div className="about-mv-card about-mv-card--mission">
             <div className="about-mv-icon-bg">🎯</div>
             <span className="about-mv-badge">
-              {language === 'vi' ? 'Sứ mệnh' : 'Mission'}
+              {language === 'vi' ? 'Sứ mệnh' : language === 'es' ? 'Misión' : 'Mission'}
             </span>
             <h3>{t('aboutUsPage.missionVision.missionTitle')}</h3>
             <p>{t('aboutUsPage.missionVision.missionDesc')}</p>
@@ -83,7 +85,7 @@ export default function AboutUs() {
           <div className="about-mv-card about-mv-card--vision">
             <div className="about-mv-icon-bg">🔭</div>
             <span className="about-mv-badge">
-              {language === 'vi' ? 'Tầm nhìn' : 'Vision'}
+              {language === 'vi' ? 'Tầm nhìn' : language === 'es' ? 'Visión' : 'Vision'}
             </span>
             <h3>{t('aboutUsPage.missionVision.visionTitle')}</h3>
             <p>{t('aboutUsPage.missionVision.visionDesc')}</p>

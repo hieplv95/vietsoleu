@@ -143,9 +143,20 @@ export default function Navbar() {
           {/* Language Switcher Toggle */}
           <button
             className="navbar__lang-toggle"
-            onClick={() => setLanguage(language === 'vi' ? 'en' : 'vi')}
-            aria-label={language === 'vi' ? 'Switch to English' : 'Chuyển sang Tiếng Việt'}
-            title={language === 'vi' ? 'English' : 'Tiếng Việt'}
+            onClick={() => {
+              const nextLang = { vi: 'en', en: 'es', es: 'vi' }
+              setLanguage(nextLang[language] || 'vi')
+            }}
+            aria-label={
+              language === 'vi' ? 'Switch to English' : 
+              language === 'en' ? 'Cambiar a Español' : 
+              'Chuyển sang Tiếng Việt'
+            }
+            title={
+              language === 'vi' ? 'English' : 
+              language === 'en' ? 'Español' : 
+              'Tiếng Việt'
+            }
           >
             {/* Globe Icon */}
             <svg className="navbar__lang-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -153,8 +164,8 @@ export default function Navbar() {
               <line x1="2" y1="12" x2="22" y2="12"/>
               <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
             </svg>
-            <span className="navbar__lang-text-desktop">{language === 'vi' ? 'EN' : 'VI'}</span>
-            <span className="navbar__lang-text-mobile">{language === 'vi' ? 'VN' : 'EN'}</span>
+            <span className="navbar__lang-text-desktop">{language.toUpperCase()}</span>
+            <span className="navbar__lang-text-mobile">{language === 'vi' ? 'VN' : language.toUpperCase()}</span>
           </button>
 
           <a href="https://yocheckin.com/auth/register" className="btn btn-primary btn-sm" target="_blank" rel="noreferrer">
