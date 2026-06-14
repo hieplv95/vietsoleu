@@ -401,6 +401,13 @@ export const vi = {
       title: 'Làm thế nào để khách hàng quay lại tiệm nails nhiều hơn',
       excerpt: 'Phân tích hành vi khách hàng và các chiến lược giữ chân hiệu quả để tăng tỷ lệ khách hàng trung thành cho tiệm nails của bạn.',
       readTime: '6 phút đọc',
+    },
+    post4: {
+      category: 'Digital Marketing',
+      date: '14 tháng 6, 2026',
+      title: 'Tại sao Google Maps là "vũ khí tối thượng" mà các tiệm nails không thể bỏ qua?',
+      excerpt: 'Bạn đầu tư hàng ngàn Euro vào tiệm sang chảnh nhưng vẫn vắng khách? Khám phá tại sao Google Maps chính là kênh marketing sống còn hiện nay.',
+      readTime: '6 phút đọc',
     }
   },
   contactPage: {

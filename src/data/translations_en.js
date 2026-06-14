@@ -400,6 +400,13 @@ export const en = {
       title: 'How to Get Customers to Return to Your Nail Salon More Often',
       excerpt: 'Analyze customer behavior and explore effective retention strategies to boost loyalty for your nail salon.',
       readTime: '6 min read',
+    },
+    post4: {
+      category: 'Digital Marketing',
+      date: 'June 14, 2026',
+      title: 'Why Google Maps is the "Ultimate Weapon" Nail Salons Cannot Ignore',
+      excerpt: 'Invested thousands of Euros in a luxury salon but still empty? Discover why Google Maps is the vital marketing channel today.',
+      readTime: '6 min read',
     }
   },
   contactPage: {

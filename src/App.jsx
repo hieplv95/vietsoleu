@@ -47,6 +47,7 @@ function App() {
           <Route path="/social-media-marketing" element={<SocialMediaMarketing />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:postId" element={<BlogPost />} />
+          <Route path="/tiem-nails-google-maps" element={<BlogPost postIdOverride="tiem-nails-google-maps" />} />
           <Route path="/demo/:templateId" element={<NailTemplateViewer />} />
           <Route path="/lien-he" element={<Contact />} />
           <Route path="/ve-chung-toi" element={<AboutUs />} />

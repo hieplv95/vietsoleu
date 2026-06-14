@@ -61,6 +61,43 @@ export const blogPosts = {
         }
       ],
       outro: 'Mùa lễ hội Noel là thời cơ tốt nhất trong năm để đột phá doanh thu cho tiệm nails của bạn. Bằng việc kết hợp các mẫu thiết kế móng bắt mắt, chăm sóc khách hàng tận tâm và sử dụng các công cụ marketing thông minh như SMS tự động hay quảng cáo mạng xã hội, tiệm của bạn chắc chắn sẽ gặt hái thành công lớn. Nếu tiệm của bạn cần hỗ trợ thiết kế website đặt lịch chuyên nghiệp hay chạy quảng cáo thu hút khách hàng bản địa tại Châu Âu, hãy liên hệ ngay với đội ngũ Vietsol Digital Marketing để nhận tư vấn miễn phí!'
+    },
+    'tiem-nails-google-maps': {
+      title: 'Tại sao Google Maps là "vũ khí tối thượng" mà các tiệm nails không thể bỏ qua?',
+      category: 'Digital Marketing',
+      date: '14 tháng 6, 2026',
+      readTime: '6 phút đọc',
+      emoji: '📍',
+      color: '#3b82f6',
+      intro: 'Bạn đầu tư hàng ngàn Euro vào không gian tiệm sang chảnh, thợ tay nghề cao, sơn xịn màu hot... nhưng tiệm vẫn vắng khách? Khách qua đường thì ít, mà chi phí quảng cáo Facebook, Instagram thì ngày càng đắt đỏ nhưng không ra khách đều?\n\nCó một sự thật là: Hơn 80% khách hàng khi muốn làm một bộ móng mới, việc đầu tiên họ làm không phải là lướt mạng xã hội, mà là mở điện thoại lên và gõ: "Nail salon near me" (Tiệm nails gần đây).\n\nNếu tiệm của bạn không xuất hiện trên Google Maps ngay lúc đó, bạn đã chính thức dâng khách hàng cho đối thủ! Dưới đây là những lý do sống còn tại sao Google Maps chính là kênh marketing 0 đồng hiệu quả nhất hiện nay cho các tiệm nails.',
+      tips: [
+        {
+          num: 1,
+          title: 'Tiếp cận khách hàng ngay "điểm chạm" có nhu cầu cao nhất',
+          desc: 'Khác với người lướt Facebook/TikTok (họ xem giải trí là chính), người tìm kiếm trên Google Maps là những người đang có nhu cầu làm móng ngay lập tức hoặc trong tuần. Họ muốn tìm một tiệm gần nhà, gần công sở để tiện đi lại. Khi tiệm của bạn hiển thị ngay top đầu, tỷ lệ họ nhấn vào gọi điện hoặc đặt lịch hẹn là cực kỳ cao. Đây là lượng khách hàng có tỷ lệ chuyển đổi thành tiền mặt nhanh nhất.'
+        },
+        {
+          num: 2,
+          title: 'Xây dựng uy tín tuyệt đối bằng "Review" (Đánh giá)',
+          desc: 'Khách hàng ngày nay rất thông minh và... sợ bị hỏng móng. Trước khi giao bộ móng của mình cho một tiệm lạ, họ sẽ đọc đánh giá. Những ngôi sao vàng biết nói: Một tiệm nails có điểm số 4.8⭐ cùng hàng trăm đánh giá khen ngợi về độ bền của móng acrylic, sự tỉ mỉ của thợ, hay không gian sạch sẽ... sẽ tạo nên một lòng tin tuyệt đối. Điểm review trên Google Maps có giá trị hơn vạn lời quảng cáo từ chính bạn.'
+        },
+        {
+          num: 3,
+          title: 'Tối ưu hóa trải nghiệm đặt lịch (Booking) và tăng chuyển đổi',
+          desc: 'Google Maps không chỉ hiển thị địa chỉ. Nó là một "văn phòng thu nhỏ" của tiệm trên internet: Thông tin minh bạch (khách biết chính xác giờ mở cửa, đóng cửa, số điện thoại để gọi ngay lập tức) và tích hợp link đặt lịch (bạn hoàn toàn có thể gắn link hệ thống đặt lịch tự động trực tiếp lên Maps, giúp khách đặt lịch luôn chỉ trong 30 giây không cần nhắn tin qua lại).'
+        },
+        {
+          num: 4,
+          title: '"Showroom" trưng bày tác phẩm đỉnh cao của tiệm',
+          desc: 'Thay vì bắt khách phải lội ngược dòng thời gian trên trang cá nhân để tìm mẫu, Google Maps có mục "Ảnh" được phân loại rõ ràng do cả chủ tiệm và khách hàng đăng lên. Những bộ móng Refill Acrylic chuẩn chỉnh, những mẫu nail art lấp lánh có gắn định vị của tiệm sẽ là bằng chứng sống động nhất thuyết phục khách hàng bấm nút "Đường đi".'
+        },
+        {
+          num: 5,
+          title: 'Hoàn toàn MIỄN PHÍ nhưng mang lại giá trị BỀN VỮNG',
+          desc: 'Bạn chạy quảng cáo Facebook, tắt tiền là hết khách. Nhưng với Google Maps (Google Business Profile), bạn chỉ cần thiết lập chuẩn chỉnh một lần và chăm sóc nó đều đặn, tiệm của bạn sẽ nằm trên bản đồ mãi mãi. Đây là nguồn khách hàng vãng lai và khách bản địa tăng trưởng đều đặn mỗi tháng mà bạn không mất một đồng chi phí quảng cáo nào.'
+        }
+      ],
+      outro: '💡 LỜI KHUYÊN CHO CHỦ TIỆM NAILS:\nĐừng chỉ tạo Maps xong để đấy! Hãy tích cực nhắc nhở khách hàng để lại review sau khi làm móng xong (có thể tặng họ một voucher nhỏ cho lần sau). Maps càng nhiều review chất lượng, Google càng ưu tiên đẩy tiệm của bạn lên trang đầu khi khách khứa tìm kiếm quanh khu vực!'
     }
   },
   en: {
@@ -125,6 +162,43 @@ export const blogPosts = {
         }
       ],
       outro: 'The Christmas season is the best time of the year to grow your nail salon business. By combining gorgeous nail art portfolios, heartfelt customer care, and smart marketing tools like automated SMS or local social ads, your salon is set for massive success. If your salon needs support in designing a professional booking website or running advertising campaigns to attract local clients in Europe, contact the Vietsol Digital Marketing team today for a free consultation!'
+    },
+    'tiem-nails-google-maps': {
+      title: 'Why Google Maps is the "Ultimate Weapon" Nail Salons Cannot Ignore',
+      category: 'Digital Marketing',
+      date: 'June 14, 2026',
+      readTime: '6 min read',
+      emoji: '📍',
+      color: '#3b82f6',
+      intro: 'You invest thousands of Euros in a luxurious salon, highly skilled staff, premium nail polishes... yet your salon is still empty? Street traffic is low, and Facebook or Instagram ads are getting more expensive without bringing in regular clients?\n\nThere is a reality: More than 80% of clients wanting a new manicure don\'t scroll social media first. Instead, they open their phones and search: "Nail salon near me".\n\nIf your salon doesn\'t show up on Google Maps, you are giving clients away to your competitors! Here are the vital reasons why Google Maps is the most effective organic marketing channel for nail salons today.',
+      tips: [
+        {
+          num: 1,
+          title: 'Reach clients at their highest intent point',
+          desc: 'Unlike social media users browsing for entertainment, those searching on Google Maps need a manicure immediately or very soon. They want a salon close to home or work. When your salon appears at the top, the click-to-call or booking rate is extremely high. This is the fastest converting source of clients.'
+        },
+        {
+          num: 2,
+          title: 'Build absolute trust with Google Reviews',
+          desc: 'Modern clients are smart—and afraid of bad manicures. Before trying a new salon, they read reviews. A rating of 4.8⭐ with hundreds of reviews praising acrylic durability, staff care, or clean salon space builds absolute trust. Google Maps reviews are worth more than any self-promotion.'
+        },
+        {
+          num: 3,
+          title: 'Optimize booking experience and boost conversions',
+          desc: 'Google Maps is your digital office: transparent info (opening hours, phone) and integration of direct booking engine links. Clients find you, view photos, and book in 30 seconds without back-and-forth messaging.'
+        },
+        {
+          num: 4,
+          title: 'An online showroom for your best nail art',
+          desc: 'Instead of forcing clients to scroll through old posts, Google Maps groups photos uploaded by both owners and clients. Standard acrylic refills and sparkling nail designs geotagged at your location are powerful proof to convince clients to navigate to your salon.'
+        },
+        {
+          num: 5,
+          title: '100% Free with sustainable, long-term value',
+          desc: 'Social media ads stop when you stop paying. But an optimized Google Business Profile is on the map forever. It brings a steady stream of local and walk-in clients without spending a dime.'
+        }
+      ],
+      outro: '💡 TIP FOR NAIL SALON OWNERS:\nDon\'t just set up your map and forget it! Encourage clients to leave a review after their manicure (maybe offer a small discount for their next visit). More reviews mean higher Google rankings in your local area!'
     }
   }
 }

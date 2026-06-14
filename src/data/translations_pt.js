@@ -400,6 +400,13 @@ export const pt = {
       title: 'Como Fazer com que os Clientes Regressem ao seu Salão de Unhas mais Vezes',
       excerpt: 'Analise o comportamento dos clientes e implemente técnicas eficazes de retenção para fidelizá-los.',
       readTime: '6 min de leitura',
+    },
+    post4: {
+      category: 'Marketing Digital',
+      date: '14 de Junho, 2026',
+      title: 'Por que o Google Maps é a "Arma Definitiva" que os Salões de Unhas não Podem Ignorar',
+      excerpt: 'Investiu milhares de Euros num salão luxuoso, mas continua vazio? Descubra por que o Google Maps é o canal de marketing indispensável hoje.',
+      readTime: '6 min de leitura',
     }
   },
   contactPage: {

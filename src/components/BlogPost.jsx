@@ -5,8 +5,9 @@ import { blogPosts } from '../data/blogPosts'
 import './BlogPost.css'
 import blogNoelCover from '../assets/blog_noel_cover.png'
 
-export default function BlogPost() {
-  const { postId } = useParams()
+export default function BlogPost({ postIdOverride }) {
+  const { postId: paramPostId } = useParams()
+  const postId = postIdOverride || paramPostId
   const { language } = useLanguage()
   const navigate = useNavigate()
 

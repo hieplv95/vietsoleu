@@ -400,6 +400,13 @@ export const cs = {
       title: 'Jak přimět zákazníky navštěvovat vaše nehtové studio častěji',
       excerpt: 'Analyzujte chování zákazníků a implementujte efektivní techniky pro jejich udržení.',
       readTime: '6 min. čtení',
+    },
+    post4: {
+      category: 'Digitální marketing',
+      date: '14. června 2026',
+      title: 'Proč je Google Maps „ultimátní zbraní“, kterou nehtová studia nemohou ignorovat',
+      excerpt: 'Investovali jste tisíce eur do luxusního salonu, ale stále máte prázdno? Zjistěte, proč je Google Maps klíčovým marketingovým kanálem dneška.',
+      readTime: '6 min. čtení',
     }
   },
   contactPage: {

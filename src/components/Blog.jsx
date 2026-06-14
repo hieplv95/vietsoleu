@@ -8,6 +8,17 @@ export default function Blog() {
 
   const posts = [
     {
+      id: 'tiem-nails-google-maps',
+      path: '/tiem-nails-google-maps',
+      category: t('blogSection.post4.category'),
+      date: t('blogSection.post4.date'),
+      title: t('blogSection.post4.title'),
+      excerpt: t('blogSection.post4.excerpt'),
+      readTime: t('blogSection.post4.readTime'),
+      emoji: '📍',
+      color: '#3b82f6',
+    },
+    {
       id: '10-y-tuong-giup-tiem-nails-hut-khach-vao-dip-noel',
       category: t('blogSection.post1.category'),
       date: t('blogSection.post1.date'),
@@ -27,16 +38,6 @@ export default function Blog() {
       readTime: t('blogSection.post2.readTime'),
       emoji: '⭐',
       color: '#f5a623',
-    },
-    {
-      id: 'lam-the-nao-de-khach-hang-quay-lai',
-      category: t('blogSection.post3.category'),
-      date: t('blogSection.post3.date'),
-      title: t('blogSection.post3.title'),
-      excerpt: t('blogSection.post3.excerpt'),
-      readTime: t('blogSection.post3.readTime'),
-      emoji: '💅',
-      color: '#6c47ff',
     },
   ]
 
@@ -76,12 +77,12 @@ export default function Blog() {
                   <span>{post.readTime}</span>
                 </div>
                 <h3 className="blog__card-title">
-                  <Link to={`/blog/${post.id}`} style={{ color: 'inherit', textDecoration: 'none' }}>
+                  <Link to={post.path || `/blog/${post.id}`} style={{ color: 'inherit', textDecoration: 'none' }}>
                     {post.title}
                   </Link>
                 </h3>
                 <p className="blog__card-excerpt">{post.excerpt}</p>
-                <Link to={`/blog/${post.id}`} className="blog__card-link" style={{ color: post.color }}>
+                <Link to={post.path || `/blog/${post.id}`} className="blog__card-link" style={{ color: post.color }}>
                   {t('blogSection.linkReadMore')}
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
                     <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>

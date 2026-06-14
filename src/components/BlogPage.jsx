@@ -22,6 +22,18 @@ export default function BlogPage() {
 
   const posts = [
     {
+      id: 'tiem-nails-google-maps',
+      path: '/tiem-nails-google-maps',
+      categoryTag: 'marketing',
+      category: t('blogSection.post4.category'),
+      date: t('blogSection.post4.date'),
+      title: t('blogSection.post4.title'),
+      excerpt: t('blogSection.post4.excerpt'),
+      readTime: t('blogSection.post4.readTime'),
+      emoji: '📍',
+      color: '#3b82f6',
+    },
+    {
       id: '10-y-tuong-giup-tiem-nails-hut-khach-vao-dip-noel',
       categoryTag: 'tips',
       category: t('blogSection.post1.category'),
@@ -116,12 +128,12 @@ export default function BlogPage() {
                   <span>{post.readTime}</span>
                 </div>
                 <h3 className="blog-dir-card__title">
-                  <Link to={`/blog/${post.id}`} style={{ color: 'inherit', textDecoration: 'none' }}>
+                  <Link to={post.path || `/blog/${post.id}`} style={{ color: 'inherit', textDecoration: 'none' }}>
                     {post.title}
                   </Link>
                 </h3>
                 <p className="blog-dir-card__excerpt">{post.excerpt}</p>
-                <Link to={`/blog/${post.id}`} className="blog-dir-card__link" style={{ color: post.color }}>
+                <Link to={post.path || `/blog/${post.id}`} className="blog-dir-card__link" style={{ color: post.color }}>
                   {labelReadMore}
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
                     <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>

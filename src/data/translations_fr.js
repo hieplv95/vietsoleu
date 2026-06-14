@@ -400,6 +400,13 @@ export const fr = {
       title: 'Comment Faire Revenir les Clients dans votre Salon Plus Souvent',
       excerpt: 'Analysez le comportement des clients et mettez en place des techniques de rétention efficaces pour les fidéliser.',
       readTime: '6 min de lecture',
+    },
+    post4: {
+      category: 'Digital Marketing',
+      date: '14 Juin 2026',
+      title: 'Pourquoi Google Maps est l\'"Arme Ultime" que les Salons de Manucure ne Peuvent pas Ignorer',
+      excerpt: 'Vous avez investi des milliers d\'euros dans un salon de luxe mais il reste vide ? Découvrez pourquoi Google Maps est le canal marketing indispensable aujourd\'hui.',
+      readTime: '6 min de lecture',
     }
   },
   contactPage: {

@@ -400,6 +400,13 @@ export const de = {
       title: 'Wie Sie Kunden dazu bringen, Ihr Nagelstudio häufiger zu besuchen',
       excerpt: 'Analysieren Sie das Kundenverhalten und implementieren Sie effektive Bindungstechniken, um sie zu treuen Kunden zu machen.',
       readTime: '6 Min. Lesezeit',
+    },
+    post4: {
+      category: 'Digitales Marketing',
+      date: '14. Juni 2026',
+      title: 'Warum Google Maps die "ultimative Waffe" ist, die Nagelstudios nicht ignorieren dürfen',
+      excerpt: 'Sie haben Tausende Euro in einen Luxussalon investiert, sind aber immer noch leer? Entdecken Sie, warum Google Maps heute der entscheidende Marketingkanal ist.',
+      readTime: '6 Min. Lesezeit',
     }
   },
   contactPage: {
