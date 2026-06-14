@@ -113,13 +113,11 @@ export default function BlogPost({ postIdOverride }) {
           </div>
           
           {/* Main Visual container */}
-          <div className="blog-post-header__banner" style={{ background: `linear-gradient(135deg, ${post.color}15, ${post.color}25)` }}>
-            {postImage ? (
+          {postImage && (
+            <div className="blog-post-header__banner" style={{ background: `linear-gradient(135deg, ${post.color}15, ${post.color}25)` }}>
               <img src={postImage} alt={post.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-            ) : (
-              <span className="blog-post-header__emoji">{post.emoji}</span>
-            )}
-          </div>
+            </div>
+          )}
         </header>
 
         {/* Content body with sidebar */}
