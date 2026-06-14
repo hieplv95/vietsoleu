@@ -11,7 +11,7 @@ export const vi = {
   },
   footer: {
     tagline: 'VIETSOL — Vietnam Digital Marketing Solutions in Europe',
-    subtagline: 'Giải pháp marketing số cho người Việt tại Châu Âu',
+    subtagline: 'Với đội ngũ nhiều năm làm Digital Marketing trên Internet chúng tôi mong muốn mang tới các giải pháp tiếp thị số phù hợp và hiệu quả cho các tiệm nails,Spa, Tiệm tóc... của người việt tại Châu Âu',
     newsletter: 'Nhận tin tức mới nhất',
     emailPlaceholder: 'Email của bạn',
     subscribe: 'Đăng ký',
