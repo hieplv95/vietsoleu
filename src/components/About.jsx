@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useLanguage } from '../context/LanguageContext'
 import './About.css'
 
@@ -47,12 +48,12 @@ export default function About() {
             ))}
           </div>
 
-          <a href="#contact" className="btn btn-primary">
+          <Link to="/lien-he" className="btn btn-primary">
             <span>{t('aboutSection.btnAllIntegrations')}</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
               <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
             </svg>
-          </a>
+          </Link>
         </div>
 
         {/* Right: Integration visual */}

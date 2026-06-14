@@ -20,9 +20,9 @@ export default function Navbar() {
         { label: t('navbar.socialAds'), href: '/social-media-marketing' },
       ]
     },
-    { label: t('navbar.solutions'), href: '#about' },
+    { label: t('navbar.solutions'), href: '/ve-chung-toi' },
     { label: t('navbar.blog'), href: '/blog' },
-    { label: t('navbar.contact'), href: '#contact' },
+    { label: t('navbar.contact'), href: '/lien-he' },
   ]
 
   useEffect(() => {

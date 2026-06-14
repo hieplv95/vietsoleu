@@ -11,6 +11,9 @@ import BlogPost from './components/BlogPost'
 import BlogPage from './components/BlogPage'
 import Footer from './components/Footer'
 import FloatingChat from './components/FloatingChat'
+import Contact from './components/Contact'
+import AboutUs from './components/AboutUs'
+
 
 function App() {
   const { pathname, hash } = useLocation()
@@ -45,6 +48,8 @@ function App() {
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:postId" element={<BlogPost />} />
           <Route path="/demo/:templateId" element={<NailTemplateViewer />} />
+          <Route path="/lien-he" element={<Contact />} />
+          <Route path="/ve-chung-toi" element={<AboutUs />} />
         </Routes>
       </main>
       {!isDemoPage && <Footer />}

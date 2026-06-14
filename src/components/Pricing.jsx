@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import './Pricing.css'
 
 const plans = [
@@ -116,8 +117,8 @@ export default function Pricing() {
                   </li>
                 ))}
               </ul>
-              <a
-                href="#contact"
+              <Link
+                to="/lien-he"
                 className="btn pricing__cta"
                 style={plan.popular ? {
                   background: `linear-gradient(135deg, ${plan.color}, ${plan.color}cc)`,
@@ -126,7 +127,7 @@ export default function Pricing() {
                 } : {}}
               >
                 {plan.popular ? <span>{plan.cta}</span> : plan.cta}
-              </a>
+              </Link>
             </div>
           ))}
         </div>

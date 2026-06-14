@@ -14,17 +14,11 @@ export default function Footer() {
       { label: t('footer.link_sms'), href: '#features' },
       { label: t('footer.link_review'), href: '#features' },
     ],
-    [t('footer.col_resources')]: [
-      { label: t('footer.link_support'), href: '#' },
-      { label: t('footer.link_guide'), href: '#' },
-      { label: t('footer.link_community'), href: '#' },
-      { label: t('footer.link_blog'), href: '/blog' },
-    ],
     [t('footer.col_company')]: [
-      { label: t('footer.link_about'), href: '#about' },
-      { label: t('footer.link_jobs'), href: '#' },
-      { label: t('footer.link_partners'), href: '#' },
-      { label: t('footer.link_contact'), href: '#contact' },
+      { label: t('footer.link_guide'), href: '#' },
+      { label: t('footer.link_blog'), href: '/blog' },
+      { label: t('footer.link_about'), href: '/ve-chung-toi' },
+      { label: t('footer.link_contact'), href: '/lien-he' },
     ],
   }
 

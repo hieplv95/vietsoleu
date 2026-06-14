@@ -344,7 +344,7 @@ export default function NailTemplateViewer() {
               </div>
               <div className="live-demo-nav__links">
                 <a href="#services">Dịch vụ & Bảng giá</a>
-                <a href="#about">Về chúng tôi</a>
+                <Link to="/ve-chung-toi">Về chúng tôi</Link>
                 <a href="#gallery">Bộ sưu tập</a>
               </div>
               <button onClick={() => setBookingOpen(true)} className="live-demo-nav__btn">
