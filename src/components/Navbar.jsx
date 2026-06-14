@@ -1,14 +1,26 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import logoImg from '../assets/logo-vietsol.png'
 import { useLanguage } from '../context/LanguageContext'
 import './Navbar.css'
+
+const languages = [
+  { code: 'vi', label: 'Tiếng Việt', flag: 'VI' },
+  { code: 'en', label: 'English', flag: 'EN' },
+  { code: 'es', label: 'Español', flag: 'ES' },
+  { code: 'fr', label: 'Français', flag: 'FR' },
+  { code: 'de', label: 'Deutsch', flag: 'DE' },
+  { code: 'cs', label: 'Čeština', flag: 'CS' },
+  { code: 'pt', label: 'Português', flag: 'PT' }
+]
 
 export default function Navbar() {
   const { language, setLanguage, t } = useLanguage()
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState(null)
+  const [langDropdownOpen, setLangDropdownOpen] = useState(false)
+  const langDropdownRef = useRef(null)
 
   const navLinks = [
     {
@@ -47,6 +59,16 @@ export default function Navbar() {
       document.body.style.overflow = ''
     }
   }, [menuOpen])
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (langDropdownRef.current && !langDropdownRef.current.contains(event.target)) {
+        setLangDropdownOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [])
 
   const location = useLocation()
 
@@ -140,33 +162,56 @@ export default function Navbar() {
         </nav>
 
         <div className="navbar__actions">
-          {/* Language Switcher Toggle */}
-          <button
-            className="navbar__lang-toggle"
-            onClick={() => {
-              const nextLang = { vi: 'en', en: 'es', es: 'vi' }
-              setLanguage(nextLang[language] || 'vi')
-            }}
-            aria-label={
-              language === 'vi' ? 'Switch to English' : 
-              language === 'en' ? 'Cambiar a Español' : 
-              'Chuyển sang Tiếng Việt'
-            }
-            title={
-              language === 'vi' ? 'English' : 
-              language === 'en' ? 'Español' : 
-              'Tiếng Việt'
-            }
-          >
-            {/* Globe Icon */}
-            <svg className="navbar__lang-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="12" cy="12" r="10"/>
-              <line x1="2" y1="12" x2="22" y2="12"/>
-              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-            </svg>
-            <span className="navbar__lang-text-desktop">{language.toUpperCase()}</span>
-            <span className="navbar__lang-text-mobile">{language === 'vi' ? 'VN' : language.toUpperCase()}</span>
-          </button>
+          {/* Custom Language Dropdown */}
+          <div className="navbar__lang-wrapper" ref={langDropdownRef}>
+            <button
+              type="button"
+              className={`navbar__lang-toggle ${langDropdownOpen ? 'navbar__lang-toggle--active' : ''}`}
+              onClick={() => setLangDropdownOpen(!langDropdownOpen)}
+              aria-expanded={langDropdownOpen}
+              aria-label="Select Language"
+            >
+              {/* Globe Icon */}
+              <svg className="navbar__lang-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+              <span className="navbar__lang-text-desktop">
+                {languages.find(l => l.code === language)?.label || 'Tiếng Việt'}
+              </span>
+              <span className="navbar__lang-text-mobile">
+                {language.toUpperCase()}
+              </span>
+              {/* Arrow Icon */}
+              <svg className={`navbar__lang-arrow ${langDropdownOpen ? 'navbar__lang-arrow--open' : ''}`} width="10" height="10" viewBox="0 0 12 12" fill="none">
+                <path d="M2 4L6 8L10 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
+              </svg>
+            </button>
+
+            {langDropdownOpen && (
+              <div className="navbar__lang-dropdown">
+                {languages.map((lang) => (
+                  <button
+                    key={lang.code}
+                    type="button"
+                    className={`navbar__lang-option ${language === lang.code ? 'navbar__lang-option--active' : ''}`}
+                    onClick={() => {
+                      setLanguage(lang.code)
+                      setLangDropdownOpen(false)
+                    }}
+                  >
+                    <span className="navbar__lang-option-label">{lang.label}</span>
+                    {language === lang.code && (
+                      <svg className="navbar__lang-checkmark" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="20 6 9 17 4 12"/>
+                      </svg>
+                    )}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
 
           <a href="https://yocheckin.com/auth/register" className="btn btn-primary btn-sm" target="_blank" rel="noreferrer">
             <span>{t('navbar.freeTrial')}</span>

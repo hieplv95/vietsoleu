@@ -3,16 +3,42 @@ import { Link } from 'react-router-dom'
 import { useLanguage } from '../context/LanguageContext'
 import './AboutUs.css'
 
+const titles = {
+  vi: 'Về chúng tôi - VietSol Digital Marketing',
+  en: 'About Us - VietSol Digital Marketing',
+  es: 'Sobre Nosotros - VietSol Digital Marketing',
+  fr: 'À Propos de Nous - VietSol Digital Marketing',
+  de: 'Über uns - VietSol Digital Marketing',
+  cs: 'O nás - VietSol Digital Marketing',
+  pt: 'Sobre Nós - VietSol Digital Marketing',
+}
+
+const missionBadges = {
+  vi: 'Sứ mệnh',
+  en: 'Mission',
+  es: 'Misión',
+  fr: 'Mission',
+  de: 'Mission',
+  cs: 'Mise',
+  pt: 'Missão',
+}
+
+const visionBadges = {
+  vi: 'Tầm nhìn',
+  en: 'Vision',
+  es: 'Visión',
+  fr: 'Vision',
+  de: 'Vision',
+  cs: 'Vize',
+  pt: 'Visão',
+}
+
 export default function AboutUs() {
   const { t, language } = useLanguage()
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
-    document.title = language === 'vi' 
-      ? 'Về chúng tôi - VietSol Digital Marketing' 
-      : language === 'es'
-      ? 'Sobre Nosotros - VietSol Digital Marketing'
-      : 'About Us - VietSol Digital Marketing'
+    document.title = titles[language] || titles.en
   }, [language])
 
   return (
@@ -76,7 +102,7 @@ export default function AboutUs() {
           <div className="about-mv-card about-mv-card--mission">
             <div className="about-mv-icon-bg">🎯</div>
             <span className="about-mv-badge">
-              {language === 'vi' ? 'Sứ mệnh' : language === 'es' ? 'Misión' : 'Mission'}
+              {missionBadges[language] || missionBadges.en}
             </span>
             <h3>{t('aboutUsPage.missionVision.missionTitle')}</h3>
             <p>{t('aboutUsPage.missionVision.missionDesc')}</p>
@@ -85,7 +111,7 @@ export default function AboutUs() {
           <div className="about-mv-card about-mv-card--vision">
             <div className="about-mv-icon-bg">🔭</div>
             <span className="about-mv-badge">
-              {language === 'vi' ? 'Tầm nhìn' : language === 'es' ? 'Visión' : 'Vision'}
+              {visionBadges[language] || visionBadges.en}
             </span>
             <h3>{t('aboutUsPage.missionVision.visionTitle')}</h3>
             <p>{t('aboutUsPage.missionVision.visionDesc')}</p>
