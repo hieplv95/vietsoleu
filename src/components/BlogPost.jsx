@@ -4,6 +4,7 @@ import { useLanguage } from '../context/LanguageContext'
 import { blogPosts } from '../data/blogPosts'
 import './BlogPost.css'
 import blogNoelCover from '../assets/blog_noel_cover.png'
+import blogGoogleMapsCover from '../assets/blog_google_maps_cover.png'
 
 export default function BlogPost({ postIdOverride }) {
   const { postId: paramPostId } = useParams()
@@ -27,7 +28,8 @@ export default function BlogPost({ postIdOverride }) {
   }
 
   const postImageMap = {
-    '10-y-tuong-giup-tiem-nails-hut-khach-vao-dip-noel': blogNoelCover
+    '10-y-tuong-giup-tiem-nails-hut-khach-vao-dip-noel': blogNoelCover,
+    'tiem-nails-google-maps': blogGoogleMapsCover
   }
   const postImage = postImageMap[postId]
 

@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { useLanguage } from '../context/LanguageContext'
 import './Blog.css'
 import blogNoelCover from '../assets/blog_noel_cover.png'
+import blogGoogleMapsCover from '../assets/blog_google_maps_cover.png'
 
 export default function Blog() {
   const { t } = useLanguage()
@@ -17,6 +18,7 @@ export default function Blog() {
       readTime: t('blogSection.post4.readTime'),
       emoji: '📍',
       color: '#3b82f6',
+      image: blogGoogleMapsCover,
     },
     {
       id: '10-y-tuong-giup-tiem-nails-hut-khach-vao-dip-noel',
