@@ -11,33 +11,40 @@ export default function Hero() {
     let rafId = null
     let cachedRect = null
 
-    const updateRect = () => {
-      if (heroRef.current) {
-        cachedRect = heroRef.current.getBoundingClientRect()
-      }
-    }
-
     const handleMouseMove = (e) => {
-      if (!heroRef.current || !cachedRect) return
-      if (rafId) return // Skip if a frame is already scheduled
+      const el = heroRef.current
+      if (!el) return
+      if (!cachedRect) {
+        cachedRect = el.getBoundingClientRect()
+      }
+      if (rafId) return
       rafId = requestAnimationFrame(() => {
+        if (!cachedRect) return
         const x = ((e.clientX - cachedRect.left) / cachedRect.width) * 100
         const y = ((e.clientY - cachedRect.top) / cachedRect.height) * 100
-        heroRef.current?.style.setProperty('--mouse-x', `${x}%`)
-        heroRef.current?.style.setProperty('--mouse-y', `${y}%`)
+        el.style.setProperty('--mouse-x', `${x}%`)
+        el.style.setProperty('--mouse-y', `${y}%`)
         rafId = null
       })
     }
 
-    // Cache rect on mount and resize (not on every mousemove)
-    updateRect()
-    window.addEventListener('resize', updateRect, { passive: true })
+    const handleMouseLeave = () => {
+      cachedRect = null
+    }
+
+    const handleResize = () => {
+      cachedRect = null
+    }
 
     const el = heroRef.current
     el?.addEventListener('mousemove', handleMouseMove, { passive: true })
+    el?.addEventListener('mouseleave', handleMouseLeave, { passive: true })
+    window.addEventListener('resize', handleResize, { passive: true })
+
     return () => {
       el?.removeEventListener('mousemove', handleMouseMove)
-      window.removeEventListener('resize', updateRect)
+      el?.removeEventListener('mouseleave', handleMouseLeave)
+      window.removeEventListener('resize', handleResize)
       if (rafId) cancelAnimationFrame(rafId)
     }
   }, [])

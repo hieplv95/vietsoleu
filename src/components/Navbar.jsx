@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import logoImg from '../assets/logo-vietsol_opt.webp'
 import { useLanguage } from '../context/LanguageContext'
 import './Navbar.css'
 
@@ -91,7 +90,7 @@ export default function Navbar() {
       <div className="container navbar__inner">
         <Link to="/" className="navbar__logo" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
           <div className="navbar__logo-icon-container">
-            <img src={logoImg} alt="VietSol Logo" className="navbar__logo-icon-cropped" width="105" height="105" fetchPriority="high" />
+            <img src="/logo-vietsol.webp" alt="VietSol Logo" className="navbar__logo-icon-cropped" width="105" height="105" fetchPriority="high" decoding="async" />
           </div>
         </Link>
 
