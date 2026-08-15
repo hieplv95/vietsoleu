@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react'
-import socialHeroImg from '../assets/social.jpg'
-import f1Img from '../assets/social_benefit_1.png'
-import f2Img from '../assets/social_benefit_2.png'
-import f3Img from '../assets/social_benefit_3.png'
-import f4Img from '../assets/social_benefit_4.png'
+import socialHeroImg from '../assets/social.webp'
+import f1Img from '../assets/social_benefit_1.webp'
+import f2Img from '../assets/social_benefit_2.webp'
+import f3Img from '../assets/social_benefit_3.webp'
+import f4Img from '../assets/social_benefit_4.webp'
 import { useLanguage } from '../context/LanguageContext'
 import './SocialMediaMarketing.css'
-import googleMapsAdsDemoImg from '../assets/google_maps_ads_demo.png'
-import instagramAdsTypesImg from '../assets/instagram_ads_types.png'
+import googleMapsAdsDemoImg from '../assets/google_maps_ads_demo.webp'
+import instagramAdsTypesImg from '../assets/instagram_ads_types.webp'
 
 export default function SocialMediaMarketing() {
   const { t } = useLanguage()

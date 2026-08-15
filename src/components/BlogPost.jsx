@@ -3,8 +3,8 @@ import { useParams, Link, useNavigate } from 'react-router-dom'
 import { useLanguage } from '../context/LanguageContext'
 import { blogPosts } from '../data/blogPosts'
 import './BlogPost.css'
-import blogNoelCover from '../assets/blog_noel_cover.png'
-import blogGoogleMapsCover from '../assets/blog_google_maps_cover.png'
+import blogNoelCover from '../assets/blog_noel_cover.webp'
+import blogGoogleMapsCover from '../assets/blog_google_maps_cover.webp'
 
 export default function BlogPost({ postIdOverride }) {
   const { postId: paramPostId } = useParams()

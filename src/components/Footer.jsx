@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom'
-import logoImg from '../assets/logo-vietsol.png'
+import logoImg from '../assets/logo-vietsol.webp'
 import { useLanguage } from '../context/LanguageContext'
 import './Footer.css'
 

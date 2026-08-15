@@ -1,7 +1,7 @@
 import React from 'react'
 import './Partners.css'
-import phoVietnamLogo from '../assets/partners/pho-vietnam.png'
-import phoVietExactLogo from '../assets/partners/pho-viet-exact.png'
+import phoVietnamLogo from '../assets/partners/pho-vietnam.webp'
+import phoVietExactLogo from '../assets/partners/pho-viet-exact.webp'
 
 export default function Partners() {
   const partners = [

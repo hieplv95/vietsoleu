@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
-import unasArtNailsImg from '../assets/unas_artnails.png'
+import unasArtNailsImg from '../assets/unas_artnails.webp'
 import { useLanguage } from '../context/LanguageContext'
 import './NailSalonServices.css'
 

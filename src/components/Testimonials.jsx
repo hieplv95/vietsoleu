@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { useLanguage } from '../context/LanguageContext'
-import avatarWoman1 from '../assets/avatar-woman-1.jpg'
-import avatarMan from '../assets/avatar-man.png'
-import avatarWoman2 from '../assets/avatar-woman-2.png'
-import avatarWoman3 from '../assets/avatar-woman-3.jpg'
+import avatarWoman1 from '../assets/avatar-woman-1.webp'
+import avatarMan from '../assets/avatar-man.webp'
+import avatarWoman2 from '../assets/avatar-woman-2.webp'
+import avatarWoman3 from '../assets/avatar-woman-3.webp'
 import './Testimonials.css'
 
 export default function Testimonials() {

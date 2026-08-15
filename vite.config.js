@@ -7,6 +7,8 @@ export default defineConfig({
   plugins: [
     react(),
     ViteImageOptimizer({
+      // Skip WebP — already pre-optimized
+      webp: false,
       // PNG optimization
       png: {
         quality: 80,

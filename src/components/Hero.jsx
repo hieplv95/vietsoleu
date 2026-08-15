@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import tabletImg from '../assets/yocheckin-tablet.png'
+import tabletImg from '../assets/yocheckin-tablet.webp'
 import { useLanguage } from '../context/LanguageContext'
 import './Hero.css'
 

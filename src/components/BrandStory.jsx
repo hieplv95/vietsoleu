@@ -1,9 +1,9 @@
 import { useLanguage } from '../context/LanguageContext'
-import salonMain from '../assets/salon_main.png'
-import yocheckinReal from '../assets/yocheckin-real.png'
-import salonWaiting from '../assets/salon_waiting.png'
-import salonCheckin from '../assets/salon_checkin.png'
-import salonTech from '../assets/salon_tech.png'
+import salonMain from '../assets/salon_main.webp'
+import yocheckinReal from '../assets/yocheckin-real.webp'
+import salonWaiting from '../assets/salon_waiting.webp'
+import salonCheckin from '../assets/salon_checkin.webp'
+import salonTech from '../assets/salon_tech.webp'
 import './BrandStory.css'
 
 export default function BrandStory() {

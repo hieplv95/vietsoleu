@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
 import { useLanguage } from '../context/LanguageContext'
 import './Blog.css'
-import blogNoelCover from '../assets/blog_noel_cover.png'
-import blogGoogleMapsCover from '../assets/blog_google_maps_cover.png'
+import blogNoelCover from '../assets/blog_noel_cover.webp'
+import blogGoogleMapsCover from '../assets/blog_google_maps_cover.webp'
 
 export default function Blog() {
   const { t } = useLanguage()
