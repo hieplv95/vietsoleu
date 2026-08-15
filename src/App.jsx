@@ -5,10 +5,9 @@ import './index.css'
 import Navbar from './components/Navbar'
 import Home from './components/Home'
 
-import Footer from './components/Footer'
-import FloatingChat from './components/FloatingChat'
-
-// Lazy-load non-homepage routes to reduce initial bundle size
+// Lazy-load non-critical components and routes to minimize initial bundle
+const Footer = lazy(() => import('./components/Footer'))
+const FloatingChat = lazy(() => import('./components/FloatingChat'))
 const NailSalonServices = lazy(() => import('./components/NailSalonServices'))
 const NailTemplateViewer = lazy(() => import('./components/NailTemplateViewer'))
 const SocialMediaMarketing = lazy(() => import('./components/SocialMediaMarketing'))
@@ -16,7 +15,6 @@ const BlogPost = lazy(() => import('./components/BlogPost'))
 const BlogPage = lazy(() => import('./components/BlogPage'))
 const Contact = lazy(() => import('./components/Contact'))
 const AboutUs = lazy(() => import('./components/AboutUs'))
-
 
 function App() {
   const { pathname, hash } = useLocation()
@@ -62,13 +60,14 @@ function App() {
           </Routes>
         </Suspense>
       </main>
-      {!isDemoPage && <Footer />}
-      {!isDemoPage && <FloatingChat />}
+      {!isDemoPage && (
+        <Suspense fallback={null}>
+          <Footer />
+          <FloatingChat />
+        </Suspense>
+      )}
     </div>
   )
 }
 
 export default App
-
-
-
