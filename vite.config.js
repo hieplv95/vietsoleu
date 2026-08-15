@@ -7,8 +7,7 @@ export default defineConfig({
   plugins: [
     react(),
     ViteImageOptimizer({
-      // Skip WebP — already pre-optimized
-      webp: false,
+      test: /\.(jpe?g|png|gif|tiff|svg)$/i,
       // PNG optimization
       png: {
         quality: 80,
@@ -25,6 +24,10 @@ export default defineConfig({
   ],
   server: {
     port: 5188,
+  },
+  esbuild: {
+    drop: ['console', 'debugger'],
+    legalComments: 'none',
   },
   build: {
     // Enable CSS code splitting for better caching

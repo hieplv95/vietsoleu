@@ -21,6 +21,7 @@
   border-radius: 50%;
   filter: blur(80px);
   pointer-events: none;
+  will-change: transform;
 }
 
 .hero__orb--1 {
@@ -116,6 +117,7 @@
   background: #a78bfa;
   border-radius: 50%;
   animation: pulse-dot 2s ease-in-out infinite;
+  will-change: transform, opacity;
 }
 
 /* Title */
@@ -130,12 +132,10 @@
 }
 
 .hero__title-gradient {
-  background: linear-gradient(135deg, #a78bfa, #6c47ff, #00d4b1);
-  background-size: 200% 200%;
+  background: linear-gradient(135deg, #a78bfa 0%, #6c47ff 50%, #00d4b1 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: gradientShift 4s ease infinite;
 }
 
 /* Desc */
