@@ -4,8 +4,10 @@ import { Routes, Route, useLocation } from 'react-router-dom'
 import './index.css'
 import Navbar from './components/Navbar'
 import Home from './components/Home'
-import Footer from './components/Footer'
-import FloatingChat from './components/FloatingChat'
+
+// Lazy-load non-critical components
+const Footer = lazy(() => import('./components/Footer'))
+const FloatingChat = lazy(() => import('./components/FloatingChat'))
 
 // Lazy-load non-homepage routes to reduce initial bundle size
 const NailSalonServices = lazy(() => import('./components/NailSalonServices'))
@@ -61,8 +63,8 @@ function App() {
           </Routes>
         </Suspense>
       </main>
-      {!isDemoPage && <Footer />}
-      {!isDemoPage && <FloatingChat />}
+      {!isDemoPage && <Suspense fallback={null}><Footer /></Suspense>}
+      {!isDemoPage && <Suspense fallback={null}><FloatingChat /></Suspense>}
     </div>
   )
 }
