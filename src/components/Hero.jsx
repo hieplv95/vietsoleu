@@ -8,6 +8,11 @@ export default function Hero() {
   const heroRef = useRef(null)
 
   useEffect(() => {
+    // Only attach mouse tracking on desktop devices with fine pointer
+    if (typeof window === 'undefined' || !window.matchMedia('(pointer: fine)').matches) {
+      return
+    }
+
     let rafId = null
     let cachedRect = null
 

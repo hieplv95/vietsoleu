@@ -134,8 +134,12 @@
   gap: 6px;
   font-size: 0.8125rem;
   font-weight: 600;
-  color: var(--svc-color);
+  color: #a78bfa;
   transition: gap 0.2s ease;
+}
+
+[data-theme="light"] .services__link {
+  color: #5a38e8;
 }
 
 .services__link:hover {
