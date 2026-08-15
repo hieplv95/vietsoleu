@@ -122,6 +122,7 @@ export default function Hero() {
               width="665"
               height="470"
               fetchPriority="high"
+              decoding="async"
             />
           </div>
 
