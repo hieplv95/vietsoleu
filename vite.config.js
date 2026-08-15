@@ -1,35 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer'
-import { readFile, writeFile } from 'fs/promises'
-import { resolve } from 'path'
-
-// Vite plugin: after build, defer non-critical CSS (eliminates render-blocking link)
-function deferCssPlugin() {
-  return {
-    name: 'defer-css',
-    apply: 'build',
-    async closeBundle() {
-      const htmlPath = resolve('dist/index.html')
-      try {
-        let html = await readFile(htmlPath, 'utf8')
-        // Convert blocking <link rel="stylesheet"> CSS to deferred (media print trick)
-        // Skip already-async links
-        html = html.replace(
-          /<link rel="stylesheet"([^>]*) href="(\/assets\/[^"]+\.css)"([^>]*)>/g,
-          (match, before, href, after) => {
-            if (match.includes('media=')) return match // already deferred
-            return `<link rel="preload" as="style" href="${href}"><link rel="stylesheet"${before} href="${href}"${after} media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="${href}"></noscript>`
-          }
-        )
-        await writeFile(htmlPath, html, 'utf8')
-        console.log('[defer-css] CSS links deferred successfully')
-      } catch (e) {
-        console.warn('[defer-css] Failed:', e.message)
-      }
-    },
-  }
-}
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -50,7 +21,6 @@ export default defineConfig({
         quality: 75,
       },
     }),
-    deferCssPlugin(),
   ],
   server: {
     port: 5188,

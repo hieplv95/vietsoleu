@@ -1,33 +1,6 @@
 {
   "headers": [
     {
-      "source": "/assets/(.*)\\.(:ext)js",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "/assets/(.*)\\.(:ext)css",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "/assets/(.*)\\.(:ext)webp",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
       "source": "/assets/(.*)",
       "headers": [
         {
@@ -37,11 +10,11 @@
       ]
     },
     {
-      "source": "/(.*)\\.(:ext)ico",
+      "source": "/(.*)\\.(png|jpg|jpeg|gif|webp|svg|ico)",
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "public, max-age=86400"
+          "value": "public, max-age=31536000, immutable"
         }
       ]
     },

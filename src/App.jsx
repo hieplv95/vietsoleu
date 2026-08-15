@@ -5,9 +5,8 @@ import './index.css'
 import Navbar from './components/Navbar'
 import Home from './components/Home'
 
-// Lazy-load non-critical components
-const Footer = lazy(() => import('./components/Footer'))
-const FloatingChat = lazy(() => import('./components/FloatingChat'))
+import Footer from './components/Footer'
+import FloatingChat from './components/FloatingChat'
 
 // Lazy-load non-homepage routes to reduce initial bundle size
 const NailSalonServices = lazy(() => import('./components/NailSalonServices'))
@@ -63,8 +62,8 @@ function App() {
           </Routes>
         </Suspense>
       </main>
-      {!isDemoPage && <Suspense fallback={null}><Footer /></Suspense>}
-      {!isDemoPage && <Suspense fallback={null}><FloatingChat /></Suspense>}
+      {!isDemoPage && <Footer />}
+      {!isDemoPage && <FloatingChat />}
     </div>
   )
 }
