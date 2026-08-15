@@ -119,7 +119,7 @@ export default function BlogPage() {
                 ) : (
                   <span className="blog-dir-card__emoji">{post.emoji}</span>
                 )}
-                <div className="blog-dir-card__category" style={{ color: post.color, background: `${post.color}18` }}>
+                <div className="blog-dir-card__category">
                   {post.category}
                 </div>
               </div>
@@ -135,7 +135,7 @@ export default function BlogPage() {
                   </Link>
                 </h3>
                 <p className="blog-dir-card__excerpt">{post.excerpt}</p>
-                <Link to={post.path || `/blog/${post.id}`} className="blog-dir-card__link" style={{ color: post.color }}>
+                <Link to={post.path || `/blog/${post.id}`} className="blog-dir-card__link">
                   {labelReadMore}
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
                     <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>

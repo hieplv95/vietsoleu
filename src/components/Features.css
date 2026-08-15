@@ -70,7 +70,8 @@
 }
 
 .features__pain-content strong {
-  color: var(--clr-accent-gold);
+  color: var(--clr-text);
+  font-weight: 700;
 }
 
 /* Feature grid */

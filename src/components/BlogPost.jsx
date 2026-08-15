@@ -104,7 +104,7 @@ export default function BlogPost({ postIdOverride }) {
 
         {/* Header Section */}
         <header className="blog-post-header">
-          <div className="blog-post-header__category" style={{ color: post.color, background: `${post.color}15` }}>
+          <div className="blog-post-header__category">
             {post.category}
           </div>
           <h1 className="blog-post-header__title">{post.title}</h1>

@@ -27,7 +27,7 @@ export default function BrandStory() {
             <div className="brand-story__bottom-row">
               {/* Left Column: Vertical image */}
               <div className="brand-story__col-vertical">
-                <img src={salonCheckin} alt="Client checkin" className="brand-story__img brand-story__img--vertical" loading="lazy" width="203" height="203" />
+                <img src={salonCheckin} alt="Client checkin" className="brand-story__img brand-story__img--vertical" loading="lazy" width="180" height="180" />
               </div>
 
               {/* Middle Column: Stacked horizontal images */}
@@ -35,12 +35,12 @@ export default function BrandStory() {
                 <div className="brand-story__img-wrapper brand-story__img-wrapper--horizontal">
                   <img src={yocheckinReal} alt="YoCheckIn iPad" className="brand-story__img brand-story__img--cropped" loading="lazy" width="400" height="200" />
                 </div>
-                <img src={salonTech} alt="YoCheckIn terminal setup" className="brand-story__img brand-story__img--horizontal" loading="lazy" width="203" height="203" />
+                <img src={salonTech} alt="YoCheckIn terminal setup" className="brand-story__img brand-story__img--horizontal" loading="lazy" width="180" height="120" />
               </div>
 
               {/* Right Column: Vertical image */}
               <div className="brand-story__col-vertical">
-                <img src={salonWaiting} alt="Cozy European salon" className="brand-story__img brand-story__img--vertical" loading="lazy" width="203" height="300" />
+                <img src={salonWaiting} alt="Cozy European salon" className="brand-story__img brand-story__img--vertical" loading="lazy" width="180" height="266" />
               </div>
             </div>
 

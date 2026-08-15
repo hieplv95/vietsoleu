@@ -68,7 +68,7 @@ export default function Blog() {
                 ) : (
                   <span className="blog__card-emoji">{post.emoji}</span>
                 )}
-                <div className="blog__card-category" style={{ color: post.color, background: `${post.color}18` }}>
+                <div className="blog__card-category">
                   {post.category}
                 </div>
               </div>
@@ -84,7 +84,7 @@ export default function Blog() {
                   </Link>
                 </h3>
                 <p className="blog__card-excerpt">{post.excerpt}</p>
-                <Link to={post.path || `/blog/${post.id}`} className="blog__card-link" style={{ color: post.color }}>
+                <Link to={post.path || `/blog/${post.id}`} className="blog__card-link">
                   {t('blogSection.linkReadMore')}
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
                     <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>

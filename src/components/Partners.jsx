@@ -9,7 +9,7 @@ export default function Partners() {
       id: 'pho-vietnam',
       name: 'Pho Vietnam',
       url: 'https://phovietnam.es/',
-      logo: <img src={phoVietnamLogo} alt="Pho Vietnam" className="partner-img partner-img--wide" loading="lazy" width="359" height="77" />
+      logo: <img src={phoVietnamLogo} alt="Pho Vietnam" className="partner-img partner-img--wide" loading="lazy" width="260" height="56" />
     },
     {
       id: 'google',
