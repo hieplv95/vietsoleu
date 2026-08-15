@@ -1,6 +1,6 @@
 import React from 'react'
 import './Partners.css'
-import phoVietnamLogo from '../assets/partners/pho-vietnam.webp'
+import phoVietnamLogo from '../assets/partners/pho-vietnam_opt.webp'
 import phoVietExactLogo from '../assets/partners/pho-viet-exact.webp'
 
 export default function Partners() {
