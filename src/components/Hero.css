@@ -107,7 +107,7 @@
   color: #a78bfa;
   background: rgba(108,71,255,0.12);
   border: 1px solid rgba(108,71,255,0.3);
-  animation: fadeInUp 0.6s ease 0.1s both;
+  animation: fadeInUp 0.6s ease both;
 }
 
 .hero__badge-dot {
@@ -126,7 +126,7 @@
   line-height: 1.1;
   letter-spacing: -0.03em;
   color: var(--clr-hero-title, #fff);
-  animation: fadeInUp 0.6s ease 0.2s both;
+  animation: fadeInUp 0.5s ease both;
 }
 
 .hero__title-gradient {
@@ -144,7 +144,7 @@
   color: var(--clr-text-muted);
   max-width: 520px;
   line-height: 1.75;
-  animation: fadeInUp 0.6s ease 0.3s both;
+  animation: fadeInUp 0.5s ease 0.1s both;
 }
 
 .hero__desc strong {
@@ -158,7 +158,7 @@
   align-items: center;
   gap: 0.875rem;
   flex-wrap: wrap;
-  animation: fadeInUp 0.6s ease 0.4s both;
+  animation: fadeInUp 0.5s ease 0.15s both;
 }
 
 /* Trust */
@@ -167,7 +167,7 @@
   align-items: center;
   gap: 0.75rem;
   flex-wrap: wrap;
-  animation: fadeInUp 0.6s ease 0.5s both;
+  animation: fadeInUp 0.5s ease 0.2s both;
 }
 
 .hero__trust-item {

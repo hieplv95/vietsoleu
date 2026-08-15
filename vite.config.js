@@ -37,8 +37,11 @@ export default defineConfig({
         // Split vendor JS for better caching
         manualChunks(id) {
           if (id.includes('node_modules')) {
-            if (id.includes('react-dom') || id.includes('react') || id.includes('react-router-dom')) {
+            if (id.includes('react-dom') || id.includes('/react/')) {
               return 'vendor'
+            }
+            if (id.includes('react-router')) {
+              return 'router'
             }
           }
         },
