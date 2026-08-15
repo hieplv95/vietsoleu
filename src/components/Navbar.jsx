@@ -37,12 +37,6 @@ export default function Navbar() {
   ]
 
   useEffect(() => {
-    // Maintain theme compatibility
-    const currentTheme = localStorage.getItem('vietsol-theme') || 'light'
-    document.documentElement.setAttribute('data-theme', currentTheme)
-  }, [])
-
-  useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20)
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
@@ -90,7 +84,7 @@ export default function Navbar() {
       <div className="container navbar__inner">
         <Link to="/" className="navbar__logo" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
           <div className="navbar__logo-icon-container">
-            <img src="/logo-vietsol.webp" alt="VietSol Logo" className="navbar__logo-icon-cropped" width="105" height="105" fetchPriority="high" decoding="async" />
+            <img src="/logo-vietsol.webp" alt="VietSol Logo" className="navbar__logo-icon-cropped" width="80" height="80" fetchPriority="high" decoding="async" />
           </div>
         </Link>
 

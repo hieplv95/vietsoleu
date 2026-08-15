@@ -1,4 +1,3 @@
-import React from 'react'
 import './Partners.css'
 import phoVietnamLogo from '../assets/partners/pho-vietnam_opt.webp'
 import phoVietExactLogo from '../assets/partners/pho-viet-exact.webp'
@@ -101,7 +100,7 @@ export default function Partners() {
 
   // Multiply items for infinite smooth marquee loop
   const marqueeItems = [
-    ...partners, ...partners, ...partners
+    ...partners, ...partners
   ]
 
   return (

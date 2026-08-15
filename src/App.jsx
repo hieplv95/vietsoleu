@@ -35,7 +35,7 @@ function App() {
         }, 150)
         return () => clearTimeout(timer)
       }
-    } else {
+    } else if (window.scrollY > 0) {
       window.scrollTo({ top: 0, behavior: 'smooth' })
     }
   }, [pathname, hash, isDemoPage])

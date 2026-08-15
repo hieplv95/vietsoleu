@@ -104,55 +104,28 @@ export default function BrandStory() {
                 <rect width="750" height="500" fill="#F1BF00" />
                 <rect width="750" height="125" fill="#C60B1E" />
                 <rect width="750" height="125" y="375" fill="#C60B1E" />
-                {/* Coat of arms (aligned to the left) */}
-                <g transform="translate(180, 160) scale(1.1)">
-                  {/* Left Pillar */}
-                  <rect x="0" y="40" width="12" height="100" fill="#B3B3B3" rx="2" />
-                  <ellipse cx="6" cy="40" rx="8" ry="4" fill="#F1BF00" />
-                  <rect x="-2" y="140" width="16" height="10" fill="#808080" rx="1" />
-                  {/* Right Pillar */}
-                  <rect x="110" y="40" width="12" height="100" fill="#B3B3B3" rx="2" />
-                  <ellipse cx="116" cy="40" rx="8" ry="4" fill="#F1BF00" />
-                  <rect x="108" y="140" width="16" height="10" fill="#808080" rx="1" />
-                  {/* Shield */}
-                  <path d="M 25,40 L 95,40 L 95,110 A 35,35 0 0,1 25,110 Z" fill="#C60B1E" stroke="#F1BF00" strokeWidth="6" />
-                  <path d="M 28,43 L 92,43 L 92,105 A 32,32 0 0,1 28,105 Z" fill="#FFFFFF" />
-                  {/* Inner quarters of shield */}
-                  <rect x="28" y="43" width="32" height="32" fill="#C60B1E" /> {/* Castile (Castle) */}
-                  <rect x="60" y="43" width="32" height="32" fill="#E5A3C1" /> {/* León (Lion) */}
-                  <rect x="28" y="75" width="32" height="30" fill="#F1BF00" /> {/* Aragon (Stripes) */}
-                  <rect x="60" y="75" width="32" height="30" fill="#007A87" /> {/* Navarre */}
-                  {/* Castile Castle drawing */}
-                  <path d="M 38,70 L 38,55 L 44,55 L 44,50 L 48,50 L 48,55 L 50,55 L 50,70 Z" fill="#F1BF00" />
-                  {/* Crown on top of Shield */}
-                  <path d="M 30,35 Q 60,10 90,35 Q 90,20 60,15 Q 30,20 30,35 Z" fill="#F1BF00" />
-                  <circle cx="60" cy="12" r="5" fill="#C60B1E" />
-                  <path d="M 40,35 L 40,25 M 50,35 L 50,22 M 60,35 L 60,20 M 70,35 L 70,22 M 80,35 L 80,25" stroke="#F1BF00" strokeWidth="4" />
-                </g>
+                {/* Simplified coat of arms */}
+                <path d="M 220,180 h 30 v 140 h -30 z M 290,180 h 30 v 140 h -30 z M 235,180 L 305,180 L 305,250 A 35,35 0 0,1 235,250 Z" fill="#C60B1E" />
+                <path d="M 245,190 h 50 v 50 A 25,25 0 0,1 245,240 Z" fill="#F1BF00" />
               </svg>
             </div>
 
-            {/* EU Flag */}
+            {/* EU Flag - Flat structure, 0 nested defs/uses */}
             <div className="brand-story__flag-wrapper" title={t('brandStory.flagEu')}>
               <svg width="72" height="48" viewBox="0 0 300 200" className="brand-story__flag">
-                <defs>
-                  <g id="eu-star">
-                    <polygon points="0,-10 3,-3 10,-3 4.5,1 7.5,8 0,4 -7.5,8 -4.5,1 -10,-3 -3,-3" fill="#FFCC00" />
-                  </g>
-                </defs>
                 <rect width="300" height="200" fill="#003399" />
-                <use href="#eu-star" transform="translate(150, 40)" />
-                <use href="#eu-star" transform="translate(180, 48)" />
-                <use href="#eu-star" transform="translate(202, 70)" />
-                <use href="#eu-star" transform="translate(210, 100)" />
-                <use href="#eu-star" transform="translate(202, 130)" />
-                <use href="#eu-star" transform="translate(180, 152)" />
-                <use href="#eu-star" transform="translate(150, 160)" />
-                <use href="#eu-star" transform="translate(120, 152)" />
-                <use href="#eu-star" transform="translate(98, 130)" />
-                <use href="#eu-star" transform="translate(90, 100)" />
-                <use href="#eu-star" transform="translate(98, 70)" />
-                <use href="#eu-star" transform="translate(120, 48)" />
+                <polygon points="150,30 153,37 160,37 154.5,41 157.5,48 150,44 142.5,48 145.5,41 140,37 147,37" fill="#FFCC00" />
+                <polygon points="180,38 183,45 190,45 184.5,49 187.5,56 180,52 172.5,56 175.5,49 170,45 177,45" fill="#FFCC00" />
+                <polygon points="202,60 205,67 212,67 206.5,71 209.5,78 202,74 194.5,78 197.5,71 192,67 199,67" fill="#FFCC00" />
+                <polygon points="210,90 213,97 220,97 214.5,101 217.5,108 210,104 202.5,108 205.5,101 200,97 207,97" fill="#FFCC00" />
+                <polygon points="202,120 205,127 212,127 206.5,131 209.5,138 202,134 194.5,138 197.5,131 192,127 199,127" fill="#FFCC00" />
+                <polygon points="180,142 183,149 190,149 184.5,153 187.5,160 180,156 172.5,160 175.5,153 170,149 177,149" fill="#FFCC00" />
+                <polygon points="150,150 153,157 160,157 154.5,161 157.5,168 150,164 142.5,168 145.5,161 140,157 147,157" fill="#FFCC00" />
+                <polygon points="120,142 123,149 130,149 124.5,153 127.5,160 120,156 112.5,160 115.5,153 110,149 117,149" fill="#FFCC00" />
+                <polygon points="98,120 101,127 108,127 102.5,131 105.5,138 98,134 90.5,138 93.5,131 88,127 95,127" fill="#FFCC00" />
+                <polygon points="90,90 93,97 100,97 94.5,101 97.5,108 90,104 82.5,108 85.5,101 80,97 87,97" fill="#FFCC00" />
+                <polygon points="98,60 101,67 108,67 102.5,71 105.5,78 98,74 90.5,78 93.5,71 88,67 95,67" fill="#FFCC00" />
+                <polygon points="120,38 123,45 130,45 124.5,49 127.5,56 120,52 112.5,56 115.5,49 110,45 117,45" fill="#FFCC00" />
               </svg>
             </div>
           </div>

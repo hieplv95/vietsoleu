@@ -1,17 +1,16 @@
 import { vi } from './data/translations_vi'
-import { en } from './data/translations_en'
-import { es } from './data/translations_es'
-import { fr } from './data/translations_fr'
-import { de } from './data/translations_de'
-import { cs } from './data/translations_cs'
-import { pt } from './data/translations_pt'
 
-export const translations = {
+// Default translations loaded statically (Vietnamese is primary language)
+export const initialTranslations = {
   vi,
-  en,
-  es,
-  fr,
-  de,
-  cs,
-  pt,
+}
+
+// Dynamic language loader map for on-demand loading
+export const languageLoaders = {
+  en: () => import('./data/translations_en').then(m => m.en),
+  es: () => import('./data/translations_es').then(m => m.es),
+  fr: () => import('./data/translations_fr').then(m => m.fr),
+  de: () => import('./data/translations_de').then(m => m.de),
+  cs: () => import('./data/translations_cs').then(m => m.cs),
+  pt: () => import('./data/translations_pt').then(m => m.pt),
 }

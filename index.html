@@ -2,27 +2,48 @@
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate icon" type="image/png" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Vietsol — Giải pháp phần mềm marketing cho tiệm nails người Việt tại Châu Âu. Phần mềm YoCheckIn giúp quản lý khách hàng, tăng đánh giá Google Maps, gửi SMS tự động." />
     <meta name="keywords" content="phần mềm tiệm nails, marketing nails, quản lý khách hàng nails, YoCheckIn, Vietsol, digital marketing Châu Âu" />
     <meta property="og:title" content="Vietsol – Giải pháp phần mềm marketing cho tiệm nails" />
     <meta property="og:description" content="Phần mềm YoCheckIn do đội ngũ Vietsol phát triển — chính thức ra mắt cho người Việt tại Châu Âu" />
     <meta property="og:type" content="website" />
+    <!-- Initialize Theme before paint to prevent Forced Reflow -->
+    <script>
+      (function() {
+        try {
+          var t = localStorage.getItem('vietsol-theme') || 'dark';
+          document.documentElement.setAttribute('data-theme', t);
+        } catch(e) {}
+      })();
+    </script>
     <!-- Preload critical LCP logo -->
     <link rel="preload" as="image" href="/logo-vietsol.webp" type="image/webp" fetchpriority="high" />
-    <!-- Google Fonts: preconnect + async load -->
+    <!-- Google Fonts: preconnect + streamlined weights -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800;900&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800;900&display=swap" media="print" onload="this.media='all'" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@700;800&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@700;800&display=swap" media="print" onload="this.media='all'" />
     <noscript>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800;900&display=swap" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@700;800&display=swap" />
     </noscript>
     <title>Vietsol – Giải pháp phần mềm marketing cho tiệm nails</title>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Prerender shell to eliminate LCP Element Render Delay -->
+      <header class="navbar" style="position:fixed;top:0;left:0;right:0;z-index:1000;padding:0.5rem 0;width:100%;">
+        <div class="container navbar__inner" style="display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;padding:0 1.5rem;">
+          <a href="/" class="navbar__logo" style="display:flex;align-items:center;">
+            <div class="navbar__logo-icon-container" style="width:80px;height:80px;display:flex;align-items:center;justify-content:center;">
+              <img src="/logo-vietsol.webp" alt="VietSol Logo" class="navbar__logo-icon-cropped" width="80" height="80" fetchpriority="high" decoding="async" style="width:100%;height:100%;object-fit:contain;" />
+            </div>
+          </a>
+        </div>
+      </header>
+    </div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
