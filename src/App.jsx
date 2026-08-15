@@ -1,18 +1,20 @@
 // App main routing configuration
-import { useEffect } from 'react'
+import { useEffect, lazy, Suspense } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import './index.css'
 import Navbar from './components/Navbar'
 import Home from './components/Home'
-import NailSalonServices from './components/NailSalonServices'
-import NailTemplateViewer from './components/NailTemplateViewer'
-import SocialMediaMarketing from './components/SocialMediaMarketing'
-import BlogPost from './components/BlogPost'
-import BlogPage from './components/BlogPage'
 import Footer from './components/Footer'
 import FloatingChat from './components/FloatingChat'
-import Contact from './components/Contact'
-import AboutUs from './components/AboutUs'
+
+// Lazy-load non-homepage routes to reduce initial bundle size
+const NailSalonServices = lazy(() => import('./components/NailSalonServices'))
+const NailTemplateViewer = lazy(() => import('./components/NailTemplateViewer'))
+const SocialMediaMarketing = lazy(() => import('./components/SocialMediaMarketing'))
+const BlogPost = lazy(() => import('./components/BlogPost'))
+const BlogPage = lazy(() => import('./components/BlogPage'))
+const Contact = lazy(() => import('./components/Contact'))
+const AboutUs = lazy(() => import('./components/AboutUs'))
 
 
 function App() {
@@ -41,17 +43,23 @@ function App() {
     <div style={{ width: '100%', minHeight: '100vh' }}>
       {!isDemoPage && <Navbar />}
       <main style={{ width: '100%' }}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/thiet-ke-website-nails" element={<NailSalonServices />} />
-          <Route path="/social-media-marketing" element={<SocialMediaMarketing />} />
-          <Route path="/blog" element={<BlogPage />} />
-          <Route path="/blog/:postId" element={<BlogPost />} />
-          <Route path="/tiem-nails-google-maps" element={<BlogPost postIdOverride="tiem-nails-google-maps" />} />
-          <Route path="/demo/:templateId" element={<NailTemplateViewer />} />
-          <Route path="/lien-he" element={<Contact />} />
-          <Route path="/ve-chung-toi" element={<AboutUs />} />
-        </Routes>
+        <Suspense fallback={
+          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '60vh' }}>
+            <div style={{ width: '36px', height: '36px', border: '3px solid var(--clr-border)', borderTopColor: 'var(--clr-primary)', borderRadius: '50%', animation: 'spin-slow 0.8s linear infinite' }} />
+          </div>
+        }>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/thiet-ke-website-nails" element={<NailSalonServices />} />
+            <Route path="/social-media-marketing" element={<SocialMediaMarketing />} />
+            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/blog/:postId" element={<BlogPost />} />
+            <Route path="/tiem-nails-google-maps" element={<BlogPost postIdOverride="tiem-nails-google-maps" />} />
+            <Route path="/demo/:templateId" element={<NailTemplateViewer />} />
+            <Route path="/lien-he" element={<Contact />} />
+            <Route path="/ve-chung-toi" element={<AboutUs />} />
+          </Routes>
+        </Suspense>
       </main>
       {!isDemoPage && <Footer />}
       {!isDemoPage && <FloatingChat />}

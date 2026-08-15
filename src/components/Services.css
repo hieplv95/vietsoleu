@@ -223,3 +223,8 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Light mode contrast fixes */
+[data-theme="light"] .services__link {
+  filter: brightness(0.7);
+}

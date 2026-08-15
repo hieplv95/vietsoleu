@@ -82,7 +82,7 @@ export default function Testimonials() {
             </div>
             <div className="testimonials__author">
               <div className="testimonials__avatar">
-                <img src={testimonials[active].avatar} alt={testimonials[active].name} />
+                <img src={testimonials[active].avatar} alt={testimonials[active].name} loading="lazy" width="56" height="56" />
               </div>
               <div>
                 <div className="testimonials__name">{testimonials[active].name}</div>
@@ -104,7 +104,7 @@ export default function Testimonials() {
                 onClick={() => setActive(i)}
               >
                 <div className="testimonials__nav-avatar">
-                  <img src={t.avatar} alt={t.name} />
+                  <img src={t.avatar} alt={t.name} loading="lazy" width="40" height="40" />
                 </div>
                 <div>
                   <div className="testimonials__nav-name">{t.name}</div>

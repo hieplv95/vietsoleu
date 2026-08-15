@@ -9,7 +9,7 @@ export default function Partners() {
       id: 'pho-vietnam',
       name: 'Pho Vietnam',
       url: 'https://phovietnam.es/',
-      logo: <img src={phoVietnamLogo} alt="Pho Vietnam" className="partner-img partner-img--wide" />
+      logo: <img src={phoVietnamLogo} alt="Pho Vietnam" className="partner-img partner-img--wide" loading="lazy" width="359" height="77" />
     },
     {
       id: 'google',
@@ -41,7 +41,7 @@ export default function Partners() {
       id: 'pho-viet',
       name: 'Restaurante Pho Viet',
       url: 'https://www.restaurantephoviet.com/',
-      logo: <img src={phoVietExactLogo} alt="Restaurante Pho Viet" className="partner-img partner-img--exact" />
+      logo: <img src={phoVietExactLogo} alt="Restaurante Pho Viet" className="partner-img partner-img--exact" loading="lazy" width="100" height="100" />
     },
     {
       id: 'luxe-nails',

@@ -8,17 +8,38 @@ export default function Hero() {
   const heroRef = useRef(null)
 
   useEffect(() => {
-    const handleMouseMove = (e) => {
-      if (!heroRef.current) return
-      const rect = heroRef.current.getBoundingClientRect()
-      const x = ((e.clientX - rect.left) / rect.width) * 100
-      const y = ((e.clientY - rect.top) / rect.height) * 100
-      heroRef.current.style.setProperty('--mouse-x', `${x}%`)
-      heroRef.current.style.setProperty('--mouse-y', `${y}%`)
+    let rafId = null
+    let cachedRect = null
+
+    const updateRect = () => {
+      if (heroRef.current) {
+        cachedRect = heroRef.current.getBoundingClientRect()
+      }
     }
+
+    const handleMouseMove = (e) => {
+      if (!heroRef.current || !cachedRect) return
+      if (rafId) return // Skip if a frame is already scheduled
+      rafId = requestAnimationFrame(() => {
+        const x = ((e.clientX - cachedRect.left) / cachedRect.width) * 100
+        const y = ((e.clientY - cachedRect.top) / cachedRect.height) * 100
+        heroRef.current?.style.setProperty('--mouse-x', `${x}%`)
+        heroRef.current?.style.setProperty('--mouse-y', `${y}%`)
+        rafId = null
+      })
+    }
+
+    // Cache rect on mount and resize (not on every mousemove)
+    updateRect()
+    window.addEventListener('resize', updateRect, { passive: true })
+
     const el = heroRef.current
-    el?.addEventListener('mousemove', handleMouseMove)
-    return () => el?.removeEventListener('mousemove', handleMouseMove)
+    el?.addEventListener('mousemove', handleMouseMove, { passive: true })
+    return () => {
+      el?.removeEventListener('mousemove', handleMouseMove)
+      window.removeEventListener('resize', updateRect)
+      if (rafId) cancelAnimationFrame(rafId)
+    }
   }, [])
 
   return (
@@ -98,6 +119,9 @@ export default function Hero() {
               src={tabletImg}
               alt="YoCheckin tại tiệm Nails"
               className="hero__photo"
+              width="665"
+              height="470"
+              fetchPriority="high"
             />
           </div>
 

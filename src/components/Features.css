@@ -70,7 +70,7 @@
 }
 
 .features__pain-content strong {
-  color: #f5a623;
+  color: var(--clr-accent-gold);
 }
 
 /* Feature grid */

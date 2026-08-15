@@ -20,27 +20,27 @@ export default function BrandStory() {
             {/* Top row: Accent line + Main Image */}
             <div className="brand-story__top-row">
               <div className="brand-story__accent-line"></div>
-              <img src={salonMain} alt="Vietnamese nail tech working on client" className="brand-story__img brand-story__img--main" />
+              <img src={salonMain} alt="Vietnamese nail tech working on client" className="brand-story__img brand-story__img--main" loading="lazy" width="621" height="621" />
             </div>
 
             {/* Bottom row: Grid with Left vertical, Middle stacked, Right vertical */}
             <div className="brand-story__bottom-row">
               {/* Left Column: Vertical image */}
               <div className="brand-story__col-vertical">
-                <img src={salonCheckin} alt="Client checkin" className="brand-story__img brand-story__img--vertical" />
+                <img src={salonCheckin} alt="Client checkin" className="brand-story__img brand-story__img--vertical" loading="lazy" width="203" height="203" />
               </div>
 
               {/* Middle Column: Stacked horizontal images */}
               <div className="brand-story__col-stacked">
                 <div className="brand-story__img-wrapper brand-story__img-wrapper--horizontal">
-                  <img src={yocheckinReal} alt="YoCheckIn iPad" className="brand-story__img brand-story__img--cropped" />
+                  <img src={yocheckinReal} alt="YoCheckIn iPad" className="brand-story__img brand-story__img--cropped" loading="lazy" width="400" height="200" />
                 </div>
-                <img src={salonTech} alt="YoCheckIn terminal setup" className="brand-story__img brand-story__img--horizontal" />
+                <img src={salonTech} alt="YoCheckIn terminal setup" className="brand-story__img brand-story__img--horizontal" loading="lazy" width="203" height="203" />
               </div>
 
               {/* Right Column: Vertical image */}
               <div className="brand-story__col-vertical">
-                <img src={salonWaiting} alt="Cozy European salon" className="brand-story__img brand-story__img--vertical" />
+                <img src={salonWaiting} alt="Cozy European salon" className="brand-story__img brand-story__img--vertical" loading="lazy" width="203" height="300" />
               </div>
             </div>
 
