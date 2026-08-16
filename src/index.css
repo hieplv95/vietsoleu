@@ -1,45 +1,9 @@
 /* Google Fonts loaded async from index.html — do NOT re-add @import here */
 
-/* ===== CSS CUSTOM PROPERTIES — DARK MODE (default) ===== */
+/* ===== CSS CUSTOM PROPERTIES — LIGHT MODE (default) ===== */
 :root,
-[data-theme="dark"] {
-  /* Colors */
-  --clr-primary: #6c47ff;
-  --clr-primary-light: #a78bfa;
-  --clr-primary-dark: #4e2ed4;
-  --clr-accent: #ff6b35;
-  --clr-gold: #f5a623;
-  --clr-teal: #00d4b1;
-
-  --clr-bg: #06091a;
-  --clr-bg-2: #0d1230;
-  --clr-bg-3: #111827;
-  --clr-surface: rgba(255, 255, 255, 0.04);
-  --clr-surface-hover: rgba(255, 255, 255, 0.08);
-  --clr-border: rgba(255, 255, 255, 0.08);
-  --clr-border-light: rgba(255, 255, 255, 0.15);
-
-  --clr-text: #f8fafc;
-  --clr-text-muted: #cbd5e1;
-  --clr-text-dim: #94a3b8;
-
-  /* Shadows dark */
-  --shadow-theme-card: 0 8px 32px rgba(0, 0, 0, 0.4);
-  --clr-hero-title: #ffffff;
-  --clr-section-title-from: #ffffff;
-  --clr-section-title-to: #c0bcff;
-
-  /* Contrast-safe accent colors for dark mode */
-  --clr-accent-gold: #f5a623;
-  --clr-accent-purple: #a78bfa;
-  --clr-accent-teal: #00d4b1;
-  --clr-section-label-text: #c4b5fd;
-  --clr-section-label-bg: rgba(108, 71, 255, 0.18);
-  --clr-section-label-border: rgba(167, 139, 250, 0.35);
-}
-
-/* ===== LIGHT MODE ===== */
 [data-theme="light"] {
+  /* Colors */
   --clr-primary: #5a38e8;
   --clr-primary-light: #7c5cf6;
   --clr-primary-dark: #3e22b8;
@@ -74,6 +38,46 @@
   --clr-section-label-text: #372099;
   --clr-section-label-bg: rgba(74, 45, 184, 0.12);
   --clr-section-label-border: rgba(74, 45, 184, 0.3);
+}
+
+/* ===== DARK MODE ===== */
+[data-theme="dark"] {
+  /* Colors */
+  --clr-primary: #6c47ff;
+  --clr-primary-light: #a78bfa;
+  --clr-primary-dark: #4e2ed4;
+  --clr-accent: #ff6b35;
+  --clr-gold: #f5a623;
+  --clr-teal: #00d4b1;
+
+  --clr-bg: #06091a;
+  --clr-bg-2: #0d1230;
+  --clr-bg-3: #111827;
+  --clr-surface: rgba(255, 255, 255, 0.04);
+  --clr-surface-hover: rgba(255, 255, 255, 0.08);
+  --clr-border: rgba(255, 255, 255, 0.08);
+  --clr-border-light: rgba(255, 255, 255, 0.15);
+
+  --clr-text: #f8fafc;
+  --clr-text-muted: #cbd5e1;
+  --clr-text-dim: #94a3b8;
+
+  /* Shadows dark */
+  --shadow-theme-card: 0 8px 32px rgba(0, 0, 0, 0.4);
+  --clr-hero-title: #ffffff;
+  --clr-section-title-from: #ffffff;
+  --clr-section-title-to: #c0bcff;
+
+  --shadow-glow-purple: 0 0 40px rgba(108, 71, 255, 0.2);
+  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.4);
+
+  /* Contrast-safe accent colors for dark mode */
+  --clr-accent-gold: #f5a623;
+  --clr-accent-purple: #a78bfa;
+  --clr-accent-teal: #00d4b1;
+  --clr-section-label-text: #c4b5fd;
+  --clr-section-label-bg: rgba(108, 71, 255, 0.18);
+  --clr-section-label-border: rgba(167, 139, 250, 0.35);
 }
 
 /* ===== SHARED STATIC TOKENS (theme-independent) ===== */
