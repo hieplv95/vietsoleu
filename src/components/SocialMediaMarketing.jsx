@@ -73,7 +73,7 @@ export default function SocialMediaMarketing() {
             </div>
           </div>
           <div className="social-hero__image-container">
-            <img src={socialHeroImg} alt="Social Media Marketing for Nail Salon" className="social-hero__preview-img" />
+            <img src={socialHeroImg} alt="Social Media Marketing for Nail Salon" className="social-hero__preview-img" width="1600" height="900" loading="lazy" decoding="async" />
           </div>
         </div>
       </section>
@@ -92,7 +92,7 @@ export default function SocialMediaMarketing() {
           <div className="benefit-card">
             <div className="benefit-card__header">
               <span className="benefit-number num-1">1</span>
-              <img src={f1Img} className="benefit-icon" alt="Tăng review rating" />
+              <img src={f1Img} className="benefit-icon" alt="Tăng review rating" width="449" height="77" loading="lazy" decoding="async" />
             </div>
             <div className="benefit-card__content">
               <h3>{t('socialPage.benefits.card1Title')}</h3>
@@ -104,7 +104,7 @@ export default function SocialMediaMarketing() {
           <div className="benefit-card">
             <div className="benefit-card__header">
               <span className="benefit-number num-2">2</span>
-              <img src={f2Img} className="benefit-icon" alt="Kết nối khách hàng" />
+              <img src={f2Img} className="benefit-icon" alt="Kết nối khách hàng" width="449" height="77" loading="lazy" decoding="async" />
             </div>
             <div className="benefit-card__content">
               <h3>{t('socialPage.benefits.card2Title')}</h3>
@@ -116,7 +116,7 @@ export default function SocialMediaMarketing() {
           <div className="benefit-card">
             <div className="benefit-card__header">
               <span className="benefit-number num-3">3</span>
-              <img src={f3Img} className="benefit-icon" alt="Xây dựng thương hiệu" />
+              <img src={f3Img} className="benefit-icon" alt="Xây dựng thương hiệu" width="449" height="77" loading="lazy" decoding="async" />
             </div>
             <div className="benefit-card__content">
               <h3>{t('socialPage.benefits.card3Title')}</h3>
@@ -128,7 +128,7 @@ export default function SocialMediaMarketing() {
           <div className="benefit-card">
             <div className="benefit-card__header">
               <span className="benefit-number num-4">4</span>
-              <img src={f4Img} className="benefit-icon" alt="Chi phí thấp" />
+              <img src={f4Img} className="benefit-icon" alt="Chi phí thấp" width="449" height="77" loading="lazy" decoding="async" />
             </div>
             <div className="benefit-card__content">
               <h3>{t('socialPage.benefits.card4Title')}</h3>
@@ -173,7 +173,7 @@ export default function SocialMediaMarketing() {
               <div className="phone-mockup">
                 <div className="phone-speaker"></div>
                 <div className="phone-screen">
-                  <img src={googleMapsAdsDemoImg} alt="Google Maps Ads Demo" className="phone-screenshot" />
+                  <img src={googleMapsAdsDemoImg} alt="Google Maps Ads Demo" className="phone-screenshot" width="470" height="1024" loading="lazy" decoding="async" />
                 </div>
                 <div className="phone-home-button"></div>
               </div>
@@ -271,7 +271,7 @@ export default function SocialMediaMarketing() {
               </div>
             </div>
             <div className="instagram-demo-image-wrapper">
-              <img src={instagramAdsTypesImg} alt="Các loại quảng cáo Instagram" className="instagram-demo-img" />
+              <img src={instagramAdsTypesImg} alt="Các loại quảng cáo Instagram" className="instagram-demo-img" width="617" height="406" loading="lazy" decoding="async" />
             </div>
           </div>
 

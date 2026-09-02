@@ -91,7 +91,6 @@
   left: 50%;
   transform: translateX(-50%);
   background: var(--clr-bg-2);
-  backdrop-filter: blur(20px);
   border: 1px solid var(--clr-border-light);
   border-radius: 12px;
   padding: 0.5rem;
@@ -168,8 +167,6 @@
   top: calc(100% + 8px);
   right: 0;
   background: var(--clr-bg-2);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--clr-border-light);
   border-radius: 12px;
   padding: 0.5rem;

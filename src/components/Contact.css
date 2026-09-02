@@ -93,7 +93,6 @@
   border-radius: var(--radius-lg);
   padding: var(--space-6);
   transition: transform var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
-  backdrop-filter: blur(10px);
 }
 
 .contact-card:hover {
@@ -153,7 +152,6 @@
   border: 1px solid var(--clr-border);
   border-radius: var(--radius-lg);
   padding: var(--space-6);
-  backdrop-filter: blur(10px);
 }
 
 .contact-social-section h3 {
@@ -209,7 +207,6 @@
   border: 1px solid var(--clr-border);
   border-radius: var(--radius-xl);
   padding: var(--space-8) var(--space-10);
-  backdrop-filter: blur(16px);
   box-shadow: var(--shadow-theme-card);
   animation: fadeInUp 0.8s ease forwards;
 }

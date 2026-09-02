@@ -155,8 +155,26 @@ ul {
 button {
   cursor: pointer;
   border: none;
-  outline: none;
   font-family: inherit;
+}
+
+/* Chỉ báo focus cho bàn phím. Dùng :focus-visible nên vòng viền chỉ hiện khi
+   điều hướng bằng phím, không hiện khi bấm chuột. Vòng nằm ngoài phần tử 3px
+   nên đọc rõ cả trên nút tím đặc lẫn trên nền sáng. */
+:focus-visible {
+  outline: 2px solid var(--clr-primary);
+  outline-offset: 3px;
+}
+
+/* Người dùng đã bật "giảm chuyển động" trong hệ điều hành:
+   tắt animation, transition và cuộn mượt trên toàn site. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 /* ===== LAYOUT ===== */

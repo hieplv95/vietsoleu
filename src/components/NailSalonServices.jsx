@@ -91,7 +91,7 @@ export default function NailSalonServices() {
             </div>
           </div>
           <div className="nails-hero__image-container">
-            <img src={unasArtNailsImg} alt="Unas ArtNails Preview" className="nails-hero__preview-img" />
+            <img src={unasArtNailsImg} alt="Unas ArtNails Preview" className="nails-hero__preview-img" width="1024" height="470" loading="lazy" decoding="async" />
           </div>
         </div>
       </section>

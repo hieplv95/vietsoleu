@@ -41,7 +41,7 @@ export default function Footer() {
         <div className="footer__brand">
           <div className="footer__logo">
             <div className="footer__logo-icon-container">
-              <img src={logoImg} alt="VietSol Logo" className="footer__logo-icon-cropped" />
+              <img src={logoImg} alt="VietSol Logo" className="footer__logo-icon-cropped" width="105" height="105" loading="lazy" decoding="async" />
             </div>
           </div>
           <p className="footer__tagline">
