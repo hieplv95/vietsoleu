@@ -42,15 +42,6 @@
   transform: rotate(-8deg) scale(1.05);
 }
 
-.footer__logo span {
-  font-family: 'Outfit', sans-serif;
-  font-size: 1.25rem;
-  font-weight: 800;
-  background: linear-gradient(135deg, var(--clr-text, #fff) 0%, #a78bfa 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
 
 .footer__tagline {
   font-size: 0.8125rem;
@@ -175,7 +166,7 @@
 }
 
 .footer__link:hover {
-  color: #a78bfa;
+  color: var(--clr-primary);
 }
 
 /* Bottom bar */

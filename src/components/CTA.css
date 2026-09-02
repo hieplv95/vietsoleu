@@ -18,7 +18,7 @@
 .cta__bg-orb--1 {
   width: 700px;
   height: 700px;
-  background: radial-gradient(circle, rgba(108,71,255,0.25) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(var(--clr-primary-rgb),0.25) 0%, transparent 70%);
   top: -200px;
   left: 50%;
   transform: translateX(-50%);
@@ -27,7 +27,7 @@
 .cta__bg-orb--2 {
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, rgba(0,212,177,0.12) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(var(--clr-teal-rgb),0.12) 0%, transparent 70%);
   bottom: -100px;
   right: 10%;
 }
@@ -36,8 +36,8 @@
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(108,71,255,0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(108,71,255,0.06) 1px, transparent 1px);
+    linear-gradient(rgba(var(--clr-primary-rgb),0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(var(--clr-primary-rgb),0.06) 1px, transparent 1px);
   background-size: 60px 60px;
   mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 20%, transparent 80%);
 }
@@ -60,13 +60,13 @@
   border-radius: 999px;
   font-size: 0.8125rem;
   font-weight: 700;
-  background: rgba(108,71,255,0.12);
-  border: 1px solid rgba(108,71,255,0.3);
-  color: #a78bfa;
+  background: rgba(var(--clr-primary-rgb),0.12);
+  border: 1px solid rgba(var(--clr-primary-rgb),0.3);
+  color: var(--clr-primary);
 }
 
 .cta__title {
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--ff-heading);
   font-size: clamp(2rem, 4vw, 3.5rem);
   font-weight: 900;
   color: #fff;
@@ -76,10 +76,7 @@
 }
 
 .cta__title-highlight {
-  background: linear-gradient(135deg, #a78bfa, #00d4b1);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--clr-primary);
 }
 
 .cta__desc {
@@ -99,7 +96,7 @@
 }
 
 .cta__btn-primary {
-  box-shadow: 0 8px 40px rgba(108,71,255,0.5) !important;
+  box-shadow: 0 8px 40px rgba(var(--clr-primary-rgb),0.5) !important;
 }
 
 .cta__btn-whatsapp {

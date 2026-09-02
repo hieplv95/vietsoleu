@@ -16,7 +16,7 @@
 .about__bg-orb--1 {
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(108,71,255,0.15) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(var(--clr-primary-rgb),0.15) 0%, transparent 70%);
   top: -100px;
   right: -100px;
 }
@@ -24,7 +24,7 @@
 .about__bg-orb--2 {
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, rgba(0,212,177,0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(var(--clr-teal-rgb),0.1) 0%, transparent 70%);
   bottom: -50px;
   left: 0;
 }
@@ -45,13 +45,10 @@
 }
 
 .about__title {
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--ff-heading);
   font-size: clamp(1.75rem, 3vw, 2.5rem);
   font-weight: 800;
-  background: linear-gradient(135deg, var(--clr-section-title-from, #fff) 0%, var(--clr-section-title-to, #c0bcff) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--clr-text);
   line-height: 1.2;
 }
 
@@ -113,14 +110,14 @@
 .about__hub-ring--1 {
   width: 180px;
   height: 180px;
-  border-color: rgba(108,71,255,0.2);
+  border-color: rgba(var(--clr-primary-rgb),0.2);
   animation-duration: 20s;
 }
 
 .about__hub-ring--2 {
   width: 280px;
   height: 280px;
-  border-color: rgba(108,71,255,0.12);
+  border-color: rgba(var(--clr-primary-rgb),0.12);
   animation-duration: 30s;
   animation-direction: reverse;
 }
@@ -128,7 +125,7 @@
 .about__hub-ring--3 {
   width: 360px;
   height: 360px;
-  border-color: rgba(108,71,255,0.07);
+  border-color: rgba(var(--clr-primary-rgb),0.07);
   animation-duration: 40s;
 }
 
@@ -139,14 +136,14 @@
   gap: 0.375rem;
   z-index: 2;
   background: var(--clr-bg-2);
-  border: 1px solid rgba(108,71,255,0.3);
+  border: 1px solid rgba(var(--clr-primary-rgb),0.3);
   border-radius: 16px;
   padding: 1rem 1.5rem;
-  box-shadow: 0 0 40px rgba(108,71,255,0.3);
+  box-shadow: 0 0 40px rgba(var(--clr-primary-rgb),0.3);
 }
 
 .about__hub-center span {
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--ff-heading);
   font-size: 0.8125rem;
   font-weight: 700;
   color: var(--clr-accent-purple);

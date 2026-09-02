@@ -10,8 +10,8 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 50% 60% at 20% 50%, rgba(108,71,255,0.08) 0%, transparent 70%),
-    radial-gradient(ellipse 50% 60% at 80% 50%, rgba(0,212,177,0.06) 0%, transparent 70%);
+    radial-gradient(ellipse 50% 60% at 20% 50%, rgba(var(--clr-primary-rgb),0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 60% at 80% 50%, rgba(var(--clr-teal-rgb),0.06) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -31,14 +31,14 @@
 }
 
 .pricing__card--popular {
-  border-color: rgba(0,212,177,0.4) !important;
-  background: rgba(0,212,177,0.05) !important;
+  border-color: rgba(var(--clr-teal-rgb),0.4) !important;
+  background: rgba(var(--clr-teal-rgb),0.05) !important;
   transform: translateY(-8px);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 0 1px rgba(0,212,177,0.2);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 0 1px rgba(var(--clr-teal-rgb),0.2);
 }
 
 .pricing__card--hovered:not(.pricing__card--popular) {
-  border-color: rgba(108,71,255,0.3);
+  border-color: rgba(var(--clr-primary-rgb),0.3);
 }
 
 /* Popular badge */
@@ -47,14 +47,14 @@
   top: -14px;
   left: 50%;
   transform: translateX(-50%);
-  background: linear-gradient(135deg, #00d4b1, #6c47ff);
+  background: linear-gradient(135deg, var(--clr-teal), var(--clr-primary));
   color: white;
   font-size: 0.75rem;
   font-weight: 700;
   padding: 4px 16px;
   border-radius: 999px;
   white-space: nowrap;
-  box-shadow: 0 4px 20px rgba(0,212,177,0.4);
+  box-shadow: 0 4px 20px rgba(var(--clr-teal-rgb),0.4);
 }
 
 .pricing__card-header {
@@ -76,7 +76,7 @@
 }
 
 .pricing__plan-name {
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--ff-heading);
   font-size: 1.25rem;
   font-weight: 700;
   color: var(--clr-text);
@@ -105,7 +105,7 @@
 }
 
 .pricing__amount {
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--ff-heading);
   font-size: 3rem;
   font-weight: 900;
   color: var(--plan-color, #fff);

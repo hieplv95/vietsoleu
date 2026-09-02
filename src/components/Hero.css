@@ -11,7 +11,6 @@
   background: var(--clr-bg);
   --mouse-x: 50%;
   --mouse-y: 50%;
-  transition: background 0.35s ease;
   box-sizing: border-box;
 }
 
@@ -27,7 +26,7 @@
 .hero__orb--1 {
   width: 650px;
   height: 650px;
-  background: radial-gradient(circle, rgba(108,71,255,0.28) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(var(--clr-primary-rgb),0.1) 0%, transparent 70%);
   top: -200px;
   left: -150px;
   animation: float 8s ease-in-out infinite;
@@ -36,7 +35,7 @@
 .hero__orb--2 {
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(0,212,177,0.15) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(var(--clr-teal-rgb),0.08) 0%, transparent 70%);
   bottom: -100px;
   right: 0%;
   animation: float 10s ease-in-out infinite reverse;
@@ -45,22 +44,18 @@
 .hero__orb--3 {
   width: 350px;
   height: 350px;
-  background: radial-gradient(circle, rgba(245,166,35,0.12) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(var(--clr-gold-rgb),0.06) 0%, transparent 70%);
   top: 30%;
   right: 30%;
   animation: float 7s ease-in-out infinite;
 }
 
-[data-theme="light"] .hero__orb--1 { background: radial-gradient(circle, rgba(108,71,255,0.1) 0%, transparent 70%); }
-[data-theme="light"] .hero__orb--2 { background: radial-gradient(circle, rgba(0,168,142,0.08) 0%, transparent 70%); }
-[data-theme="light"] .hero__orb--3 { background: radial-gradient(circle, rgba(212,144,10,0.06) 0%, transparent 70%); }
-
 .hero__grid-overlay {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(108,71,255,0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(108,71,255,0.05) 1px, transparent 1px);
+    linear-gradient(rgba(var(--clr-primary-rgb),0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(var(--clr-primary-rgb),0.05) 1px, transparent 1px);
   background-size: 60px 60px;
   mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 40%, transparent 100%);
 }
@@ -69,7 +64,7 @@
   position: absolute;
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(108,71,255,0.06) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(var(--clr-primary-rgb),0.06) 0%, transparent 70%);
   border-radius: 50%;
   pointer-events: none;
   transform: translate(-50%, -50%);
@@ -99,30 +94,30 @@
 .hero__badge {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 0.45rem 1.1rem;
+  gap: 7px;
+  padding: 6px 14px;
   border-radius: 999px;
-  font-size: 20px;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  color: #a78bfa;
-  background: rgba(108,71,255,0.12);
-  border: 1px solid rgba(108,71,255,0.3);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--clr-section-label-text);
+  background: var(--clr-section-label-bg);
+  border: 0;
   animation: fadeInUp 0.6s ease both;
 }
 
 .hero__badge-dot {
-  width: 7px;
-  height: 7px;
-  background: #a78bfa;
+  width: 5px;
+  height: 5px;
+  background: var(--clr-primary);
   border-radius: 50%;
-  animation: pulse-dot 2s ease-in-out infinite;
-  will-change: transform, opacity;
+  flex-shrink: 0;
 }
 
 /* Title */
 .hero__title {
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--ff-heading);
   font-size: clamp(2.2rem, 3.5vw, 3.75rem);
   font-weight: 900;
   line-height: 1.1;
@@ -132,10 +127,7 @@
 }
 
 .hero__title-gradient {
-  background: linear-gradient(135deg, #a78bfa 0%, #6c47ff 50%, #00d4b1 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--clr-primary);
 }
 
 /* Desc */
@@ -148,7 +140,7 @@
 }
 
 .hero__desc strong {
-  color: #a78bfa;
+  color: var(--clr-primary);
   font-weight: 600;
 }
 
@@ -197,7 +189,7 @@
   overflow: hidden;
   box-shadow:
     0 30px 80px rgba(0,0,0,0.35),
-    0 0 0 1px rgba(108,71,255,0.15),
+    0 0 0 1px rgba(var(--clr-primary-rgb),0.15),
     inset 0 1px 0 rgba(255,255,255,0.05);
   transform: perspective(1200px) rotateY(-4deg) rotateX(2deg);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -207,7 +199,7 @@
   transform: perspective(1200px) rotateY(-1deg) rotateX(1deg);
   box-shadow:
     0 40px 100px rgba(0,0,0,0.4),
-    0 0 0 1px rgba(108,71,255,0.25),
+    0 0 0 1px rgba(var(--clr-primary-rgb),0.25),
     inset 0 1px 0 rgba(255,255,255,0.08);
 }
 
@@ -219,8 +211,8 @@
   overflow: hidden;
   position: relative;
   box-shadow:
-    0 30px 80px rgba(0,0,0,0.35),
-    0 0 0 1px rgba(108,71,255,0.15);
+    0 20px 60px rgba(var(--clr-primary-rgb),0.18),
+    0 0 0 1px rgba(var(--clr-primary-rgb),0.12);
   transform: perspective(1200px) rotateY(-4deg) rotateX(2deg);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
@@ -229,13 +221,7 @@
   transform: perspective(1200px) rotateY(-1deg) rotateX(1deg);
   box-shadow:
     0 40px 100px rgba(0,0,0,0.4),
-    0 0 0 1px rgba(108,71,255,0.25);
-}
-
-[data-theme="light"] .hero__photo-container {
-  box-shadow:
-    0 20px 60px rgba(90,56,232,0.18),
-    0 0 0 1px rgba(90,56,232,0.12);
+    0 0 0 1px rgba(var(--clr-primary-rgb),0.25);
 }
 
 /* Photo itself: scaled up and centered to crop out the white card frame and grid borders */
@@ -338,7 +324,7 @@
 }
 
 .hero__mock-stat-value {
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--ff-heading);
   font-size: 1rem;
   font-weight: 700;
   color: var(--clr-text);
@@ -353,8 +339,8 @@
 .hero__mock-stat-up {
   font-size: 0.6rem;
   font-weight: 700;
-  color: #00d4b1;
-  background: rgba(0,212,177,0.1);
+  color: var(--clr-teal);
+  background: rgba(var(--clr-teal-rgb),0.1);
   padding: 2px 5px;
   border-radius: 4px;
   align-self: flex-start;
@@ -379,8 +365,8 @@
 
 .hero__mock-chart-badge {
   font-size: 0.65rem;
-  color: #6c47ff;
-  background: rgba(108,71,255,0.12);
+  color: var(--clr-primary);
+  background: rgba(var(--clr-primary-rgb),0.12);
   padding: 2px 7px;
   border-radius: 4px;
 }
@@ -408,15 +394,15 @@
 }
 
 .hero__mock-pill--green {
-  background: rgba(0,212,177,0.1);
-  color: #00d4b1;
-  border: 1px solid rgba(0,212,177,0.2);
+  background: rgba(var(--clr-teal-rgb),0.1);
+  color: var(--clr-teal);
+  border: 1px solid rgba(var(--clr-teal-rgb),0.2);
 }
 
 .hero__mock-pill--purple {
-  background: rgba(108,71,255,0.1);
-  color: #a78bfa;
-  border: 1px solid rgba(108,71,255,0.2);
+  background: rgba(var(--clr-primary-rgb),0.1);
+  color: var(--clr-primary);
+  border: 1px solid rgba(var(--clr-primary-rgb),0.2);
 }
 
 /* Floating badge */
@@ -441,7 +427,7 @@
 }
 
 .hero__floating-badge-val {
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--ff-heading);
   font-size: 0.9375rem;
   font-weight: 800;
   color: var(--clr-text);

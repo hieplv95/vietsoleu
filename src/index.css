@@ -1,90 +1,63 @@
-/* Google Fonts loaded async from index.html — do NOT re-add @import here */
+/* Inter loaded async from index.html — do NOT re-add @import here */
 
-/* ===== CSS CUSTOM PROPERTIES — LIGHT MODE (default) ===== */
-:root,
-[data-theme="light"] {
-  /* Colors */
-  --clr-primary: #5a38e8;
-  --clr-primary-light: #7c5cf6;
-  --clr-primary-dark: #3e22b8;
+/* ===== CSS CUSTOM PROPERTIES =====
+   Bảng màu đồng bộ với yocheckin.com. Đây là nguồn duy nhất — mọi file CSS
+   khác gọi qua var(), không tự ghi mã màu. */
+:root {
+  /* Thương hiệu — thang violet của YoCheckIn */
+  --clr-primary: #7c3aed;        /* violet 600 — CTA, link, nhãn */
+  --clr-primary-mid: #6d28d9;    /* violet 700 — hover, giữa gradient */
+  --clr-primary-dark: #5b21b6;   /* violet 800 — đầu gradient nút */
+  --clr-primary-light: var(--clr-primary-mid); /* tên cũ, giữ để không phải sửa 24 file */
+  --clr-blue: #2563eb;           /* nút đăng ký trên navbar */
   --clr-accent: #e85a20;
   --clr-gold: #d4900a;
-  --clr-teal: #00a88e;
+  --clr-teal: #00c49a;           /* chỉ dùng cho gói "phổ biến" & trạng thái tốt */
+  --clr-whatsapp: #25d366;
 
-  --clr-bg: #f4f6ff;
-  --clr-bg-2: #eceffe;
-  --clr-bg-3: #e2e6ff;
-  --clr-surface: rgba(255, 255, 255, 0.85);
-  --clr-surface-hover: rgba(255, 255, 255, 1);
-  --clr-border: rgba(90, 56, 232, 0.1);
-  --clr-border-light: rgba(90, 56, 232, 0.2);
+  /* Kênh RGB của các màu trên, dùng cho rgba(): rgba(var(--clr-primary-rgb), 0.12) */
+  --clr-primary-rgb: 124, 58, 237;
+  --clr-teal-rgb: 0, 196, 154;
+  --clr-gold-rgb: 212, 144, 10;
 
+  /* Nền & bề mặt — xám trung tính, không ngả lam */
+  --clr-bg: #f8fafc;
+  --clr-bg-2: #ffffff;
+  --clr-bg-3: #f1f5f9;
+  --clr-footer: #020617;
+  --clr-surface: #ffffff;
+  --clr-surface-hover: #ffffff;
+  --clr-border: #f1f5f9;
+  --clr-border-light: #e2e8f0;
+
+  /* Chữ — ba bậc, cả ba đều đạt WCAG AA trên nền sáng */
   --clr-text: #0f172a;
-  --clr-text-muted: #334155;
-  --clr-text-dim: #475569;
+  --clr-text-muted: #475569;
+  --clr-text-dim: #64748b;
+  --clr-text-on-dark: #f1f5f9;
 
-  --shadow-theme-card: 0 4px 24px rgba(90, 56, 232, 0.1);
-  --clr-hero-title: #13123a;
-  --clr-section-title-from: #0f1224;
-  --clr-section-title-to: #3e22b8;
+  /* Bóng — nhẹ gần như không thấy, giống YoCheckIn */
+  --shadow-card: 0 8px 28px rgba(15, 23, 42, 0.08);
+  --shadow-card-rest: 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-theme-card: 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-popular: 0 24px 64px rgba(var(--clr-teal-rgb), 0.14);
+  --shadow-glow-purple: 0 0 40px rgba(var(--clr-primary-rgb), 0.15);
 
-  --shadow-glow-purple: 0 0 40px rgba(90, 56, 232, 0.2);
-  --shadow-card: 0 8px 32px rgba(90, 56, 232, 0.12);
+  --clr-hero-title: #0f172a;
+  --clr-section-title-from: #0f172a;
+  --clr-section-title-to: var(--clr-primary);
 
-  /* Contrast-safe accent colors for light mode */
+  /* Màu nhấn đạt tương phản */
   --clr-accent-gold: #995c00;
-  --clr-accent-purple: #4a2db8;
+  --clr-accent-purple: var(--clr-primary-mid);
   --clr-accent-teal: #006655;
-  --clr-section-label-text: #372099;
-  --clr-section-label-bg: rgba(74, 45, 184, 0.12);
-  --clr-section-label-border: rgba(74, 45, 184, 0.3);
-}
+  --clr-section-label-text: var(--clr-primary-mid);
+  --clr-section-label-bg: rgba(var(--clr-primary-rgb), 0.1);
+  --clr-section-label-border: transparent;
 
-/* ===== DARK MODE ===== */
-[data-theme="dark"] {
-  /* Colors */
-  --clr-primary: #6c47ff;
-  --clr-primary-light: #a78bfa;
-  --clr-primary-dark: #4e2ed4;
-  --clr-accent: #ff6b35;
-  --clr-gold: #f5a623;
-  --clr-teal: #00d4b1;
-
-  --clr-bg: #06091a;
-  --clr-bg-2: #0d1230;
-  --clr-bg-3: #111827;
-  --clr-surface: rgba(255, 255, 255, 0.04);
-  --clr-surface-hover: rgba(255, 255, 255, 0.08);
-  --clr-border: rgba(255, 255, 255, 0.08);
-  --clr-border-light: rgba(255, 255, 255, 0.15);
-
-  --clr-text: #f8fafc;
-  --clr-text-muted: #cbd5e1;
-  --clr-text-dim: #94a3b8;
-
-  /* Shadows dark */
-  --shadow-theme-card: 0 8px 32px rgba(0, 0, 0, 0.4);
-  --clr-hero-title: #ffffff;
-  --clr-section-title-from: #ffffff;
-  --clr-section-title-to: #c0bcff;
-
-  --shadow-glow-purple: 0 0 40px rgba(108, 71, 255, 0.2);
-  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.4);
-
-  /* Contrast-safe accent colors for dark mode */
-  --clr-accent-gold: #f5a623;
-  --clr-accent-purple: #a78bfa;
-  --clr-accent-teal: #00d4b1;
-  --clr-section-label-text: #c4b5fd;
-  --clr-section-label-bg: rgba(108, 71, 255, 0.18);
-  --clr-section-label-border: rgba(167, 139, 250, 0.35);
-}
-
-/* ===== SHARED STATIC TOKENS (theme-independent) ===== */
-:root {
-  /* Typography */
-  --ff-heading: 'Outfit', sans-serif;
-  --ff-body: 'Inter', sans-serif;
+  /* Typography — một họ font duy nhất, như YoCheckIn */
+  --ff-heading: 'Inter', system-ui, sans-serif;
+  --ff-body: 'Inter', system-ui, sans-serif;
 
   --fs-xs: 0.75rem;
   --fs-sm: 0.875rem;
@@ -114,11 +87,16 @@
   --space-32: 8rem;
 
   /* Border radius */
-  --radius-sm: 6px;
+  --radius-sm: 8px;
   --radius-md: 12px;
-  --radius-lg: 20px;
-  --radius-xl: 32px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
   --radius-full: 9999px;
+
+  /* Khung & nhịp dọc */
+  --container: 1280px;
+  --section-y: 80px;
+  --section-y-lg: 128px;
 
   /* Transitions */
   --transition-fast: 150ms ease;
@@ -146,7 +124,6 @@ body {
   color: var(--clr-text);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  transition: background-color 0.35s ease, color 0.35s ease;
   width: 100%;
   min-height: 100vh;
   overflow-x: hidden;
@@ -185,7 +162,7 @@ button {
 /* ===== LAYOUT ===== */
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: var(--container);
   margin-left: auto;
   margin-right: auto;
   padding-left: var(--space-6);
@@ -195,7 +172,7 @@ button {
 
 .section {
   width: 100%;
-  padding: var(--space-24) 0;
+  padding: var(--section-y) 0;
   box-sizing: border-box;
 }
 
@@ -206,46 +183,53 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
 }
 
+/* Nhãn mục — pill viết hoa nhỏ, chấm tròn tĩnh (giống YoCheckIn) */
 .section-label {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-2);
-  font-size: var(--fs-xs);
-  font-weight: 600;
-  letter-spacing: 0.12em;
+  gap: 7px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.11em;
   text-transform: uppercase;
   color: var(--clr-section-label-text);
   background: var(--clr-section-label-bg);
   border: 1px solid var(--clr-section-label-border);
-  padding: var(--space-2) var(--space-4);
+  padding: 6px 14px;
   border-radius: var(--radius-full);
   margin-bottom: var(--space-5);
 }
 
 .section-label::before {
   content: '';
-  width: 6px;
-  height: 6px;
-  background: var(--clr-primary-light);
+  width: 5px;
+  height: 5px;
+  background: var(--clr-primary);
   border-radius: 50%;
-  animation: pulse-dot 2s ease-in-out infinite;
+  flex-shrink: 0;
 }
 
+/* Tiêu đề mục — chữ đặc, dòng nhấn đổi sang tím */
 .section-title {
-  font-size: var(--fs-4xl);
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
   font-weight: 800;
-  background: linear-gradient(135deg, var(--clr-section-title-from, #fff) 0%, var(--clr-section-title-to, #c0bcff) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  letter-spacing: -0.025em;
+  color: var(--clr-text);
   margin-bottom: var(--space-5);
-  line-height: 1.15;
+  line-height: 1.14;
+  text-wrap: balance;
+}
+
+.section-title span,
+.section-title em {
+  font-style: normal;
+  color: var(--clr-primary);
 }
 
 .section-desc {
   font-size: var(--fs-lg);
   color: var(--clr-text-muted);
-  max-width: 600px;
+  max-width: 68ch;
   line-height: 1.7;
 }
 
@@ -271,28 +255,17 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
 }
 
+/* Nút chính — gradient ngang như YoCheckIn, không quầng tím */
 .btn-primary {
-  background: linear-gradient(135deg, var(--clr-primary), var(--clr-primary-dark));
+  background: linear-gradient(90deg, var(--clr-primary-dark), var(--clr-primary-mid), var(--clr-primary));
   color: white;
-  box-shadow: 0 4px 20px rgba(108, 71, 255, 0.4);
-}
-
-.btn-primary::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, var(--clr-primary-light), var(--clr-primary));
-  opacity: 0;
-  transition: opacity var(--transition-base);
+  padding: 14px 28px;
+  box-shadow: none;
 }
 
 .btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(108, 71, 255, 0.6);
-}
-
-.btn-primary:hover::before {
-  opacity: 1;
+  transform: translateY(-1px);
+  filter: brightness(1.08);
 }
 
 .btn-primary span {
@@ -334,37 +307,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ===== CARDS ===== */
+/* Thẻ — trắng đặc, viền mảnh, bóng gần như không thấy */
 .card {
   background: var(--clr-surface);
   border: 1px solid var(--clr-border);
   border-radius: var(--radius-lg);
   padding: var(--space-8);
-  transition: all var(--transition-base);
+  box-shadow: var(--shadow-card-rest);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base), transform var(--transition-base);
   position: relative;
   overflow: hidden;
 }
 
-.card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(108, 71, 255, 0.5), transparent);
-  opacity: 0;
-  transition: opacity var(--transition-base);
-}
-
 .card:hover {
-  background: var(--clr-surface-hover);
-  border-color: rgba(108, 71, 255, 0.3);
-  transform: translateY(-4px);
+  border-color: var(--clr-border-light);
+  transform: translateY(-2px);
   box-shadow: var(--shadow-card);
-}
-
-.card:hover::before {
-  opacity: 1;
 }
 
 /* ===== GRADIENT BG EFFECTS ===== */

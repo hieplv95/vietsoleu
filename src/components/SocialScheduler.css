@@ -128,8 +128,8 @@
 }
 
 .scheduler__accordion-item--active {
-  border-color: rgba(108,71,255,0.4);
-  background: rgba(108,71,255,0.06);
+  border-color: rgba(var(--clr-primary-rgb),0.4);
+  background: rgba(var(--clr-primary-rgb),0.06);
 }
 
 .scheduler__accordion-item:not(.scheduler__accordion-item--active):hover {
@@ -147,8 +147,8 @@
   width: 28px;
   height: 28px;
   border-radius: 8px;
-  background: rgba(108,71,255,0.15);
-  color: #a78bfa;
+  background: rgba(var(--clr-primary-rgb),0.15);
+  color: var(--clr-primary);
   font-size: 0.875rem;
   font-weight: 700;
   display: flex;

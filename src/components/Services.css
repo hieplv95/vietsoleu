@@ -18,7 +18,7 @@
 .services__orb--1 {
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(108,71,255,0.14) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(var(--clr-primary-rgb),0.14) 0%, transparent 70%);
   top: -150px;
   right: -100px;
 }
@@ -26,7 +26,7 @@
 .services__orb--2 {
   width: 450px;
   height: 450px;
-  background: radial-gradient(circle, rgba(0,212,177,0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(var(--clr-teal-rgb),0.1) 0%, transparent 70%);
   bottom: -100px;
   left: -80px;
 }
@@ -40,10 +40,7 @@
 }
 
 .services__title-accent {
-  background: linear-gradient(135deg, #a78bfa, #6c47ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--clr-primary);
 }
 
 /* Cards grid */
@@ -108,7 +105,7 @@
 
 /* Text */
 .services__card-title {
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--ff-heading);
   font-size: 1.0625rem;
   font-weight: 700;
   color: var(--clr-text);
@@ -134,12 +131,8 @@
   gap: 6px;
   font-size: 0.8125rem;
   font-weight: 600;
-  color: #a78bfa;
+  color: var(--clr-primary);
   transition: gap 0.2s ease;
-}
-
-[data-theme="light"] .services__link {
-  color: #5a38e8;
 }
 
 .services__link:hover {
@@ -175,7 +168,7 @@
   position: absolute;
   inset: 0;
   border-radius: var(--radius-lg);
-  background: linear-gradient(135deg, rgba(108,71,255,0.06) 0%, rgba(0,212,177,0.04) 100%);
+  background: linear-gradient(135deg, rgba(var(--clr-primary-rgb),0.06) 0%, rgba(var(--clr-teal-rgb),0.04) 100%);
   pointer-events: none;
 }
 
@@ -228,7 +221,7 @@
   }
 }
 
-/* Light mode contrast fixes */
-[data-theme="light"] .services__link {
+/* Contrast fix: darken the link so it clears WCAG AA on the light card */
+.services__link {
   filter: brightness(0.7);
 }

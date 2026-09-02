@@ -9,7 +9,6 @@
   color: var(--clr-text);
   overflow: hidden;
   box-sizing: border-box;
-  transition: background 0.35s ease, color 0.35s ease;
 }
 
 /* Background effects */
@@ -23,7 +22,7 @@
 .blog-dir-glow--1 {
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(108,71,255,0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(var(--clr-primary-rgb),0.04) 0%, transparent 70%);
   top: -100px;
   left: -100px;
 }
@@ -31,17 +30,9 @@
 .blog-dir-glow--2 {
   width: 450px;
   height: 450px;
-  background: radial-gradient(circle, rgba(0,212,177,0.06) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(var(--clr-teal-rgb),0.03) 0%, transparent 70%);
   bottom: 10%;
   right: -100px;
-}
-
-[data-theme="light"] .blog-dir-glow--1 {
-  background: radial-gradient(circle, rgba(108,71,255,0.04) 0%, transparent 70%);
-}
-
-[data-theme="light"] .blog-dir-glow--2 {
-  background: radial-gradient(circle, rgba(0,212,177,0.03) 0%, transparent 70%);
 }
 
 /* Page Header */
@@ -53,7 +44,7 @@
 }
 
 .blog-dir-title {
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--ff-heading);
   font-size: clamp(2rem, 4vw, 3.25rem);
   font-weight: 900;
   line-height: 1.15;
@@ -95,18 +86,14 @@
 .blog-dir-filter-btn:hover {
   color: var(--clr-primary-light);
   border-color: var(--clr-primary);
-  background: rgba(108,71,255,0.08);
+  background: rgba(var(--clr-primary-rgb),0.08);
 }
 
 .blog-dir-filter-btn.active {
   color: white;
   background: var(--clr-primary);
   border-color: var(--clr-primary);
-  box-shadow: 0 4px 15px rgba(108,71,255,0.3);
-}
-
-[data-theme="light"] .blog-dir-filter-btn.active {
-  box-shadow: 0 4px 15px rgba(108,71,255,0.2);
+  box-shadow: 0 4px 15px rgba(var(--clr-primary-rgb),0.2);
 }
 
 /* Grid layout */
@@ -127,12 +114,8 @@
 
 .blog-dir-card:hover {
   transform: translateY(-5px);
-  border-color: rgba(255,255,255,0.15);
-}
-
-[data-theme="light"] .blog-dir-card:hover {
-  border-color: rgba(90,56,232,0.25);
-  box-shadow: 0 15px 40px rgba(90,56,232,0.06);
+  border-color: rgba(var(--clr-primary-rgb),0.25);
+  box-shadow: 0 15px 40px rgba(var(--clr-primary-rgb),0.06);
 }
 
 .blog-dir-card__thumb {
@@ -159,9 +142,9 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: #ffffff;
-  background: rgba(15, 23, 42, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #0f172a;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(var(--clr-primary-rgb), 0.2);
   backdrop-filter: blur(8px);
 }
 
@@ -182,7 +165,7 @@
 }
 
 .blog-dir-card__title {
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--ff-heading);
   font-size: 1.25rem;
   font-weight: 800;
   color: var(--clr-text);
@@ -210,27 +193,13 @@
   font-size: 0.875rem;
   font-weight: 700;
   text-decoration: none;
-  color: var(--clr-primary-light);
+  color: var(--clr-primary);
   transition: gap 0.2s ease, color 0.2s ease;
   margin-top: auto;
 }
 
 .blog-dir-card__link:hover {
   gap: 10px;
-  color: #ffffff;
-}
-
-[data-theme="light"] .blog-dir-card__category {
-  color: #0f172a;
-  background: rgba(255, 255, 255, 0.92);
-  border-color: rgba(90, 56, 232, 0.2);
-}
-
-[data-theme="light"] .blog-dir-card__link {
-  color: var(--clr-primary);
-}
-
-[data-theme="light"] .blog-dir-card__link:hover {
   color: var(--clr-primary-dark);
 }
 

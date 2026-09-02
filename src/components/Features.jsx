@@ -78,7 +78,7 @@ export default function Features() {
         <div className="text-center">
           <div className="section-label">{t('featuresSection.label')}</div>
           <h2 className="section-title">
-            {t('featuresSection.title1')}<br />{t('featuresSection.title2')}
+            {t('featuresSection.title1')}<br /><span>{t('featuresSection.title2')}</span>
           </h2>
           <p className="section-desc">
             {t('featuresSection.desc')}

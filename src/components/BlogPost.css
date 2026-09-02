@@ -9,7 +9,6 @@
   color: var(--clr-text);
   overflow: hidden;
   box-sizing: border-box;
-  transition: background 0.35s ease, color 0.35s ease;
 }
 
 .blog-post-page__glow {
@@ -20,13 +19,9 @@
   width: 800px;
   height: 450px;
   background: radial-gradient(circle, var(--post-accent) 0%, transparent 65%);
-  opacity: 0.12;
+  opacity: 0.06;
   filter: blur(80px);
   pointer-events: none;
-}
-
-[data-theme="light"] .blog-post-page__glow {
-  opacity: 0.06;
 }
 
 .blog-post-page__inner {
@@ -69,20 +64,14 @@
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin-bottom: 1.25rem;
-  color: #ffffff;
-  background: rgba(15, 23, 42, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #0f172a;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(var(--clr-primary-rgb), 0.2);
   backdrop-filter: blur(8px);
 }
 
-[data-theme="light"] .blog-post-header__category {
-  color: #0f172a;
-  background: rgba(255, 255, 255, 0.92);
-  border-color: rgba(90, 56, 232, 0.2);
-}
-
 .blog-post-header__title {
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--ff-heading);
   font-size: clamp(2.2rem, 3.8vw, 3.5rem);
   font-weight: 900;
   line-height: 1.15;
@@ -113,13 +102,8 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-  border: 1px solid rgba(255,255,255,0.06);
-}
-
-[data-theme="light"] .blog-post-header__banner {
-  box-shadow: 0 15px 40px rgba(90,56,232,0.08);
-  border: 1px solid rgba(90,56,232,0.06);
+  box-shadow: 0 15px 40px rgba(var(--clr-primary-rgb),0.08);
+  border: 1px solid rgba(var(--clr-primary-rgb),0.06);
 }
 
 .blog-post-header__emoji {
@@ -165,7 +149,7 @@
 }
 
 .blog-post-toc__title {
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--ff-heading);
   font-size: 1.125rem;
   font-weight: 700;
   margin-bottom: 1rem;
@@ -219,11 +203,7 @@
 
 .blog-post-tip-card:hover {
   transform: translateY(-2px);
-  border-color: rgba(255,255,255,0.15);
-}
-
-[data-theme="light"] .blog-post-tip-card:hover {
-  border-color: rgba(90,56,232,0.2);
+  border-color: rgba(var(--clr-primary-rgb),0.2);
 }
 
 .blog-post-tip-card__header {
@@ -240,7 +220,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--ff-heading);
   font-weight: 800;
   font-size: 1.25rem;
   color: white;
@@ -248,7 +228,7 @@
 }
 
 .blog-post-tip-card__title {
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--ff-heading);
   font-size: 1.35rem;
   font-weight: 800;
   color: var(--clr-text);
@@ -264,7 +244,7 @@
 /* Outro */
 .blog-post-content__outro {
   padding: 2rem;
-  background: linear-gradient(135deg, rgba(108,71,255,0.06), rgba(0,212,177,0.03));
+  background: linear-gradient(135deg, rgba(var(--clr-primary-rgb),0.06), rgba(var(--clr-teal-rgb),0.03));
   border: 1px dashed var(--clr-border-light);
   border-radius: 16px;
 }
@@ -296,8 +276,8 @@
 }
 
 .highlight-widget {
-  background: linear-gradient(to bottom, var(--clr-surface) 0%, rgba(108,71,255,0.04) 100%);
-  border-color: rgba(108,71,255,0.2);
+  background: linear-gradient(to bottom, var(--clr-surface) 0%, rgba(var(--clr-primary-rgb),0.04) 100%);
+  border-color: rgba(var(--clr-primary-rgb),0.2);
 }
 
 .widget-icon {
@@ -306,7 +286,7 @@
 }
 
 .widget-title {
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--ff-heading);
   font-size: 1.125rem;
   font-weight: 800;
   color: var(--clr-text);
@@ -341,7 +321,7 @@
   left: -50%;
   right: -50%;
   bottom: -50%;
-  background: radial-gradient(circle, rgba(108,71,255,0.12) 0%, transparent 60%);
+  background: radial-gradient(circle, rgba(var(--clr-primary-rgb),0.12) 0%, transparent 60%);
   pointer-events: none;
 }
 
@@ -353,7 +333,7 @@
 }
 
 .blog-post-cta__title {
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--ff-heading);
   font-size: clamp(1.8rem, 3.5vw, 2.5rem);
   font-weight: 900;
   line-height: 1.2;

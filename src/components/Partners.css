@@ -8,11 +8,6 @@
   position: relative;
 }
 
-[data-theme="dark"] .partners-section {
-  background: var(--clr-bg-2, #0f172a);
-  border-top-color: rgba(255, 255, 255, 0.12);
-  border-bottom-color: rgba(255, 255, 255, 0.12);
-}
 
 .partners-container {
   max-width: 1400px;
@@ -30,12 +25,9 @@
   border-right: 2px solid rgba(203, 213, 225, 0.8);
 }
 
-[data-theme="dark"] .partners-label-wrapper {
-  border-right-color: rgba(255, 255, 255, 0.2);
-}
 
 .partners-label {
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--ff-heading);
   font-size: 1.15rem;
   font-weight: 900;
   letter-spacing: 0.18em;
@@ -43,9 +35,6 @@
   text-transform: uppercase;
 }
 
-[data-theme="dark"] .partners-label {
-  color: #cbd5e1;
-}
 
 .partners-marquee-viewport {
   flex: 1;
@@ -109,9 +98,6 @@
   max-width: 280px;
 }
 
-[data-theme="dark"] .partner-img--exact {
-  filter: brightness(1.25) drop-shadow(0 0 10px rgba(255, 255, 255, 0.4));
-}
 
 .partner-svg {
   height: 48px;
@@ -124,7 +110,7 @@
 .partner-logo-item:hover .partner-svg {
   opacity: 1;
   transform: scale(1.1);
-  filter: drop-shadow(0 4px 12px rgba(108, 71, 255, 0.25));
+  filter: drop-shadow(0 4px 12px rgba(var(--clr-primary-rgb), 0.25));
 }
 
 @keyframes marquee-scroll {
