@@ -206,7 +206,7 @@
 /* Container for the photo to handle CSS cropping and card effects */
 .hero__photo-container {
   width: 100%;
-  aspect-ratio: 1.416; /* Aspect ratio of the original image (670x473) */
+  aspect-ratio: 1.751; /* Tỷ lệ ảnh gốc (1340x765) */
   border-radius: 16px;
   overflow: hidden;
   position: relative;
@@ -224,7 +224,7 @@
     0 0 0 1px rgba(var(--clr-primary-rgb),0.25);
 }
 
-/* Photo itself: scaled up and centered to crop out the white card frame and grid borders */
+/* Ảnh đã đúng khung, không cần phóng to để cắt viền như ảnh cũ */
 .hero__photo {
   position: absolute;
   top: 0;
@@ -232,13 +232,11 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transform: scale(1.23); /* Scales up the inner image, cropping out the white frame and grid borders */
-  transform-origin: center center;
   transition: transform 0.4s ease;
 }
 
 .hero__right:hover .hero__photo {
-  transform: scale(1.28); /* Smooth interactive zoom-in effect on hover */
+  transform: scale(1.03); /* Phóng nhẹ khi rê chuột */
 }
 
 

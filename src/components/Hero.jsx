@@ -131,8 +131,8 @@ export default function Hero() {
               src={tabletImg}
               alt="YoCheckin tại tiệm Nails"
               className="hero__photo"
-              width="665"
-              height="470"
+              width="1340"
+              height="765"
               fetchPriority="high"
               decoding="async"
             />
