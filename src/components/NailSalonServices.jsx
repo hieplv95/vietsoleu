@@ -183,17 +183,17 @@ export default function NailSalonServices() {
               </div>
               <div className="package-header-cell top10">
                 <span className="pkg-label">TOP 10</span>
-                <span className="pkg-price">$79</span>
+                <span className="pkg-price">€79</span>
                 <span className="pkg-period">{t('webSeoPage.seoPricingTable.period')}</span>
               </div>
               <div className="package-header-cell top5">
                 <span className="pkg-label">TOP 5</span>
-                <span className="pkg-price">$139</span>
+                <span className="pkg-price">€139</span>
                 <span className="pkg-period">{t('webSeoPage.seoPricingTable.period')}</span>
               </div>
               <div className="package-header-cell top3">
                 <span className="pkg-label">TOP 3</span>
-                <span className="pkg-price">$299+</span>
+                <span className="pkg-price">€299+</span>
                 <span className="pkg-period">{t('webSeoPage.seoPricingTable.period')}</span>
               </div>
             </div>
@@ -229,7 +229,7 @@ export default function NailSalonServices() {
                 <span>{t('webSeoPage.seoPricingTable.mapServiceTitle')}</span>
               </div>
               <div className="package-header-cell-map">
-                <span className="pkg-label-map">TOP 3 $ 299</span>
+                <span className="pkg-label-map">TOP 3 € 299</span>
                 <span className="pkg-period-map">{t('webSeoPage.seoPricingTable.period')}</span>
               </div>
             </div>
